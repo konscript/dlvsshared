@@ -42,12 +42,12 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 
 				 <div id="map-continents">
 				 <ul class="continents">
-				  <li class="c1"><a href="<?php bloginfo('wpurl'); ?>/region/africa">Africa</a></li>
-				  <li class="c2"><a href="<?php bloginfo('wpurl'); ?>/region/asia">Asien</a></li>
-				  <li class="c3"><a href="<?php bloginfo('wpurl'); ?>/region/oceania">Oceanien</a></li>
-				  <li class="c4"><a href="<?php bloginfo('wpurl'); ?>/region/europe">Europa</a></li>
-				  <li class="c5"><a href="<?php bloginfo('wpurl'); ?>/region/north-america">Nord Amerika</a></li>
-				  <li class="c6"><a href="<?php bloginfo('wpurl'); ?>/region/south-america">Syd Amerika</a></li>
+				  <li class="c1"><a href="<?php bloginfo('wpurl'); ?>/region/africa"><?php echo dlvs_translate("Africa"); ?></a></li>
+				  <li class="c2"><a href="<?php bloginfo('wpurl'); ?>/region/asia"><?php echo dlvs_translate("Asia"); ?></a></li>
+				  <li class="c3"><a href="<?php bloginfo('wpurl'); ?>/region/oceania"><?php echo dlvs_translate("Oceania"); ?></a></li>
+				  <li class="c4"><a href="<?php bloginfo('wpurl'); ?>/region/europe"><?php echo dlvs_translate("Europe"); ?></a></li>
+				  <li class="c5"><a href="<?php bloginfo('wpurl'); ?>/region/north-america"><?php echo dlvs_translate("North America"); ?></a></li>
+				  <li class="c6"><a href="<?php bloginfo('wpurl'); ?>/region/south-america"><?php echo dlvs_translate("South America"); ?></a></li>
 				 </ul>
 				</div>
 
