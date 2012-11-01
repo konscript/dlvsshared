@@ -1578,6 +1578,8 @@ class Acf
 	
 	function is_field_unlocked($field_name)
 	{
+		return true;
+
 		$hashes = array(
 			'repeater'			=> 'bbefed143f1ec106ff3a11437bd73432',
 			'options_page'		=> '1fc8b993548891dc2b9a63ac057935d8',
