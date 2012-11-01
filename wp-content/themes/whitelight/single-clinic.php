@@ -70,7 +70,7 @@ if(get_field('xmedicus_id')){
 							$link_city = str_replace("\n", "", strip_tags(get_field('city')));
 						?>
 
-						<iframe width="709" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?q=<?php echo $link_address.$link_city; ?>&amp;ie=UTF8&amp;output=embed"></iframe>
+						<iframe width="709" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?q=<?php echo urlencode($link_address) . " " . urlencode($link_city); ?>&ie=UTF8&output=embed"></iframe>
 						<br />
 						<a href="https://maps.google.com/?q=<?php echo $link_address.$link_city; ?>" target="_blank"><?php echo dlvs_translate("Show full-screen map"); ?></a>
 						<br />
