@@ -3,7 +3,6 @@
 
 <div id="content">
 	<div class="page col-full">
-		<?php //sidebar(true, true, false); ?>
 		<section id="main" class="fullwidth">
 			<header><h1><?php the_title(); ?></h1></header>
 			<?php while ( have_posts() ) { the_post(); $count++;
@@ -31,6 +30,8 @@
 				</tbody>
 			</table>
 		</section>
+		<?php //sidebar(true, true, false); ?>
+
 	</div>
 </div>
 

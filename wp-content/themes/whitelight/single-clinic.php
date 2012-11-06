@@ -13,14 +13,16 @@ $clinic = basename(get_permalink());
 // If the site uses xmedicus, book button should link directly to
 if(get_field('xmedicus_id')){
 	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . get_field('xmedicus_id') . '"><div class="button-book-title"> ' . dlvs_translate("Book vaccination") . '</div></a>';
-}else{
+} else if (get_field("booking_url", $clinic->ID)) {
 	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/"><div class="button-book-title"> ' . dlvs_translate("Book vaccination") . '</div></a>';
+} else {
+	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="#"><div class="button-book-title">Call to book:<br />01462 459595</div></a>';	
 }
 ?>
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar($sidebar_button.$sidebar_menu, false, false); ?>
+		
 		<section id="main" class="col-left">
 
 			<?php if (have_posts()): while (have_posts()): the_post(); ?>
@@ -82,6 +84,8 @@ if(get_field('xmedicus_id')){
 			<?php endwhile; endif; ?>
 			
 		</section>
+
+		<?php sidebar($sidebar_button.$sidebar_menu, false, false); ?>
 	</div>
 </div>
 

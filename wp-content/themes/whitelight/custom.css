@@ -58,7 +58,7 @@ a.button-book:hover {
 a.button-book .button-book-title {
   text-align: center;
   color: #f6f6f6;
-  line-height: 1em;
+  line-height: 1.3em;
   font-weight: normal;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   letter-spacing: 0.05em;
@@ -93,6 +93,8 @@ a.button-book-step .button-book-title {
 a.button-book-table {
   height: 40px;
   margin: 2px;
+  float: none;
+  margin-bottom: 0;
 }
 a.button-book-table .button-book-title {
   font-size: 1em;
@@ -116,6 +118,7 @@ table.zebra td {
   padding: 5px 15px;
   border-bottom: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
+  vertical-align: top;
 }
 table.zebra tbody tr:nth-child(odd) {
   background-color: #f6f6f6;
@@ -181,11 +184,323 @@ table.zebra tbody tr:nth-child(odd) {
   text-decoration: none;
   font-weight: normal;
 }
+/********************************************** 
+ * Homepage
+ **********************************************/
+.home #content {
+  padding-bottom: 0;
+}
+/********************************************** 
+ * Featured slider on homepage
+ **********************************************/
+#featured {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+}
+#featured article header .button {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  #featured .slide-content-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+  #featured article {
+    height: 100%;
+    width: 300px;
+    float: right;
+    margin-right: 10%;
+    background: #ffffff;
+    background: rgba(255, 255, 255, 0.7);
+  }
+  #featured article header {
+    position: relative;
+    height: 100%;
+    background-color: transparent;
+    color: black;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    padding: 30px 30px 0 30px;
+    text-shadow: none;
+  }
+  #featured article header h1,
+  #featured article header .entry {
+    height: auto;
+  }
+  #featured article header h1 {
+    font-family: Georgia, serif;
+    color: black;
+    font-size: 2.5em;
+    padding-bottom: 20px;
+  }
+  #featured article header .entry {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 1.5em;
+    color: black;
+  }
+  #featured article header .calltoaction {
+    position: absolute;
+    bottom: 60px;
+    width: 240px;
+    display: block;
+    text-align: center;
+  }
+  #featured article header .calltoaction a {
+    display: block;
+    font-size: 1.1em;
+    background-color: #B72020;
+    border-radius: 3px;
+    padding: 10px 20px;
+    width: auto;
+  }
+  #featured article header .calltoaction a:hover {
+    background-color: #db2f2f;
+    text-decoration: none;
+    -webkit-transition: all 0.2s 0.2s;
+    -moz-transition: all 0.2s 0.2s;
+    -o-transition: all 0.2s 0.2s;
+    transition: all 0.2s 0.2s;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #featured article {
+    background: #fff;
+  }
+  #featured article header {
+    height: auto;
+    background-color: transparent;
+    color: black;
+    text-shadow: none;
+    background: #fff;
+  }
+  #featured article header h1 {
+    font-family: Georgia, serif;
+    font-size: 2.5em;
+    color: black;
+    margin-bottom: 35px;
+  }
+  #featured article header .entry {
+    display: none;
+  }
+  #featured article header .calltoaction {
+    position: absolute;
+    bottom: 15px;
+    width: 240px;
+    display: block;
+    text-align: center;
+  }
+  #featured article header .calltoaction a {
+    display: block;
+    font-size: 1.1em;
+    background-color: #B72020;
+    border-radius: 3px;
+    padding: 10px 20px;
+    width: auto;
+  }
+  #featured article header .calltoaction a:hover {
+    background-color: #db2f2f;
+    text-decoration: none;
+    -webkit-transition: all 0.2s 0.2s;
+    -moz-transition: all 0.2s 0.2s;
+    -o-transition: all 0.2s 0.2s;
+    transition: all 0.2s 0.2s;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .controls-container .flex-control-nav {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 920px) {
+  #featured article header .entry {
+    display: none;
+  }
+}
+.home #intro h1 {
+  margin-bottom: 0;
+}
+.controls-container .flex-control-nav {
+  left: 20px;
+  right: auto;
+}
+/********************************************** 
+ * Features area on homepage
+ **********************************************/
+.home-section#features li h2 a {
+  font-weight: normal;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05em;
+}
+.home-section#features li p {
+  width: 100%;
+}
+.home-section#features li p img {
+  margin-right: 10px;
+  margin-bottom: 40px;
+}
+.home-section li h2 {
+  margin-bottom: 1em;
+}
+.home-section header h1 {
+  font-size: 1em;
+  font-weight: bold;
+}
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+  .home-section.count4 header {
+    display: none;
+  }
+  .home-section.count4 ul {
+    float: left;
+    width: 100%;
+  }
+  .home-section.count4 ul li {
+    float: left;
+    margin-right: 2%;
+    width: 23%;
+  }
+  .home-section.count4#portfolio .portfolio-item {
+    width: 100%;
+    margin: 0!important;
+  }
+}
+/********************************************** 
+ * Alt Blogpost area on homepage (picture with news)
+ **********************************************/
+.home-section#blog-alt li h2 a {
+  font-weight: normal;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1em;
+}
+.home-section#blog-alt ul li .thumbnail {
+  display: none;
+}
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+  .home-section#blog-alt header {
+    width: 48%;
+    margin-right: 4%;
+  }
+  .home-section#blog-alt ul {
+    width: 48%;
+  }
+  .home-section#blog-alt ul li {
+    width: 46%;
+    margin-right: 8%;
+  }
+  .home-section#blog-alt ul li.last {
+    margin-right: 0;
+  }
+}
+/********************************************** 
+ * Blogpost area on homepage (interactive map)
+ **********************************************/
+.home-section#blog {
+  display: block;
+  padding-bottom: 2em;
+}
+.home-section#blog ul.entries {
+  margin-top: 15px;
+}
+.home-section#blog ul.entries li {
+  width: 100%;
+  position: relative;
+  min-height: 110px;
+  margin-bottom: 0;
+}
+.home-section#blog ul.entries li img {
+  position: absolute;
+  left: 5px;
+}
+.home-section#blog ul.entries li h3 {
+  position: absolute;
+  left: 30px;
+}
+.home-section#blog ul.entries li h3 a {
+  font-weight: normal;
+  text-decoration: underline;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1em;
+  color: black;
+}
+.home-section#blog ul.entries li p {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+  .home-section#blog header {
+    float: left;
+    width: 68%;
+    margin-right: 2%;
+  }
+  .home-section#blog ul.entries {
+    float: left;
+    width: 30%;
+  }
+  .home-section#blog ul.entries li {
+    margin-bottom: 2em;
+  }
+}
+/********************************************** 
+ * Streamer (mobile app) area on homepage
+ **********************************************/
+.home-section#streamer {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.home-section#streamer h1 {
+  font-weight: normal;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.3em;
+  font-size: 2.2em;
+}
+.home-section#streamer h1 .highlight {
+  color: #b7190e;
+}
+.home-section#streamer .phone .icons {
+  margin: 20px 0;
+}
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+  .home-section#streamer h1 {
+    float: left;
+    margin-bottom: 1.5em;
+  }
+  .home-section#streamer .phone {
+    float: right;
+  }
+  .home-section#streamer .phone a.iphone-model {
+    float: left;
+    margin-top: -90px;
+  }
+  .home-section#streamer .phone .icons {
+    float: left;
+    margin: 0 40px;
+  }
+  .home-section#streamer .phone .icons a {
+    display: block;
+    margin: 5px 0;
+  }
+}
 /*****************************************************************
  *	CUSTOM POST TYPES
- *****************************************************************//**
-  * Home & Region
-  **********************************/
+ *****************************************************************//***
+ * Home & Region
+ **********************************/
 .home .region-map,
 .region .region-map,
 .page-template-template-vaccination-recommendations-php .region-map {
@@ -309,9 +624,9 @@ table.zebra tbody tr:nth-child(odd) {
   -webkit-opacity: 1;
   opacity: 1;
 }
-/*
-	* Clinic
-	**********************************/
+/***
+ * Clinic
+ **********************************/
 .contact p.address {
   background: url('img/icon-address-black-20px.png') no-repeat 2px center;
 }
@@ -328,9 +643,9 @@ table.zebra tbody tr:nth-child(odd) {
 .gmap a {
   float: left;
 }
-/**
-  * Country
-  **********************************/.post.country header {
+/***
+ * Country
+ **********************************/.post.country header {
   float: left;
 }
 .country-meta-header {
@@ -381,6 +696,23 @@ div.post.country table#vaccinations_groups tr td img {
 div.post.country table#vaccinations_groups tr td.vaccination-name {
   width: 30%;
 }
+div.post.country .meta-boxes {
+  margin-top: 20px;
+}
+div.post.country .meta-boxes .box {
+  float: left;
+  border: 1px solid #EEE;
+  margin-right: 10px;
+}
+div.post.country .meta-boxes .box img {
+  float: left;
+  padding: 5px;
+}
+div.post.country .meta-boxes .box .text {
+  float: left;
+  padding: 10px 10px 10px 5px;
+  line-height: 20px;
+}
 div.post.country .disclaimer {
   color: #aaa;
 }
@@ -395,9 +727,9 @@ div.post.country .disclaimer ul li {
   list-style-position: inside;
   text-indent: 1em;
 }
-/**
-* FAQ
-**********************************/.faq #searchFaq {
+/***
+ * FAQ
+ **********************************/.faq #searchFaq {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -424,6 +756,14 @@ div.post.country .disclaimer ul li {
 .faq h3 {
   font-size: 1em;
   margin: 15px 0;
+}
+/***
+ * Booking page
+ **********************************/
+@media only screen and (max-width: 768px) {
+  .template.booking .weekday {
+    display: none;
+  }
 }
 /**********************************************
  * Hide Search
@@ -462,318 +802,6 @@ div.post.country .disclaimer ul li {
 #navigation .nav li a:hover::after,
 #navigation .nav li:hover > a::after {
   border-color: #B72020 transparent transparent transparent!important;
-}
-/********************************************** 
- * Homepage
- **********************************************/
-.home #content {
-  padding-bottom: 0;
-}
-/********************************************** 
- * Featured slider on homepage
- **********************************************/
-#featured {
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  -o-box-shadow: none;
-}
-#featured article header .button {
-  display: none;
-}
-@media only screen and (min-width: 768px) {
-  #featured .slide-content-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-  }
-  #featured article {
-    height: 100%;
-    width: 300px;
-    float: right;
-    margin-right: 10%;
-    background: #ffffff;
-    background: rgba(255, 255, 255, 0.7);
-  }
-  #featured article header {
-    position: relative;
-    height: 100%;
-    background-color: transparent;
-    color: black;
-    bottom: 0;
-    left: 0;
-    width: auto;
-    padding: 30px 30px 0 30px;
-    text-shadow: none;
-  }
-  #featured article header h1,
-  #featured article header .entry {
-    height: auto;
-  }
-  #featured article header h1 {
-    font-family: Georgia, serif;
-    color: black;
-    font-size: 2.5em;
-    padding-bottom: 20px;
-  }
-  #featured article header .entry {
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    line-height: 1.5em;
-    color: black;
-  }
-  #featured article header .calltoaction {
-    position: absolute;
-    bottom: 60px;
-    width: 240px;
-    display: block;
-    text-align: center;
-  }
-  #featured article header .calltoaction a {
-    display: block;
-    font-size: 1.1em;
-    background-color: #B72020;
-    border-radius: 3px;
-    padding: 10px 20px;
-    width: auto;
-  }
-  #featured article header .calltoaction a:hover {
-    background-color: #db2f2f;
-    text-decoration: none;
-    -webkit-transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s 0.2s;
-    -o-transition: all 0.2s 0.2s;
-    transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-  }
-}
-@media only screen and (max-width: 768px) {
-  #featured article {
-    background: #fff;
-  }
-  #featured article header {
-    height: auto;
-    background-color: transparent;
-    color: black;
-    text-shadow: none;
-    background: #fff;
-  }
-  #featured article header h1 {
-    font-family: Georgia, serif;
-    font-size: 2.5em;
-    color: black;
-  }
-  #featured article header .entry {
-    font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 1em;
-    line-height: 1.5em;
-    color: black;
-  }
-  #featured article header .calltoaction {
-    position: absolute;
-    bottom: 60px;
-    width: 240px;
-    display: block;
-    text-align: center;
-  }
-  #featured article header .calltoaction a {
-    display: block;
-    font-size: 1.1em;
-    background-color: #B72020;
-    border-radius: 3px;
-    padding: 10px 20px;
-    width: auto;
-  }
-  #featured article header .calltoaction a:hover {
-    background-color: #db2f2f;
-    text-decoration: none;
-    -webkit-transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s 0.2s;
-    -o-transition: all 0.2s 0.2s;
-    transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-  }
-  .controls-container .flex-control-nav {
-    display: none;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 920px) {
-  #featured article header .entry {
-    display: none;
-  }
-}
-.home #intro h1 {
-  margin-bottom: 0;
-}
-.controls-container .flex-control-nav {
-  left: 20px;
-  right: auto;
-}
-/********************************************** 
- * Features area on homepage
- **********************************************/
-.home-section#features li h2 a {
-  font-weight: normal;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.05em;
-}
-.home-section#features li p {
-  width: 100%;
-}
-.home-section#features li p img {
-  margin-right: 10px;
-  margin-bottom: 40px;
-}
-.home-section li h2 {
-  margin-bottom: 1em;
-}
-.home-section header h1 {
-  font-size: 1em;
-  font-weight: bold;
-}
-/* Only apply to iPad portrait and up */
-@media only screen and (min-width: 768px) {
-  .home-section.count4 header {
-    display: none;
-  }
-  .home-section.count4 ul {
-    float: left;
-    width: 100%;
-  }
-  .home-section.count4 ul li {
-    float: left;
-    margin-right: 2%;
-    width: 23%;
-  }
-  .home-section.count4#portfolio .portfolio-item {
-    width: 100%;
-    margin: 0!important;
-  }
-}
-/********************************************** 
- * Alt Blogpost area on homepage (picture with news)
- **********************************************/
-.home-section#blog-alt li h2 a {
-  font-weight: normal;
-  font-style: italic;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.1em;
-}
-.home-section#blog-alt ul li .thumbnail {
-  display: none;
-}
-/* Only apply to iPad portrait and up */
-@media only screen and (min-width: 768px) {
-  .home-section#blog-alt header {
-    width: 48%;
-    margin-right: 4%;
-  }
-  .home-section#blog-alt ul {
-    width: 48%;
-  }
-  .home-section#blog-alt ul li {
-    width: 46%;
-    margin-right: 8%;
-  }
-  .home-section#blog-alt ul li.last {
-    margin-right: 0;
-  }
-}
-/********************************************** 
- * Blogpost area on homepage (interactive map)
- **********************************************/
-.home-section#blog {
-  display: block;
-  padding-bottom: 2em;
-}
-.home-section#blog header {
-  float: left;
-  width: 68%;
-  margin-right: 2%;
-}
-.home-section#blog ul.entries {
-  margin-top: 15px;
-  float: left;
-  width: 30%;
-}
-.home-section#blog ul.entries li {
-  width: 100%;
-  position: relative;
-  min-height: 110px;
-}
-.home-section#blog ul.entries li img {
-  position: absolute;
-  left: 5px;
-}
-.home-section#blog ul.entries li h3 {
-  position: absolute;
-  left: 30px;
-}
-.home-section#blog ul.entries li h3 a {
-  font-weight: normal;
-  text-decoration: underline;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.1em;
-  color: black;
-}
-.home-section#blog ul.entries li p {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
-/********************************************** 
- * Streamer (mobile app) area on homepage
- **********************************************/
-.home-section#streamer {
-  margin-bottom: 0;
-  border-bottom: none;
-}
-.home-section#streamer h1 {
-  font-weight: normal;
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.3em;
-  font-size: 2.2em;
-}
-.home-section#streamer h1 .highlight {
-  color: #b7190e;
-}
-.home-section#streamer .phone .icons {
-  margin: 20px 0;
-}
-/* Only apply to iPad portrait and up */
-@media only screen and (min-width: 768px) {
-  .home-section#streamer h1 {
-    float: left;
-    margin-bottom: 1.5em;
-  }
-  .home-section#streamer .phone {
-    float: right;
-  }
-  .home-section#streamer .phone a.iphone-model {
-    float: left;
-    margin-top: -90px;
-  }
-  .home-section#streamer .phone .icons {
-    float: left;
-    margin: 0 40px;
-  }
-  .home-section#streamer .phone .icons a {
-    display: block;
-    margin: 5px 0;
-  }
-}
-/********************************************** 
- * Footer
- **********************************************/
-#footer-widgets .widget {
-  margin-bottom: 0;
-  color: white;
 }
 /********************************************** 
  * Mixins

@@ -9,7 +9,6 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar($sidebar_menu, false, false); ?>
 		<section id="main" class="col-left">
 
 			<?php if (have_posts()): while (have_posts()): the_post(); ?>
@@ -67,6 +66,9 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 				</div><!--#end post-->
 			<?php endwhile; endif; ?>
 		</section>
+
+		<?php sidebar($sidebar_menu, false, false); ?>
+
 	</div>
 </div>
 

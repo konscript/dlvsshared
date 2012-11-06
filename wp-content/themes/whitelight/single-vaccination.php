@@ -19,7 +19,6 @@
 
 <div id="content">
 	<div class="page col-full">
-		<?php if(!$_GET["ajax"]){ sidebar($sidebar_button.$sidebar_menu, false, false); } ?>
 		<section id="main" class="<?php if(!$_GET["ajax"]){ echo "col-left"; } else { echo "fullwidth"; } ?>">
 
 			<?php 
@@ -49,6 +48,7 @@
 			    </div><!--#end post-->
 	        <?php endwhile; endif; ?>
 		</section>
+		<?php if(!$_GET["ajax"]){ sidebar($sidebar_button.$sidebar_menu, false, false); } ?>
 	</div>
 </div>
 

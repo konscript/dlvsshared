@@ -37,7 +37,7 @@
 			//float: left;
 			text-align: center;
 			color: @color_secondary_b;
-			line-height: 1em;			
+			line-height: 1.3em;			
 			font-weight: normal;
 			//font-style: italic;			
 			//text-transform: uppercase;
@@ -87,6 +87,9 @@
 	a.button-book-table {
 		height: 40px;
 		margin: 2px;
+		float: none;
+		margin-bottom: 0;
+
 		.button-book-title {		
 			font-size: 1em;
 			line-height: 40px;
@@ -110,9 +113,11 @@
   		
   		td {
   			line-height: 25px;
-				padding: 5px 15px;
-				border-bottom: 1px solid @color_secondary_c;
-				border-left: 1px solid @color_secondary_c; }
+			padding: 5px 15px;
+			border-bottom: 1px solid @color_secondary_c;
+			border-left: 1px solid @color_secondary_c;
+			vertical-align: top;
+		}
   		
   		tbody tr:nth-child(odd){
   			background-color: #f6f6f6; }

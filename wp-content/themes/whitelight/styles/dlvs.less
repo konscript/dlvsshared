@@ -13,7 +13,7 @@
 
 
 /* --- GENERAL --- */
-body  { color: @color_body; background: @bg_dark; }
+body  { color: @color_body; background: white; }
 h1, h2, h3, h4, h5, h6  { color: darken(@color_body, 20%); }
 hr { background-color: @border_main; }
 input, textarea { border-color: darken(@border_main, 8%) @border_main @border_main darken(@border_main, 8%); color: @color_body; }
@@ -157,7 +157,10 @@ article.type-features  {
 	background: @bg_dark;
 	.nav a  { color: #fff; }
 }
-#footer-widgets { background: @bg_dark; }
+#footer-widgets { 
+	background: #FAFAFA url(../images/bg-texture.png) repeat left top;
+	border-top: 1px solid #EDEDED;
+}
 
 /* --- BREADCRUMBS --- */
 .breadcrumbs {
@@ -334,9 +337,12 @@ body .woo-pagination {
 /* --- FOOTER WIDGETS --- */
 #footer-widgets  {
 	.widget  {
-		color: darken(@bg_light, 20%);
-		h3 { color: #fff; border-bottom: none; }
-		ul li a { color: darken(@bg_light, 20%); }
+		color: @color_body;
+		margin-bottom: 0;
+
+		h3 { color: @color_body; border-bottom: none; }
+		ul li a { color: @color_links; }
+		ul li a:hover { color: darken(@color_links, 10%); }
 	}
 	.searchform, #searchform  { background: #fff; }
 	.widget_woo_twitter ul li { border-bottom:1px solid darken(@bg_light, 20%); }

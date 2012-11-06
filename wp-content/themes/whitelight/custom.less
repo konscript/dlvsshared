@@ -6,11 +6,11 @@ WOO CUSTOM STYLESHEET (for DLVS)
  * PORTED FROM OLD TRAVEL VACCINATION
  ************************************************/
 
-@color_secondary_b: #f6f6f6;    // White Dark
-@color_contrast_b:  #ee3124;    // Red Light
+@color_secondary_b: #f6f6f6;    						// White Dark
+@color_contrast_b:  #ee3124;    						// Red Light
 @color_contrast:    darken(@color_contrast_b, 15%);     // Red
 @color_contrast_c:  lighten(@color_contrast_b, 10%);    // Red Lighter
-@color_secondary_c: #eee;           // White Darker
+@color_secondary_c: #eee;           					// White Darker
 
 // Typography
 @typography_family_primary: 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
@@ -41,14 +41,14 @@ WOO CUSTOM STYLESHEET (for DLVS)
  * Colors
  ************************************************/
 
-@color-primary: 	#000000;	// Black
+@color-primary: 	#000000;		// Black
 @color-primary-b: 	#444;			// Black Light 
-@color-primary-c: 	#7f7f7f;	// Black Lighter 
+@color-primary-c: 	#7f7f7f;		// Black Lighter 
 @color-secondary:	#fff;			// White
-@color-secondary-b:	#f6f6f6;	// White Dark
+@color-secondary-b:	#f6f6f6;		// White Dark
 @color-secondary-c:	#eee;			// White Darker
 @color-secondary-d:	#ccc;			// White Even Darker
-@color-contrast-b:	#ee3124;	// Red Light
+@color-contrast-b:	#ee3124;		// Red Light
 @color-contrast:	darken(@color-contrast-b, 15%);		// Red
 @color-contrast-c:	lighten(@color-contrast-b, 10%);	// Red Lighter
 
@@ -84,9 +84,8 @@ WOO CUSTOM STYLESHEET (for DLVS)
 
 @import url(custom_elements.less);
 @import url(custom_utilities.less);
-@import url(custom_post_types.less);
-// @import url(custom_templates.less);
-
+@import url(custom_home.less);
+@import url(custom_templates.less);
 
 /**********************************************
  * Hide Search
@@ -120,378 +119,6 @@ WOO CUSTOM STYLESHEET (for DLVS)
 #navigation .nav li a:hover::after,
 #navigation .nav li:hover > a::after {
 	border-color: #B72020 transparent transparent transparent!important;
-}
-
-/********************************************** 
- * Homepage
- **********************************************/
-
-.home #content {
-	padding-bottom: 0;
-}
-
-/********************************************** 
- * Featured slider on homepage
- **********************************************/
-
-// No shadows on slider wrapper (best for white bg)
-#featured {
-	box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -o-box-shadow: none;
-}
-
-#featured article header .button {
-	display: none;
-}
-
-// Slider content bar (only apply to iPad portrait and up)
-@media only screen and (min-width: 768px) {
-
-	#featured .slide-content-container {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-	}
-	#featured article {
-		height: 100%;
-		width: 300px;
-		float: right;
-		margin-right: 10%;
-		background: #ffffff;
-		background: rgb(255,255,255);
-		background: rgba(255,255,255,0.7);
-	}
-	#featured article header {
-		position: relative;
-		height: 100%;
-		background-color: transparent;
-		color: black;
-		bottom: 0;
-		left: 0;
-		width: auto;
-		padding: 30px 30px 0 30px;
-		text-shadow: none;
-	}
-	#featured article header h1,
-	#featured article header .entry {
-		height: auto;
-	}
-	#featured article header h1 {
-		font-family: Georgia, serif;
-		color: black;
-		font-size: 2.5em;
-		padding-bottom: 20px;
-	}
-	#featured article header .entry {
-		font-family: 'Helvetica Neue', Helvetica, sans-serif;
-		//font-size: 1em;
-		line-height: 1.5em;
-		color: black;
-	}
-	#featured article header .calltoaction {
-		position: absolute;
-		bottom: 60px;
-		width: 240px;
-		display: block;
-		text-align: center;
-	}
-	#featured article header .calltoaction a {
-		display: block;
-		font-size: 1.1em;
-		background-color: #B72020;
-		border-radius: 3px;
-		padding: 10px 20px;
-		width: auto;
-
-		&:hover {
-			background-color: lighten(#B72020, 10%);
-			text-decoration: none;
-			.transition(all, 0.2s);
-		}
-	}
-}
-
-// Slider content bar (only apply to small size devices)
-@media only screen and (max-width: 768px) {
-	#featured article {
-		background: #fff;
-	}
-	#featured article header {
-		text-shadow: none;
-		height: auto;
-		background-color: transparent;
-		color: black;
-		text-shadow: none;
-		background: #fff;
-	}
-	#featured article header h1 {
-		font-family: Georgia, serif;
-		font-size: 2.5em;
-		color: black;
-	}
-	#featured article header .entry {
-		font-family: 'Helvetica Neue', Helvetica, sans-serif;
-		font-size: 1em;
-		line-height: 1.5em;
-		color: black;
-	}
-	#featured article header .calltoaction {
-		position: absolute;
-		bottom: 60px;
-		width: 240px;
-		display: block;
-		text-align: center;
-	}
-	#featured article header .calltoaction a {
-		display: block;
-		font-size: 1.1em;
-		background-color: #B72020;
-		border-radius: 3px;
-		padding: 10px 20px;
-		width: auto;
-
-		&:hover {
-			background-color: lighten(#B72020, 10%);
-			text-decoration: none;
-			.transition(all, 0.2s);
-		}
-	}
-	.controls-container .flex-control-nav {
-		display: none;
-	}	
-}
-
-// Hide the content bar in slider when too tight (between 768px & 920px)
-@media only screen and (min-width: 768px) and (max-width: 920px) {
-	#featured article header .entry {
-		display: none;
-	}
-}
-
-.home #intro h1 {
-	margin-bottom: 0;
-}
-
-.controls-container .flex-control-nav {
-	left: 20px;
-	right: auto;
-}
-
-/********************************************** 
- * Features area on homepage
- **********************************************/
-
-.home-section#features li h2 a {
-	font-weight: normal;
-	//font-style: italic;
-	font-family: @typography-family-secondary;
-	font-size: 1.05em;
-}
-
-.home-section#features li p {
-	width: 100%;
-}
-
-.home-section#features li p img {
-	margin-right: 10px;
-	margin-bottom: 40px
-}
-
-.home-section li h2 {
-	margin-bottom: 1em;
-}
-
-.home-section header h1 {
-	font-size: 1em;
-	font-weight: bold;
-}
-
-/* Only apply to iPad portrait and up */
-@media only screen and (min-width: 768px) {
-
-	.home-section.count4  {
-		header  { display: none; }
-		ul  {
-			float: left;
-			width: 100%;
-			li  {
-				float: left;
-				margin-right: 2%;
-				width: 23%;
-			}
-		}
-		&#portfolio  {
-			.portfolio-item {
-				width: 100%;
-				margin: 0!important;
-			}
-		}
-	}
-}
-
-/********************************************** 
- * Alt Blogpost area on homepage (picture with news)
- **********************************************/
-
-.home-section#blog-alt {
-
-	li h2 a {
-		font-weight: normal;
-		font-style: italic;
-		font-family: @typography-family-secondary;
-		font-size: 1.1em;
-	}
-
-	ul {
-		li {
-			.thumbnail {
-				display: none;
-			}	
-		}
-	}
-}
-
-/* Only apply to iPad portrait and up */
-@media only screen and (min-width: 768px) {
-
-	.home-section#blog-alt {
-
-		header {
-			width: 48%;
-			margin-right: 4%
-		}
-
-		ul {
-			width: 48%;
-
-			li {
-				width: 46%;
-				margin-right: 8%;
-			}
-
-			li.last {
-				margin-right: 0;
-			}
-		}
-	}
-
-}
-
-/********************************************** 
- * Blogpost area on homepage (interactive map)
- **********************************************/
-
-.home-section#blog {
-	display: block;
-	padding-bottom: 2em;
-
-	header {
-		float: left;		
-		width: 68%;
-		margin-right: 2%;
-	}
-	ul.entries {
-		margin-top: 15px;
-		float: left;
-		width: 30%;
-
-		li {
-			width: 100%;
-			position: relative;
-			min-height: 110px;
-
-			img {
-				position: absolute;
-				left: 5px;
-			}
-			h3 {
-				position: absolute;
-				left: 30px;
-
-				a {
-					font-weight: normal;
-					//font-style: italic;
-					text-decoration: underline;
-					font-family: @typography-family-secondary;
-					font-size: 1.1em;	
-					color: black;				
-				}
-			}
-			p {
-				position: absolute;
-				top: 30px;
-				left: 30px;
-			}
-		}
-	}
-}
-
-
-/********************************************** 
- * Streamer (mobile app) area on homepage
- **********************************************/
-
-// Streamer
-.home-section#streamer {
-	margin-bottom: 0;
-	border-bottom: none;
-
-	h1 {
-		font-weight: normal;
-		font-family: @typography-family-secondary;
-		line-height: 1.3em;
-		font-size: 2.2em;
-
-		.highlight {
-			color: @color-contrast;
-		}
-	}
-
-	.phone {
-		.icons {
-			margin: 20px 0;
-		}
-	}
-}
-
-/* Only apply to iPad portrait and up */
-@media only screen and (min-width: 768px) {
-
-	.home-section#streamer {
-
-		h1 {
-			float: left;		
-			margin-bottom: 1.5em;
-		}
-
-		.phone {
-			float: right;
-
-			a.iphone-model {
-				float: left;
-				margin-top: -90px;
-			}
-
-			.icons {
-				float: left;
-				margin: 0 40px;
-
-				a {
-					display: block;
-					margin: 5px 0;
-				}
-			}		
-		}
-	}
-}
-
-/********************************************** 
- * Footer
- **********************************************/
-
-#footer-widgets .widget {
-	margin-bottom: 0;
-	color: white;
 }
 
 /********************************************** 

@@ -80,16 +80,16 @@
 				<thead>
 					<td>Clinic</td>
 					<?php foreach($weekdays as $weekday): ?>
-						<td><?php echo ucfirst($weekday); ?></td>
+						<td class="weekday"><?php echo ucfirst($weekday); ?></td>
 					<?php endforeach; ?>
 					<td width="100">&nbsp;</td>							
 				</thead>						
 				<?php $clinics = getClinics(); ?>
 				<?php foreach($clinics as $clinic): ?>	
 					<tr>
-						<td><?php the_field("address", $clinic->ID); ?></td>
+						<td><a href="<?php echo get_permalink($clinic->ID); ?>"><?php echo get_the_title($clinic->ID); ?></a><br /><?php the_field("address", $clinic->ID); ?></td>
 						<?php foreach($weekdays as $weekday): ?>
-							<td><?php the_field($weekday, $clinic->ID); ?></td>
+							<td class="weekday"><?php the_field($weekday, $clinic->ID); ?></td>
 						<?php endforeach; ?>
 						<?php
 							if (get_field("booking_url", $clinic->ID)){

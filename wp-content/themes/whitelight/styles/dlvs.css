@@ -2,7 +2,7 @@
 /* --- GENERAL --- */
 body {
   color: #555555;
-  background: #0d0d0d;
+  background: white;
 }
 h1,
 h2,
@@ -194,7 +194,8 @@ article.type-features .post-more a:visited {
   color: #fff;
 }
 #footer-widgets {
-  background: #0d0d0d;
+  background: #fafafa url(../images/bg-texture.png) repeat left top;
+  border-top: 1px solid #EDEDED;
 }
 /* --- BREADCRUMBS --- */
 .breadcrumbs {
@@ -473,14 +474,18 @@ body .woo-pagination .page-numbers.current {
 }
 /* --- FOOTER WIDGETS --- */
 #footer-widgets .widget {
-  color: #c7c7c7;
+  color: #555555;
+  margin-bottom: 0;
 }
 #footer-widgets .widget h3 {
-  color: #fff;
+  color: #555555;
   border-bottom: none;
 }
 #footer-widgets .widget ul li a {
-  color: #c7c7c7;
+  color: #b72020;
+}
+#footer-widgets .widget ul li a:hover {
+  color: #8c1818;
 }
 #footer-widgets .searchform,
 #footer-widgets #searchform {

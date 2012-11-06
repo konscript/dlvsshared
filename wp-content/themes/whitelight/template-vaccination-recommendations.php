@@ -11,8 +11,6 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 
 <div id="content">
 	<div class="page col-full">
-		<?php 
-		sidebar($sidebar_menu, true, false); ?>
 		<section id="main" class="col-left">
 			
 			<header><h1><?php the_title(); ?></h1></header>
@@ -53,6 +51,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 
 			</div>		
 		</section>
+		<?php sidebar($sidebar_menu, true, false); ?>
 	</div>
 </div>
 

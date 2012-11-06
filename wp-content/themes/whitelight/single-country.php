@@ -38,14 +38,6 @@ $sidebar_country_meta .=
 			</td>
 		</tr>';
 
-	if (get_field('latest_disease_surveillance')) {
-		$sidebar_country_meta .= '<tr><td colspan="2"><a href="'.get_field('latest_disease_surveillance').'" target="_blank">'.dlvs_translate('Latest Disease Surveillance').'</a></td></tr>';
-	}
-
-	if (get_field('updated_malaria_map')) {
-		$sidebar_country_meta .= '<tr><td colspan="2"><a href="'.get_field('updated_malaria_map').'" target="_blank">'.dlvs_translate('Updated Malaria Map').'</a></td></tr>';
-	}
-
 $sidebar_country_meta .= '
 		</tbody>
 	</table>';
@@ -54,7 +46,6 @@ $sidebar_country_meta .= '
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar($sidebar_back . $sidebar_button, false, $sidebar_country_meta); ?>
 		<section id="main" class="col-left">
 
 			<?php if (have_posts()): while (have_posts()): the_post(); ?>
@@ -79,7 +70,7 @@ $sidebar_country_meta .= '
 								"Alle rejsende", "+2 uger", "+3 måneder", "+6 måneder"
 							);
 						} else {
-						// labels for groups
+							// labels for groups
 							$vaccinations_groups_labels = array(
 								"All travelers", "+2 weeks", "+3 months", "+6 months"
 							);
@@ -149,7 +140,33 @@ $sidebar_country_meta .= '
 							Bring the form to the Travel Nurse upon arrival at our clinic and she will make sure you are immunized and counseled before your travels.
 						</div>
 					<?php } ?>
-					
+
+					<div class="meta-boxes">
+					<?php if (get_field('updated_malaria_map')) { ?>
+						<div class="malaria-box box">
+							<a href="<?php echo get_field('updated_malaria_map'); ?>" target="_blank">
+								<img src="<?php echo get_bloginfo("template_url"); ?>/images/dlvs/country-malaria-thumbnail.jpg" />
+							</a>
+							<div class="text">
+								<a href="<?php echo get_field('updated_malaria_map'); ?>" target="_blank"><?php echo dlvs_translate('Updated Malaria Map'); ?></a><br />
+								<span>See a map of malaria risk for this country</span>
+							</div>
+						</div>
+					<?php } ?>
+
+					<?php if (get_field('latest_disease_surveillance')) { ?>
+						<div class="disease-box box">
+							<a href="<?php echo get_field('latest_disease_surveillance'); ?>" target="_blank">
+								<img src="<?php echo get_bloginfo("template_url"); ?>/images/dlvs/country-disease-thumbnail.jpg" />
+							</a>
+							<div class="text">
+								<a href="<?php echo get_field('latest_disease_surveillance'); ?>" target="_blank"><?php echo dlvs_translate('Latest Disease Surveillance'); ?></a><br />
+								<span>Information on outbreaks from NaTHNaC</span>
+							</div>
+						</div>
+					<?php } ?>
+					</div>
+														
 					<!-- <h3>FAQ</h3> -->
 					<?php /*
 						$country_id = get_the_ID();
@@ -166,6 +183,9 @@ $sidebar_country_meta .= '
 			    </div><!--#end post-->
 	        <?php endwhile; endif; ?>
 		</section>
+
+		<?php sidebar($sidebar_back . $sidebar_button, false, $sidebar_country_meta); ?>
+
 	</div>
 </div>
 

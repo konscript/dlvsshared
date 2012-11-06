@@ -33,7 +33,8 @@ function dlvs_translate($key) {
 		"Show full-screen map" => "Vis stort kort",					// clinic
 		"Type to search" => "Skriv for at søge",					// faq
 		"Updated Malaria Map" => "Opdateret Malaria kort",			// Country
-		"Latest Disease Surveillance" => "Sidste sygdomsovervågning"
+		"Latest Disease Surveillance" => "Sidste sygdomsovervågning", // Country
+		"Call to book" => "Ring for at booke vaccinationstid" // clinic
 	);
 
 	// get english translation

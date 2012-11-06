@@ -102,7 +102,7 @@
 						<h3><a href="<?php bloginfo('wpurl'); ?>/rejseraad/malaria">Malaria</a></h3>
 						<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
 					<?php } else { ?>
-						<h3><a href="<?php bloginfo('wpurl'); ?>/traveladvice/malaria/">Malaria prevention</a></h3>
+						<h3><a href="<?php bloginfo('wpurl'); ?>/malaria-about/">Malaria prevention</a></h3>
 						<p>Malaria is one of the major causes of morbidity and mortality worldwide. Learn how to avoid getting infected.</p>
 					<?php } ?>				
 				</li>

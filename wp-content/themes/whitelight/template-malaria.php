@@ -3,7 +3,6 @@
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar(true, true, false); ?>
 		<section id="main" class="col-left">
 
 			<?php 
@@ -14,6 +13,8 @@
 			<?php echo the_content(); ?>
 		
 		</section>
+		<?php sidebar(true, true, false); ?>
+
 	</div>
 </div>
 

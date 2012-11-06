@@ -19,7 +19,6 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar($sidebar_menu, true, false); ?>
 		<section id="main" class="col-left">	
 
 	        <?php
@@ -37,6 +36,8 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 	        <?php } } // End while and IF Statement ?>  
 
 		</section>
+		<?php sidebar($sidebar_menu, true, false); ?>
+
 	</div>
 </div>
 

@@ -8,7 +8,6 @@ $sidebar_menu = wp_list_categories(array(
 
 <div id="content">
 	<div class="page col-full">
-		<?php sidebar($sidebar_menu, false, false); ?>
 		<section id="main" class="col-left">
 
 			<header><h1><?php the_title(); ?></h1></header>
@@ -28,6 +27,8 @@ $sidebar_menu = wp_list_categories(array(
 				<p>Sorry, no posts matched your criteria.</p>
 			<?php endif; ?>
 		</section>
+		<?php sidebar($sidebar_menu, false, false); ?>
+
 	</div>
 </div>
 
