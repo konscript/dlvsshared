@@ -519,7 +519,7 @@ table.zebra tbody tr:nth-child(odd) {
 .page-template-template-vaccination-recommendations-php .country {
   display: block;
   float: left;
-  width: 120px;
+  width: 156px;
   height: 30px;
   overflow: hidden;
   border-right: 1px solid #eeeeee;
@@ -537,7 +537,7 @@ table.zebra tbody tr:nth-child(odd) {
 .region .country span,
 .page-template-template-vaccination-recommendations-php .country span {
   display: block;
-  width: 70px;
+  width: 106px;
   float: left;
   line-height: 14px;
   height: 28px;
