@@ -16,22 +16,28 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+define('DB_NAME', $_SERVER['DB1_NAME']);
 
 /** MySQL database username */
-define('DB_USER', 'username_here');
+define('DB_USER', $_SERVER['DB1_USER']);
 
 /** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+define('DB_PASSWORD', $_SERVER['DB1_PASS']);
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', $_SERVER['DB1_HOST'] . ':' . $_SERVER['DB1_PORT']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+/** --- PHP Fog --- Set WordPress to cache requests (for Varnish) */
+define('WP_CACHE', true);
+
+/** --- PHP Fog --- Patch a few issues with file saves, plugins, etc. */
+define('FS_METHOD', 'direct');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -42,14 +48,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         '2UCK`ZX_bV~uiE>)6VJ;0PT}@8<g_%rvEMM?>M]-zX?*~my4V$vo89Em?|E7JTDa');
+define('SECURE_AUTH_KEY',  'w%aqy=$-60Eb9NU)lhnISS<WHK{e:e-vfl(b[;8WjD[[Hj0}|eN}==}C=d/*?-wf');
+define('LOGGED_IN_KEY',    '-zea*n{U>(?HLyg8Dzs<v2WNE#Yj67*-anG,Q]>?>Bn.?SPkQ{?SJk7%IrCNr=m+');
+define('NONCE_KEY',        'P+q8 VE9Z}S|l]}@94k6A[~|+}V8Fpcnfh|{^HS Q^GDV$sKmtaaXh;:K~Xw>RLF');
+define('AUTH_SALT',        'Mk;{$j*YEt6 Yz|!B!-*2Cz|e&: (oDS.Y5Dx:[I+$D!`f|T:%8,Ux-7J7~PbFsV');
+define('SECURE_AUTH_SALT', '%n.9d-%_s,yd^YNmy|6tYn:{*mhF!ryRbcX//zp?{.itL)mT}oN^pQCg==@SDEdm');
+define('LOGGED_IN_SALT',   '8cmyQ-uS5%gz^M.1f!~0Kgcl,ui>]OYlP{S+P4]SFUI`az:<dd|pEt9L5z|7P|[8');
+define('NONCE_SALT',       't=qesfs*qM;53?-@4IFM.GHu|$Q>FN!R9*RQ:K;cPS-aN;d>6Tx:Dkk)I|LVV@oL');
 
 /**#@-*/
 
@@ -88,4 +94,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-?>
