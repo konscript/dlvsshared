@@ -10,3 +10,5 @@ wp-content/backups/
 sitemap.xml
 sitemap.xml.gz
 *.log
+.htaccess
+wp-config.php
