@@ -93,7 +93,7 @@
 						<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
 					<?php } else { ?>
 						<h3><a href="faq/">Frequently Asked Questions</a></h3>
-						<p>Why are childhood vaccination so important? What are the most common side-effects? Get the answers.</p>					
+						<p>Answers to frequently asked questions by travelers on vaccinations and travel health.</p>					
 					<?php } ?>
 				</li>
 				<li>
