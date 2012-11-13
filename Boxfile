@@ -13,3 +13,7 @@ web1:
     - "rm -R pagoda"
 db1:
   name: wp-db
+
+php: 
+    post_max_size: 20M
+    upload_max_filesize: 20M
