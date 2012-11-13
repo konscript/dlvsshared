@@ -11,5 +11,7 @@ web1:
     - "mv pagoda/wp-config.php wp-config.php"
     - "mv pagoda/.htaccess .htaccess"
     - "rm -R pagoda"
+  php_upload_max_filesize: "20M"
+  post_max_size: "20M"
 db1:
   name: wp-db
