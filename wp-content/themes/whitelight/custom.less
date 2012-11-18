@@ -118,10 +118,21 @@ WOO CUSTOM STYLESHEET (for DLVS)
 	.transition(all, 0.2s);
 	background-color: #e9e9e9;
 	color: black!important;
+    padding: 4px 8px;
+}
+#navigation .nav > li > a {
+    padding: 4px 8px;
 }
 #navigation { .nav li.current_page_item a, .nav li.current_page_parent a, .nav li.current-menu-ancestor a, .nav li.current-cat a, .nav li.li.current-menu-item a {
 	color: white!important;
 }}
+
+#navigation .nav li.parent > a {
+    padding-right: 1.4em;
+}
+#navigation .nav li.parent > a::after {
+    right: 8px;
+}
 
 // Recolor little small arrow when dropdown
 #navigation .nav li a:hover::after,
