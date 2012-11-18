@@ -196,7 +196,7 @@ $sidebar_country_meta .= '
 					*/ ?>
 
 					<div class="the-content">
-						<?php echo the_content(); ?>
+						<?php echo get_field('extra_country_info'); ?>
 					</div>
 
 			    </div><!--#end post-->
