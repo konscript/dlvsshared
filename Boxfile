@@ -1,0 +1,4 @@
+web1:
+  name: wp
+  shared_writable_dirs:
+    - wp-content/uploads

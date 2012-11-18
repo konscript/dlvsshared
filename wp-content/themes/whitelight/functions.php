@@ -47,7 +47,7 @@ array_splice($includes, count($includes), 0, array(
 
 // Allow child themes/plugins to add widgets to be loaded.
 $includes = apply_filters( 'woo_includes', $includes );
-				
+
 foreach ( $includes as $i ) {
 	locate_template( $i, true );
 }
@@ -56,6 +56,20 @@ foreach ( $includes as $i ) {
 /* You can add custom functions below */
 /*-----------------------------------------------------------------------------------*/
 
+// add widget area
+add_action( 'after_setup_theme', 'child_theme_setup' );
+
+if ( !function_exists( 'child_theme_setup' ) ):
+function child_theme_setup() {
+
+	register_sidebar( array(
+		'name' => __( 'Vaccination information', 'whitelight' ),
+		'id' => 'vaccination-information',
+		'description' => __( 'Add boilerplate information to all vaccinations', 'whitelight' ),
+	) );
+
+}
+endif;
 
 
 /*-----------------------------------------------------------------------------------*/

@@ -2,7 +2,7 @@
 
 function dlvs_translate($key) {
 
-	// English 
+	// English
 	$english_list = array();
 
 	// Danish translations
@@ -34,7 +34,11 @@ function dlvs_translate($key) {
 		"Type to search" => "Skriv for at søge",					// faq
 		"Updated Malaria Map" => "Opdateret Malaria kort",			// Country
 		"Latest Disease Surveillance" => "Sidste sygdomsovervågning", // Country
-		"Call to book" => "Ring for at booke vaccinationstid" // clinic
+		"Call to book" => "Ring for at booke vaccinationstid", 		// clinic,
+		"All travelers" => "Alle rejsende",
+		"+2 weeks" => "+2 uger",
+		"+3 months" => "+3 måneder",
+		"+6 months" => "+6 måneder"
 	);
 
 	// get english translation

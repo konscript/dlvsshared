@@ -2,16 +2,15 @@
 
 if( !is_admin()){
 	// load up jQuery from Google CDN
-	wp_deregister_script('jquery'); 
-	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"), false, '1.6.2');    
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"), false, '1.8.2');
 	wp_enqueue_script('jquery');
-   
-	wp_deregister_script('jqueryui');   
-	wp_register_script('jqueryui', ("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"), false, '1.8.16');   
-	wp_enqueue_script('jqueryui');  
+
+	wp_deregister_script('jqueryui');
+	wp_register_script('jqueryui', ("http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"), false, '1.9.1');
+	wp_enqueue_script('jqueryui');
 
 	// load local js files
-	wp_enqueue_script('jquery-ui-autocomplete.js', get_template_directory_uri() . '/includes/js/jquery-ui-autocomplete.js', array( 'jquery' ) );
 	wp_enqueue_script('jquery.maphilight.min.js', get_template_directory_uri() . '/includes/js/jquery.maphilight.min.js', array( 'jquery' ) );
 	wp_enqueue_script('jquery.select-to-autocomplete.js', get_template_directory_uri() . '/includes/js/jquery.select-to-autocomplete.js', array( 'jquery' ) );
 	wp_enqueue_script('jquery.validate.min.js', get_template_directory_uri() . '/includes/js/jquery.validate.min.js', array( 'jquery' ) );
@@ -22,13 +21,13 @@ if( !is_admin()){
 // Getting page ID of current Custom Post Type
 function getPageIDOfCurrentCustomPostType(){
 	global $wpdb;
-	global $post;		
-	
-	// get current post type		
+	global $post;
+
+	// get current post type
 	$post_type = get_post_type($post);
-	
-	// get id of page with current custom post type template		
-	$post_id = $wpdb->get_var("SELECT post_id FROM $wpdb->postmeta WHERE meta_value = 'template-".$post_type.".php'");		
+
+	// get id of page with current custom post type template
+	$post_id = $wpdb->get_var("SELECT post_id FROM $wpdb->postmeta WHERE meta_value = 'template-".$post_type.".php'");
 	return $post_id;
 }
 
@@ -47,7 +46,7 @@ function konscript_excerpt($length, $str) {
    } else {
 	   $res = $str;
    }
-   
+
    return $res;
 }
 
@@ -57,11 +56,11 @@ function konscript_excerpt($length, $str) {
 add_filter( 'the_generator', create_function('$a', "return null;") );
 
 // Custom Logo
-function custom_logo() { ?> 
+function custom_logo() { ?>
 	<style type="text/css">
 		h1 a { background-image: url(<?php echo get_bloginfo('template_directory'); ?>/img/dlvs_logo_2012.png) !important; }
 	</style>
-<?php }	
+<?php }
 add_action('login_head', 'custom_logo');
 
 // Admin Footer
@@ -73,8 +72,8 @@ add_filter('admin_footer_text', 'remove_footer_admin');
 // debug outputting
 function debug($output){
 	$debug = "<hr><pre>";
-	$debug .= print_r($output, true);	
-	$debug .= "<pre>";	
-	echo $debug; 
+	$debug .= print_r($output, true);
+	$debug .= "<pre>";
+	echo $debug;
 }
 ?>

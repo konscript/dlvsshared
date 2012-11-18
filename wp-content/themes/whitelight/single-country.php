@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php 
+<?php
 
 if (dlvssite() == "sikkerrejse") {
 	$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/vaccinationsanbefaling/" style="margin-bottom:10px;float:left">Tilbage til landeoversigten</a><br />';
@@ -16,7 +16,7 @@ if(get_field('flag')) {
 		<img src="'.get_field("flag").'" />
 	</div>';
 }
-$sidebar_country_meta .= 
+$sidebar_country_meta .=
 	'<table class="country-meta">
 		<tbody>
 		<tr>
@@ -34,7 +34,7 @@ $sidebar_country_meta .=
 		</tr>
 		<tr>
 			<td colspan="2">
-				'.$sidebar_country_meta_links.'		
+				'.$sidebar_country_meta_links.'
 			</td>
 		</tr>';
 
@@ -50,65 +50,79 @@ $sidebar_country_meta .= '
 
 			<?php if (have_posts()): while (have_posts()): the_post(); ?>
 			    <div class="post country col-full">
-		 				
+
 					<header><h1><?php the_title(); ?></h1></header>
 
-					<?php 
+					<div style="clear:both;list-style:none;">
+						<?php dynamic_sidebar( 'vaccination-information' ); ?>
+					</div>
+
+					<?php
 						$destination = urlencode(the_title('', '', false));
 						$book_button = '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';
 						//echo $book_button;
 					?>
-	
-					<div class="post-content">	
 
-					<?php							
+					<div class="post-content">
+
+					<?php
 						$already_outputted = array();
-						
-						if (dlvssite() === "sikkerrejse") {
-							// labels for groups
-							$vaccinations_groups_labels = array(
-								"Alle rejsende", "+2 uger", "+3 måneder", "+6 måneder"
-							);
-						} else {
-							// labels for groups
-							$vaccinations_groups_labels = array(
-								"All travelers", "+2 weeks", "+3 months", "+6 months"
-							);
-						}
-						
+
+						$vaccinations_groups_info = array(
+							array(
+								dlvs_translate("All travelers"),
+								dlvs_translate("Ipsum lorem"),
+							),
+							array(
+								dlvs_translate("+2 weeks"),
+								dlvs_translate("Ipsum lorem"),
+							),
+							array(
+								dlvs_translate("+3 months"),
+								dlvs_translate("Ipsum lorem"),
+							),
+							array(
+								dlvs_translate("+6 months"),
+								dlvs_translate("Ipsum lorem"),
+							)
+						);
+
 						// vaccinations for groups
 						$vaccinations_groups = array();
 						$vaccinations_groups[1] = get_field('group_1');
 						$vaccinations_groups[2] = get_field('group_2');
 						$vaccinations_groups[3] = get_field('group_3');
-						$vaccinations_groups[4] = get_field('group_4');						
-					?>		
+						$vaccinations_groups[4] = get_field('group_4');
+					?>
 					<table id="vaccinations_groups">
 						<thead>
 							<tr>
 								<td>Vaccination</td>
-								<?php foreach($vaccinations_groups_labels as $label): ?>
-									<td><?=$label?></td>
-								<?php endforeach; ?>							
+								<?php foreach($vaccinations_groups_info as $info):
+									$label = $info[0];
+									$tooltip = $info[1];
+								?>
+									<td><span class="vaccination-group" title="<?=$tooltip?>"><?=$label?></span></td>
+								<?php endforeach; ?>
 							</tr>
 						</thead>
-						<tbody>							
+						<tbody>
 						<?php foreach($vaccinations_groups as $group_id => $group): ?>
-							<?php if(!empty($group)): ?>								
-								<?php foreach($group as $vaccination): ?>									
+							<?php if(!empty($group)): ?>
+								<?php foreach($group as $vaccination): ?>
 									<?php
-										// make sure every vaccine is only outputted once (somebody may have added a vaccine to multiple groups)									
+										// make sure every vaccine is only outputted once (somebody may have added a vaccine to multiple groups)
 										if(!in_array($vaccination->ID, $already_outputted)):
-											$already_outputted[] = $vaccination->ID;										
-											?>									
-											<tr>	
+											$already_outputted[] = $vaccination->ID;
+											?>
+											<tr>
 												<td class="vaccination-name"><a href="<?php echo get_permalink( $vaccination->ID ); ?>"><?php echo $vaccination->post_title; ?></a></td>
-												<?php 
+												<?php
 												// output cell with vaccination indicator
 												$checkmark = '<img src="'.get_bloginfo("template_url").'/img/checkmark.png"/>';
-											
+
 												$repeat_in_next_group = false;
-												for ( $counter = 1; $counter <= count($vaccinations_groups_labels); $counter++) {
+												for ( $counter = 1; $counter <= count($vaccinations_groups_info); $counter++) {
 													echo "<td>";
 													if($counter == $group_id || $repeat_in_next_group === true){
 														$repeat_in_next_group = true;
@@ -120,10 +134,10 @@ $sidebar_country_meta .= '
 												}
 												?>
 											</tr>
-										<?php endif; ?>		
+										<?php endif; ?>
 								<?php endforeach; ?>
-							<?php endif; ?>			
-						<?php endforeach; ?>	
+							<?php endif; ?>
+						<?php endforeach; ?>
 						</tbody>
 					</table>
 					<?php if(dlvssite() == "flufighters") { ?>
@@ -166,20 +180,22 @@ $sidebar_country_meta .= '
 						</div>
 					<?php } ?>
 					</div>
-														
+
 					<!-- <h3>FAQ</h3> -->
 					<?php /*
 						$country_id = get_the_ID();
-						$faqs = getFaqsByCountry($country_id); 
-					*/ ?>			
+						$faqs = getFaqsByCountry($country_id);
+					*/ ?>
 					<!-- <div class="accordion"> -->
 					<?php /* foreach($faqs as $id => $faq):
 						echo slidedown($faq["post_title"], $faq["post_content"], $id);
-					endforeach; */ ?>		
+					endforeach; */ ?>
 					<!-- </div> -->
 
 					<!-- <h3>Description</h3> -->
-				 	<?php //echo the_content(); ?>
+				 	<?php echo the_content(); ?>
+
+
 			    </div><!--#end post-->
 	        <?php endwhile; endif; ?>
 		</section>
