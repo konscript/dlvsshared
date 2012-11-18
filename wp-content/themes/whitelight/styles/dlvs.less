@@ -3,7 +3,7 @@
 @import url(../css/mixins.less);
 // Colors
 @color_links: #b72020; // Links / Main theme colour
-@color_contrast: #ce1b1b; 
+@color_contrast: #ce1b1b;
 @color_body: #555; // Body Copy
 // Borders
 @border_main: #e1e1e1; // The 1px grey rules used throughout the WF
@@ -17,8 +17,8 @@ body  { color: @color_body; background: white; }
 h1, h2, h3, h4, h5, h6  { color: darken(@color_body, 20%); }
 hr { background-color: @border_main; }
 input, textarea { border-color: darken(@border_main, 8%) @border_main @border_main darken(@border_main, 8%); color: @color_body; }
-body a { 
-	color: @color_links; 
+body a {
+	color: @color_links;
 	&:hover { color: @color_links - #222; }
 }
 
@@ -32,12 +32,12 @@ body a {
 }
 .nav {
 	a {
-		color: darken(@color_body, 5%); 
+		color: darken(@color_body, 5%);
 		&:hover { background: @color_links; color: #fff; }
 	}
 	li {
 		&.parent {
-			> a { 
+			> a {
 				&:after {
 					border:.3em solid @color_links;
 					border-color:@color_links transparent transparent transparent!important;
@@ -53,7 +53,7 @@ body a {
 	}
 }
 
-/* --- HEADER --- */	
+/* --- HEADER --- */
 #header {
 	background-color: @bg_light;
 	border-bottom: 1px solid darken(@bg_light, 5%);
@@ -71,7 +71,7 @@ body a {
 
 /* --- SLIDER --- */
 #featured  {
-	border-bottom: 1px solid @border_main;		
+	border-bottom: 1px solid @border_main;
 	article  {
 		color: #fff;
     	a  { color: #fff; }
@@ -94,7 +94,7 @@ body a {
 	    	&:hover  { background: #000; }
 	    	&.active  { .vertical_gradient(@color_links, darken(@color_links, 10%)); }
 	    }
-	} 
+	}
 }
 .featured-wrap  { border-bottom: 1px solid @border_main; }
 
@@ -131,7 +131,7 @@ body .home-section  {
 .portfolio-item {
     h2  a  { color: @color_links; }
     .category  { color: lighten(@color_body, 15%); }
-}	
+}
 .single-portfolio {
     .portfolio {
     	border-bottom: 1px solid @border_main;
@@ -157,7 +157,7 @@ article.type-features  {
 	background: @bg_dark;
 	.nav a  { color: #fff; }
 }
-#footer-widgets { 
+#footer-widgets {
 	background: #FAFAFA url(../images/bg-texture.png) repeat left top;
 	border-top: 1px solid #EDEDED;
 }
@@ -206,7 +206,7 @@ article.type-features  {
 	.wp-caption { background: @bg_light; border: 1px solid @border_main; }
 }
 .entry blockquote { color: darken(@color_body, 15%); }
-body #post-author { 
+body #post-author {
 	background-color: #fff;
 	border:1px solid @border_main;
 	.profile-image { border: 1px solid @border_main; }
@@ -220,7 +220,7 @@ body #post-author {
 		td { border:1px solid @border_main; }
 	}
 }
-#connect { 
+#connect {
 	h3 { border-bottom: 1px solid @border_main; }
 	.related-posts {
 		border-top:1px solid @border_main;
@@ -230,13 +230,13 @@ body #post-author {
 
 /* --- PAGINATION --- */
 body .nav-entries, body #post-entries {
-	border-top: 1px solid @border_main;	
+	border-top: 1px solid @border_main;
 	a { color: @color_links; }
 	.nav-prev .meta-nav  { background: url(red/ico-previous.png) no-repeat left center; }
 	.nav-next .meta-nav  { background: url(red/ico-more.png) no-repeat right center; }
 }
 body .woo-pagination {
-	border-top: 1px solid @border_main;	
+	border-top: 1px solid @border_main;
 	.page-numbers {
 		color: @color_body;
 		&.current  { background: @color_links; border-color: darken(@border_main, 70%); color: #fff; }
@@ -244,14 +244,14 @@ body .woo-pagination {
 }
 
 /* --- WIDGETS --- */
-.widget  { 
+.widget  {
 	h3 { color:@color_body; border-bottom:1px solid darken(@border_main, 10%); }
 	ul {
 		li a { border-bottom:1px solid lighten(@border_main, 3%); }
 	}
 }
 #searchform, .searchform {
-	border-color: @border_main; 
+	border-color: @border_main;
     input.s, #s { color: @color_body; }
 }
 .widget_recent_comments  {
@@ -275,7 +275,7 @@ body .woo-pagination {
 }
 .widget_woo_blogauthorinfo .avatar { border: 1px solid @border_main; }
 .widget_woo_twitter {
-	ul { 
+	ul {
 		li {
 			border-bottom:1px solid lighten(@border_main, 3%);
 			.time { color: lighten(@color_body, 10%); }
@@ -306,7 +306,7 @@ body .woo-pagination {
 		}
 	}
 }
-#tabs {	
+#tabs {
 	ul.wooTabs {
 		li {
 			color: #fff;
@@ -331,18 +331,19 @@ body .woo-pagination {
 				&:hover { border-color: darken(@border_main, 10%); }
 			}
 		}
-	}	
+	}
 }
 
 /* --- FOOTER WIDGETS --- */
 #footer-widgets  {
 	.widget  {
 		color: @color_body;
-		margin-bottom: 0;
+		margin-bottom: 1.5em;
 
 		h3 { color: @color_body; border-bottom: none; }
 		ul li a { color: @color_links; }
 		ul li a:hover { color: darken(@color_links, 10%); }
+		.textwidget a { color: @color_links; }
 	}
 	.searchform, #searchform  { background: #fff; }
 	.widget_woo_twitter ul li { border-bottom:1px solid darken(@bg_light, 20%); }
@@ -350,7 +351,7 @@ body .woo-pagination {
 		ul  { border-top:1px solid lighten(@bg_dark, 30%); }
 		ul li  { border-bottom:1px solid lighten(@bg_dark, 30%); }
 	}
-	#tabs {	
+	#tabs {
 		.inside {
 			border-top:1px solid darken(@bg_light, 20%);
 			#tab-tags {
@@ -367,7 +368,7 @@ body .woo-pagination {
 					&:hover { background: @color_body; }
 				}
 			}
-		}	
+		}
 	}
 	.widget_woo_subscribe #connect .social  { border-top: 1px dotted darken(@bg_light, 20%); }
 	.widget_woo_blogauthorinfo .avatar { border: 1px solid darken(@bg_light, 20%); }
@@ -379,7 +380,7 @@ body .woo-pagination {
 	}
 	.widget_tag_cloud, .widget_product_tag_cloud  {
 		.tagcloud  {
-			a {	
+			a {
 			    color: #fff;
 			    background: darken(@bg_light, 20%);
 			    &:hover { background:  lighten(@bg_dark, 30%); }
@@ -402,15 +403,15 @@ body .woo-pagination {
 		.reply a { color: @color_body!important; }
 	}
 }
-#respond  { 
+#respond  {
 	label { color: lighten(@color_body, 10%); }
-	#commentform  {	
+	#commentform  {
 		input.txt, textarea { border-color: darken(@border_main, 8%) @border_main @border_main darken(@border_main, 8%);color: @color_body; background: @bg_light; }
 	}
 }
 
 /* --- PAGE TEMPLATES --- */
-#archives { 
+#archives {
 	.archives_list {
 		border-left:1px solid @border_main;
 		.date { color: lighten(@color_body, 10%); }
@@ -433,19 +434,19 @@ h3.archive_year { color: @color_body; }
 }
 
 /* --- BUTTONS --- */
-body a.button, 
-body a.comment-reply-link, 
+body a.button,
+body a.comment-reply-link,
 body #commentform #submit,
 body .submit,
 body input[type=submit],
 body input.button,
 body button.button {
-	.vertical_gradient(@color_links, @color_links); 
+	.vertical_gradient(@color_links, @color_links);
 	&:hover { background: (@color_links - #111); }
 	&:active { border-color: @color_links - #555; }
 }
 
-/* --- IE --- */ 
+/* --- IE --- */
 .ie6 {
 	.button, .button:visited { color: @color_body !important; }
 	.reply a { color: @color_body!important; }
@@ -489,7 +490,7 @@ body button.button {
 		background: @bg_dark;
 		.nav {
 			a {
-				color: @bg_light; 
+				color: @bg_light;
 				&:hover { background: lighten(@bg_dark,10%); }
 			}
 			li {
@@ -508,19 +509,19 @@ body button.button {
 					a { background: lighten(@bg_dark,10%); }
 				}
 				ul {
-					background: lighten(@bg_dark,10%); 
+					background: lighten(@bg_dark,10%);
 					li {
 						background: lighten(@bg_dark,10%);
 						a {
 							color: lighten(@color_body, 50%);
-							background:lighten(@bg_dark,10%)!important; 
+							background:lighten(@bg_dark,10%)!important;
 							&:hover { background: lighten(@bg_dark,15%)!important; }
 						}
 						&.parent {
 							> a {
 								&:after { border-color:transparent transparent transparent @bg_dark!important; }
 								&:hover:after  {
-									border-color:transparent transparent transparent #fff;	
+									border-color:transparent transparent transparent #fff;
 								}
 							}
 						}
@@ -538,7 +539,7 @@ body button.button {
 					&:after  { border-color: #fff transparent transparent transparent!important; }
 				}
 			}
-			
+
 	   		ul {
 	   			background: @color_links;
 	   		 	li {
@@ -623,7 +624,7 @@ ul.products li.product a.button  { color: @color_links!important; }
 		}
 	}
 }
-.widget_price_filter {	
+.widget_price_filter {
    .ui-slider .ui-slider-range { border: 1px solid darken(@color_links, 10%); background: @color_links; }
    .price_slider_wrapper .ui-widget-content { background: @bg_light; }
 }
@@ -646,7 +647,7 @@ ul.products li.product a.button  { color: @color_links!important; }
     						}
     					}
     				}
-    			}	
+    			}
         	}
         }
     }

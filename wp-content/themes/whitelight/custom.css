@@ -1,4 +1,4 @@
-/* 
+/*
 WOO CUSTOM STYLESHEET (for DLVS)
 ---------------------*/
 /**
@@ -498,7 +498,8 @@ table.zebra tbody tr:nth-child(odd) {
 }
 /*****************************************************************
  *	CUSTOM POST TYPES
- *****************************************************************//***
+ *****************************************************************/
+/***
  * Home & Region
  **********************************/
 .home .region-map,
@@ -645,7 +646,8 @@ table.zebra tbody tr:nth-child(odd) {
 }
 /***
  * Country
- **********************************/.post.country header {
+ **********************************/
+.post.country header {
   float: left;
 }
 .country-meta-header {
@@ -729,7 +731,8 @@ div.post.country .disclaimer ul li {
 }
 /***
  * FAQ
- **********************************/.faq #searchFaq {
+ **********************************/
+.faq #searchFaq {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -775,9 +778,16 @@ div.post.country .disclaimer ul li {
   margin-bottom: 0px;
 }
 /**********************************************
+ * Top Navigaton
+ **********************************************/
+#top #top-nav {
+  float: right;
+}
+/**********************************************
  * Main Navigaton
  **********************************************/
 #navigation ul#main-nav {
+  float: right;
   margin-top: 20px;
 }
 #navigation .nav > li:hover > a {
@@ -803,6 +813,6 @@ div.post.country .disclaimer ul li {
 #navigation .nav li:hover > a::after {
   border-color: #B72020 transparent transparent transparent!important;
 }
-/********************************************** 
+/**********************************************
  * Mixins
  **********************************************/
