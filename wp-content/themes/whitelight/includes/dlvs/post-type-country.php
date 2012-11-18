@@ -4,7 +4,7 @@
 ################################
 # CREATE COUNTRY POST TYPE #
 ################################
-**/	
+**/
 //register custom post type
 add_action('init', 'country_register');
 
@@ -23,7 +23,7 @@ function country_register() {
    'not_found_in_trash' => __('Nothing found in Trash'),
    'parent_item_colon' => '',
  );
- 
+
  $args = array(
    'labels' => $labels,
    'public' => true,
@@ -33,13 +33,13 @@ function country_register() {
    'menu_position' => 4,
    '_builtin' => false, // It's a custom post type, not built in!
    'menu_icon' => get_stylesheet_directory_uri() . '/img/icon_article.png',
-   'rewrite' => array('slug' => 'country', 'with_front' => false),
+   'rewrite' => array('slug' => 'vaccinations', 'with_front' => false),
 	'has_archive' => false,
    'capability_type' => 'post',
    'hierarchical' => false,
    'supports' => array('thumbnail', 'title', 'editor')
    );
-   
+
    register_post_type('country', $args);
 }
 
