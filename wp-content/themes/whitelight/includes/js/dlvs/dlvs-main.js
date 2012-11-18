@@ -42,6 +42,7 @@ jQuery.noConflict();
 		$('.template.booking a.button-book.iframe').click(function(){
 			var booking_url = $(this).attr('href');
 
+
 			$('.zebra').fadeOut('fast', function() {
 				$('.template.booking iframe').attr('src', booking_url).show();
 			});
@@ -82,9 +83,8 @@ jQuery.noConflict();
 			// form is invalid
 			if(!$("form#booking").valid()){
 				$(this).effect("shake", { times:2, distance:4, direction: "left" }, 50);
-			 return false;
+				return false;
 			}
-
 				// disable and fade form
 				$(inputFields).attr('disabled', 'enabled');
 				$('.template.booking form').fadeTo('fast', 0.5);
@@ -107,6 +107,7 @@ jQuery.noConflict();
 				var booking_url =
 					clinic_url +
 					//'?service=service' + service +
+
 					'?l1=' + encodeURI(fullname) +
 					'&l2=' + encodeURI(email) +
 					'&l3=%2B44' + encodeURI(phone) +
@@ -117,7 +118,7 @@ jQuery.noConflict();
 				// load iframe
 				$('.template.booking .iframe-placeholder').fadeOut('fast', function() {
 					$('.template.booking iframe').attr('src', booking_url);
-				})
+				});
 
         // change navigation buttons
         $(this).hide();
@@ -139,6 +140,7 @@ jQuery.noConflict();
         $(this).hide();
         $('#navigateStepNext').show();
 		});
+
 	}
 
 	/******************
@@ -147,6 +149,7 @@ jQuery.noConflict();
 	function travelguide(){
 		// hide submit button for js-enabled users
 		$('.map-form [type=submit]').hide();
+
 
 		// old-school change page on click
 		$('#country-selector').change(function(){
@@ -170,7 +173,6 @@ jQuery.noConflict();
 
 		// bind modal window (jQueryUI dialog) to vaccination-links
 		$('.vaccination-name a').click(function() {
-			debugger
 
 			// set url
 			var url = this.href + "?ajax=true";
@@ -215,7 +217,7 @@ jQuery.noConflict();
 			var search_word = $(this).val();
 
 			// clear when input is empty
-			if(search_word == ""){
+			if(search_word === ""){
 				$('#clearSearch').trigger('click');
 				return false;
 			}
@@ -249,6 +251,7 @@ jQuery.noConflict();
 			// show containers and headings
 			$(".accordion h4, .faq h3").fadeIn();
 
+
 			// clear input field
 			$("#searchFaq").val("");
 			return false;
@@ -256,18 +259,18 @@ jQuery.noConflict();
 
 		// extending jquery - case-insensitive ":contains"
 		jQuery.expr[':'].contains = function(a, i, m) {
-		  return jQuery(a).text().toUpperCase()
-			  .indexOf(m[3].toUpperCase()) >= 0;
+		return jQuery(a).text().toUpperCase()
+			.indexOf(m[3].toUpperCase()) >= 0;
 		};
 	} // search faq end
 
 	/******************
 	 * CSS edits and styling
 	 ******************/
+
 	function miscStyles(){
 //		$('.page-template-template-front-php .clinics .clinic').click(function(){
 //	 		 window.location.href = $(this).find('a').attr('href');
 //		});
 	}
-
 })(jQuery);

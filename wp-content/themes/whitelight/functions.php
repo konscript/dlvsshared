@@ -47,7 +47,6 @@ array_splice($includes, count($includes), 0, array(
 
 // Allow child themes/plugins to add widgets to be loaded.
 $includes = apply_filters( 'woo_includes', $includes );
-
 foreach ( $includes as $i ) {
 	locate_template( $i, true );
 }
@@ -70,6 +69,7 @@ function child_theme_setup() {
 
 }
 endif;
+
 
 
 /*-----------------------------------------------------------------------------------*/

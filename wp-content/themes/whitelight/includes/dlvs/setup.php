@@ -46,7 +46,6 @@ function konscript_excerpt($length, $str) {
    } else {
 	   $res = $str;
    }
-
    return $res;
 }
 

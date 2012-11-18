@@ -1,5 +1,7 @@
 <?php get_header(); ?>
+
 <?php
+
 
 if (dlvssite() == "sikkerrejse") {
 	$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/vaccinationsanbefaling/" style="margin-bottom:10px;float:left">Tilbage til landeoversigten</a><br />';
@@ -16,6 +18,7 @@ if(get_field('flag')) {
 		<img src="'.get_field("flag").'" />
 	</div>';
 }
+
 $sidebar_country_meta .=
 	'<table class="country-meta">
 		<tbody>
@@ -50,7 +53,6 @@ $sidebar_country_meta .= '
 
 			<?php if (have_posts()): while (have_posts()): the_post(); ?>
 			    <div class="post country col-full">
-
 					<header><h1><?php the_title(); ?></h1></header>
 
 					<div style="clear:both;list-style:none;">
@@ -94,6 +96,7 @@ $sidebar_country_meta .= '
 						$vaccinations_groups[3] = get_field('group_3');
 						$vaccinations_groups[4] = get_field('group_4');
 					?>
+
 					<table id="vaccinations_groups">
 						<thead>
 							<tr>
@@ -194,7 +197,6 @@ $sidebar_country_meta .= '
 
 					<!-- <h3>Description</h3> -->
 				 	<?php echo the_content(); ?>
-
 
 			    </div><!--#end post-->
 	        <?php endwhile; endif; ?>

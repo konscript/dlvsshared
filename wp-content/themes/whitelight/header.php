@@ -76,7 +76,6 @@
 			<?php } ?>
 		</div><!-- /#topad -->
         <?php } ?>
-
 		<nav id="navigation" role="navigation">
 			<?php
 			if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
