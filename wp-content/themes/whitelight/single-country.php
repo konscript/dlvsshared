@@ -184,19 +184,20 @@ $sidebar_country_meta .= '
 					<?php } ?>
 					</div>
 
-					<!-- <h3>FAQ</h3> -->
 					<?php /*
-						$country_id = get_the_ID();
-						$faqs = getFaqsByCountry($country_id);
-					*/ ?>
-					<!-- <div class="accordion"> -->
-					<?php /* foreach($faqs as $id => $faq):
-						echo slidedown($faq["post_title"], $faq["post_content"], $id);
-					endforeach; */ ?>
-					<!-- </div> -->
+					$country_id = get_the_ID();
+					$faqs = getFaqsByCountry($country_id);
 
-					<!-- <h3>Description</h3> -->
-				 	<?php echo the_content(); ?>
+					<div class="accordion"> -->
+						foreach($faqs as $id => $faq):
+							echo slidedown($faq["post_title"], $faq["post_content"], $id);
+						endforeach;
+					</div>
+					*/ ?>
+
+					<div class="the-content">
+						<?php echo get_field('extra_country_info'); ?>
+					</div>
 
 			    </div><!--#end post-->
 	        <?php endwhile; endif; ?>

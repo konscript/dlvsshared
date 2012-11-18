@@ -218,6 +218,7 @@
 			width: 100%;
 			border-top: 1px solid @color_secondary_c;
 			border-left: 1px solid @color_secondary_c;
+			margin-bottom: 20px;
 		}
 
 		table#vaccinations_groups thead tr td {
@@ -246,23 +247,26 @@
 		}
 
 		.meta-boxes {
-			margin-top: 20px;
 
 			.box {
 				float: left;
 				border: 1px solid #EEE;
-				margin-right: 10px;
+				width: 50%;
+				margin-bottom: 20px;
 
 				img {
 					float: left;
-					padding: 5px;
+					padding: 10px;
 				}
 
 				.text {
-					float: left;
 					padding: 10px 10px 10px 5px;
 					line-height: 20px;
 				}
+			}
+			.malaria-box {
+				width: 47%;
+				margin-right: 2%;
 			}
 		}
 
@@ -282,7 +286,22 @@
 				}
 			}
 		}
+
+		.the-content {
+			margin-bottom: 20px;
+			float: left;
+			clear: both;
+		}
   }
+
+@media only screen and (max-width: 768px) {
+	div.post.country{
+		.meta-boxes .box, .meta-boxes .malaria-box {
+			width: 100%;
+			margin-right: 0px;
+		}
+	}
+}
 
 /***
  * FAQ

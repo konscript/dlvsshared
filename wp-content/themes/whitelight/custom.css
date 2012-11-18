@@ -677,6 +677,7 @@ div.post.country #vaccinations_groups {
   width: 100%;
   border-top: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
+  margin-bottom: 20px;
 }
 div.post.country table#vaccinations_groups thead tr td {
   font-weight: bold;
@@ -698,22 +699,23 @@ div.post.country table#vaccinations_groups tr td img {
 div.post.country table#vaccinations_groups tr td.vaccination-name {
   width: 30%;
 }
-div.post.country .meta-boxes {
-  margin-top: 20px;
-}
 div.post.country .meta-boxes .box {
   float: left;
   border: 1px solid #EEE;
-  margin-right: 10px;
+  width: 50%;
+  margin-bottom: 20px;
 }
 div.post.country .meta-boxes .box img {
   float: left;
-  padding: 5px;
+  padding: 10px;
 }
 div.post.country .meta-boxes .box .text {
-  float: left;
   padding: 10px 10px 10px 5px;
   line-height: 20px;
+}
+div.post.country .meta-boxes .malaria-box {
+  width: 47%;
+  margin-right: 2%;
 }
 div.post.country .disclaimer {
   color: #aaa;
@@ -728,6 +730,18 @@ div.post.country .disclaimer ul {
 div.post.country .disclaimer ul li {
   list-style-position: inside;
   text-indent: 1em;
+}
+div.post.country .the-content {
+  margin-bottom: 20px;
+  float: left;
+  clear: both;
+}
+@media only screen and (max-width: 768px) {
+  div.post.country .meta-boxes .box,
+  div.post.country .meta-boxes .malaria-box {
+    width: 100%;
+    margin-right: 0px;
+  }
 }
 /***
  * FAQ
