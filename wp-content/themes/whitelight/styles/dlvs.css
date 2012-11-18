@@ -62,7 +62,8 @@ body a:hover {
 .nav li.li.current-menu-item a:after {
   border-color: #fff transparent transparent transparent;
 }
-/* --- HEADER --- */#header {
+/* --- HEADER --- */
+#header {
   background-color: #fafafa;
   border-bottom: 1px solid #ededed;
 }
@@ -475,7 +476,7 @@ body .woo-pagination .page-numbers.current {
 /* --- FOOTER WIDGETS --- */
 #footer-widgets .widget {
   color: #555555;
-  margin-bottom: 0;
+  margin-bottom: 1.5em;
 }
 #footer-widgets .widget h3 {
   color: #555555;
@@ -486,6 +487,9 @@ body .woo-pagination .page-numbers.current {
 }
 #footer-widgets .widget ul li a:hover {
   color: #8c1818;
+}
+#footer-widgets .widget .textwidget a {
+  color: #b72020;
 }
 #footer-widgets .searchform,
 #footer-widgets #searchform {
@@ -636,7 +640,8 @@ body input.button:active,
 body button.button:active {
   border-color: #620000;
 }
-/* --- IE --- */.ie6 .button,
+/* --- IE --- */
+.ie6 .button,
 .ie6 .button:visited {
   color: #555555 !important;
 }

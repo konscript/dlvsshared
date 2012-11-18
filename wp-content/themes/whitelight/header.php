@@ -7,9 +7,9 @@
  * @package WooFramework
  * @subpackage Template
  */
- 
+
  global $woo_options;
- 
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -19,7 +19,7 @@
 <title><?php woo_title(); ?></title>
 <?php woo_meta(); ?>
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/includes/css/jquery-ui-1.8.16.custom.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/includes/css/jquery-ui-1.9.1.custom.css" media="screen" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	wp_head();
@@ -43,9 +43,9 @@
     <?php } ?>
 
 	<header id="header">
-	
+
 		<div class="col-full">
-		
+
 		<?php
 		    $logo = get_template_directory_uri() . '/images/logo.png';
 		    if ( isset( $woo_options['woo_logo'] ) && $woo_options['woo_logo'] != '' ) { $logo = $woo_options['woo_logo']; }
@@ -55,13 +55,13 @@
 		    	<img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?>" />
 		    </a>
 	    <?php } ?>
-	    
+
 	    <hgroup>
-	        
+
 			<h1 class="site-title"><a href="<?php bloginfo( 'url' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			<h3 class="nav-toggle"><a href="#navigation"><?php _e('Navigation', 'woothemes'); ?></a></h3>
-		      	
+
 		</hgroup>
 
 		<?php if ( isset( $woo_options['woo_ad_top'] ) && $woo_options['woo_ad_top'] == 'true' ) { ?>
@@ -76,7 +76,6 @@
 			<?php } ?>
 		</div><!-- /#topad -->
         <?php } ?>
-		
 		<nav id="navigation" role="navigation">
 			<?php
 			if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
@@ -89,24 +88,24 @@
 				<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
 			</ul><!-- /#nav -->
     	    <?php } ?>
-    	    		
+
 		</nav><!-- /#navigation -->
-		
+
 		<?php if ( isset( $woo_options['woo_header_search'] ) && $woo_options['woo_header_search'] == 'true' ) { ?>
 		<div class="search_main fix">
 		    <form method="get" class="searchform" action="<?php echo home_url( '/' ); ?>" >
 		        <input type="text" class="field s" name="s" value="<?php esc_attr_e( 'Search…', 'woothemes' ); ?>" onfocus="if ( this.value == '<?php esc_attr_e( 'Search…', 'woothemes' ); ?>' ) { this.value = ''; }" onblur="if ( this.value == '' ) { this.value = '<?php esc_attr_e( 'Search…', 'woothemes' ); ?>'; }" />
 		        <input type="image" src="<?php echo get_template_directory_uri(); ?>/images/ico-search.png" class="search-submit" name="submit" alt="Submit" />
-		    </form>    
+		    </form>
 		</div><!--/.search_main-->
 		<?php } ?>
-		
+
 		</div><!-- /.col-full -->
-		
+
 	</header><!-- /#header -->
-	
-	<?php 
+
+	<?php
 		// Featured Slider
-		if ( ( is_home() || is_front_page() ) && !$paged && isset( $woo_options['woo_featured'] ) && $woo_options['woo_featured'] == 'true' ) 
-			get_template_part ( 'includes/featured' ); 
-	?>	
+		if ( ( is_home() || is_front_page() ) && !$paged && isset( $woo_options['woo_featured'] ) && $woo_options['woo_featured'] == 'true' )
+			get_template_part ( 'includes/featured' );
+	?>

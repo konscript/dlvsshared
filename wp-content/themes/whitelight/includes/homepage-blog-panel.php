@@ -3,13 +3,13 @@
 /**
  * Homepage Blog Panel
  */
- 
+
 	/**
  	* The Variables
  	*
  	* Setup default variables, overriding them if the "Theme Options" have been saved.
  	*/
-	
+
 	$settings = array(
 					'blog_area_content' => 'blog',
 					'blog_area_title' => '',
@@ -17,31 +17,31 @@
 					'blog_area_page' => '',
 					'blog_area_message' => '',
 					'blog_area_link_text' => __( 'View all our blog posts', 'woothemes' ),
-					'blog_area_link_URL' => ''					
+					'blog_area_link_URL' => ''
 					);
-					
+
 	$settings = woo_get_dynamic_values( $settings );
-		
-?>						
-		<section id="blog" class="home-section fix"> 
+
+?>
+		<section id="blog" class="home-section fix">
 
 			<header class="block">
 				<div id="map-wrapper">
 
 					<h3><?php echo $settings['blog_area_title'] ?></h3>
-				
+
 					<div class="map-form-container">
 						<form method="GET" class="map-form" action="<?php bloginfo('wpurl'); ?>">
 						  <select name="Country" id="country-selector">
 							<option value="" selected="selected"><?php echo dlvs_translate("Choose country"); ?></option>
-							<?php $countries = getCountries(); ?>	
+							<?php $countries = getCountries(); ?>
 							<?php foreach($countries as $country): ?>
-								<?php 
+								<?php
 									$country_name = $country->post_title;
-									$country_slug = get_permalink($country->ID);				
+									$country_slug = get_permalink($country->ID);
 									$country_id = $country->ID;
-								?>					
-							<option value="<?= $country_slug; ?>"><?=$country_name; ?></option>					
+								?>
+							<option value="<?= $country_slug; ?>"><?=$country_name; ?></option>
 							<?php endforeach; ?>
 							</select>
 						  <input type="Submit" value="Find">
@@ -63,11 +63,11 @@
 					<script type="text/javascript">
 					jQuery.noConflict();
 					(function($){
-						$(document).ready(function() {	
+						$(document).ready(function() {
 							$('#map-continents').cssMap({'size' : 540});
 						});
 					})(jQuery);
-						
+
 					</script>
 
 					<?php wp_enqueue_script('jquery.cssmap.js', get_template_directory_uri() . '/includes/js/dlvs/jquery.cssmap.js' );?>
@@ -77,9 +77,9 @@
 
 				<p><?php echo stripslashes( $settings['blog_area_message'] ); ?></p>
 				<a class="more" href="<?php if ( $settings['blog_area_link_URL'] != '' ) echo $settings['blog_area_link_URL']; else echo next_posts(); ?>" title="<?php echo stripslashes( $settings['blog_area_link_text'] ); ?>"><?php echo stripslashes( $settings['blog_area_link_text'] ); ?></a>
-			
+
 			</header>
-			
+
 			<ul class="entries">
 				<!-- <li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />
@@ -93,7 +93,7 @@
 						<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
 					<?php } else { ?>
 						<h3><a href="faq/">Frequently Asked Questions</a></h3>
-						<p>Answers to frequently asked questions by travelers on vaccinations and travel health.</p>					
+						<p>Answers to frequently asked questions by travelers on vaccinations and travel health.</p>
 					<?php } ?>
 				</li>
 				<li>
@@ -104,7 +104,7 @@
 					<?php } else { ?>
 						<h3><a href="<?php bloginfo('wpurl'); ?>/malaria-about/">Malaria prevention</a></h3>
 						<p>Malaria is one of the major causes of morbidity and mortality worldwide. Learn how to avoid getting infected.</p>
-					<?php } ?>				
+					<?php } ?>
 				</li>
 				<li>
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />
@@ -113,10 +113,10 @@
 						<p>Du kan bestille tid online til vaccination i en vores klinikker. Vælg selv tid og sted - nemmere bliver det ikke</p>
 					<?php } else { ?>
 						<h3><a href="<?php bloginfo('wpurl'); ?>/booking">Book your time</a></h3>
-						<p>You can book a time slot online in one of our clinics. Choose time and place - it doesn't get easier.</p>					
+						<p>You can book a time slot online in one of our clinics. Choose time and place - it doesn't get easier.</p>
 					<?php } ?>
 				</li>
 			</ul>
-		        	        
+
 		</section><!-- /#main -->
     	<?php wp_reset_query(); ?>
