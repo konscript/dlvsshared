@@ -55,10 +55,6 @@ $sidebar_country_meta .= '
 			    <div class="post country col-full">
 					<header><h1><?php the_title(); ?></h1></header>
 
-					<div style="clear:both;list-style:none;">
-						<?php dynamic_sidebar( 'vaccination-information' ); ?>
-					</div>
-
 					<?php
 						$destination = urlencode(the_title('', '', false));
 						$book_button = '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';
@@ -197,6 +193,10 @@ $sidebar_country_meta .= '
 
 					<div class="the-content">
 						<?php echo get_field('extra_country_info'); ?>
+					</div>
+
+					<div class="dlvs-general-info">
+						<?php dynamic_sidebar( 'vaccination-information' ); ?>
 					</div>
 
 			    </div><!--#end post-->

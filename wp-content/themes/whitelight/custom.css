@@ -699,6 +699,10 @@ div.post.country table#vaccinations_groups tr td img {
 div.post.country table#vaccinations_groups tr td.vaccination-name {
   width: 30%;
 }
+div.post.country .meta-boxes {
+  display: block;
+  width: 100%;
+}
 div.post.country .meta-boxes .box {
   float: left;
   border: 1px solid #EEE;
@@ -733,8 +737,13 @@ div.post.country .disclaimer ul li {
 }
 div.post.country .the-content {
   margin-bottom: 20px;
-  float: left;
-  clear: both;
+}
+div.post.country .dlvs-general-info {
+  list-style: none;
+  margin-bottom: 20px;
+}
+div.post.country .dlvs-general-info .widget {
+  margin-bottom: 0px;
 }
 @media only screen and (max-width: 768px) {
   div.post.country .meta-boxes .box,
