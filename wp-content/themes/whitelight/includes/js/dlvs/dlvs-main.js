@@ -10,7 +10,13 @@ jQuery.noConflict();
 		searchFaq();
 
 		// accordion slidedown
-		$( ".accordion" ).accordion({ header: 'h4', active: false, collapsible: true });
+		$( ".accordion" ).accordion({
+			header: 'h4',
+			active: false,
+			collapsible: true,
+			autoHeight: false,
+			clearStyle: true
+		});
 
 		// add tabs on frontpage
 		$("#tabs").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 7000, true);
@@ -193,7 +199,7 @@ jQuery.noConflict();
 
 			// load content into window
 			vaccinationModalElm.load(url,	function(responseText, textStatus, XMLHttpRequest) {
-			$(vaccinationModalElm).dialog('open');
+				$(vaccinationModalElm).dialog('open');
 
 				// remove id attribute "content" ot remove fixed width
 				$(this).children('#content').removeAttr('id');
