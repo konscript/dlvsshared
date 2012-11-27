@@ -69,19 +69,19 @@ $sidebar_country_meta .= '
 						$vaccinations_groups_info = array(
 							array(
 								dlvs_translate("All travelers"),
-								dlvs_translate("Ipsum lorem"),
+								dlvs_translate("All travelers description"),
 							),
 							array(
 								dlvs_translate("+2 weeks"),
-								dlvs_translate("Ipsum lorem"),
+								dlvs_translate("+2 weeks description"),
 							),
 							array(
 								dlvs_translate("+3 months"),
-								dlvs_translate("Ipsum lorem"),
+								dlvs_translate("+3 months description"),
 							),
 							array(
 								dlvs_translate("+6 months"),
-								dlvs_translate("Ipsum lorem"),
+								dlvs_translate("+6 months description"),
 							)
 						);
 
