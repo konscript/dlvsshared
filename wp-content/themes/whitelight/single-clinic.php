@@ -32,7 +32,7 @@ if(get_field('xmedicus_id')){
 
 					<?php
 					$clinic = basename(get_permalink());
-					echo get_the_ID();
+					//echo get_the_ID();
 					//echo '<a class="button-book" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . $clinic . '"><div class="button-book-title">Bestil vaccination</div></a>';
 					?>
 
@@ -47,21 +47,28 @@ if(get_field('xmedicus_id')){
 							<p class="telephone"><?php echo dlvs_translate("Phone"); ?>: <?php the_field('phone_number'); ?></p>
 						</div>
 
-						<?php $weekdays = array("monday", "tuesday", "wednesday", "thursday", "friday", "saturday"); ?>
-						<div class="opening_hours">
-							<strong><?php echo dlvs_translate("Opening hours"); ?>:</strong>
-							<br /><br />
-							<table class="zebra">
-								<?php	foreach($weekdays as $weekday): ?>
-
-									<?php
-									$hours = get_field($weekday);
-									if($hours != ""): ?>
-										<tr><td><?php echo ucfirst($weekday); ?></td><td><?php echo $hours; ?></td></tr>
-									<?php	endif; ?>
-								<?php	endforeach; ?>
-							</table>
-						</div>
+						<?php if(dlvssite() == "sikkerrejse") { ?>
+							<div class="opening_hours">
+								<strong><?php echo dlvs_translate("Opening hours"); ?>:</strong>
+								<br /><br />
+								<span>Tilpasses løbende, se booking-siden for nærmere information.</span>
+							</div>
+						<?php } else { ?>
+							<?php $weekdays = array("monday", "tuesday", "wednesday", "thursday", "friday", "saturday"); ?>
+							<div class="opening_hours">
+								<strong><?php echo dlvs_translate("Opening hours"); ?>:</strong>
+								<br /><br />
+								<table class="zebra">
+									<?php	foreach($weekdays as $weekday): ?>
+										<?php
+										$hours = get_field($weekday);
+										if($hours != ""): ?>
+											<tr><td><?php echo ucfirst($weekday); ?></td><td><?php echo $hours; ?></td></tr>
+										<?php	endif; ?>
+									<?php	endforeach; ?>
+								</table>
+							</div>
+						<?php } ?>
 
 						<!--- <div class="gmap"><?php the_field('map'); ?></div> -->
 						<br />
