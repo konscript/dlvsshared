@@ -63,6 +63,10 @@ $sidebar_country_meta .= '
 
 					<div class="post-content">
 
+						<div class="the-content">
+							<?php echo get_field('extra_country_info'); ?>
+						</div>
+
 					<?php
 						$already_outputted = array();
 
@@ -162,7 +166,7 @@ $sidebar_country_meta .= '
 							</a>
 							<div class="text">
 								<a href="<?php echo get_field('updated_malaria_map'); ?>" target="_blank"><?php echo dlvs_translate('Updated Malaria Map'); ?></a><br />
-								<span>See a map of malaria risk for this country</span>
+								<span><?php echo dlvs_translate('See a map of malaria risk for this country'); ?></span>
 							</div>
 						</div>
 					<?php } ?>
@@ -174,7 +178,7 @@ $sidebar_country_meta .= '
 							</a>
 							<div class="text">
 								<a href="<?php echo get_field('latest_disease_surveillance'); ?>" target="_blank"><?php echo dlvs_translate('Latest Disease Surveillance'); ?></a><br />
-								<span>Information on outbreaks from NaTHNaC</span>
+								<span><?php echo dlvs_translate('Information on outbreaks from NaTHNaC'); ?></span>
 							</div>
 						</div>
 					<?php } ?>
@@ -190,13 +194,14 @@ $sidebar_country_meta .= '
 						endforeach;
 					</div>
 					*/ ?>
+					<?php if($_GET["gclid"]) { ?>
+						<div class="dlvs-general-info">
+							<?php dynamic_sidebar( 'vaccination-information' ); ?>
+						</div>
+					<?php } ?>
 
-					<div class="the-content">
-						<?php echo get_field('extra_country_info'); ?>
-					</div>
-
-					<div class="dlvs-general-info">
-						<?php dynamic_sidebar( 'vaccination-information' ); ?>
+					<div class="dlvs-disclaimer-info">
+						<?php dynamic_sidebar( 'vaccination-disclaimer' ); ?>
 					</div>
 
 			    </div><!--#end post-->
