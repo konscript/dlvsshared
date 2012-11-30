@@ -738,12 +738,17 @@ div.post.country .disclaimer ul li {
 div.post.country .the-content {
   margin-bottom: 20px;
 }
-div.post.country .dlvs-general-info {
+div.post.country .dlvs-general-info,
+div.post.country .dlvs-disclaimer-info {
   list-style: none;
   margin-bottom: 20px;
 }
-div.post.country .dlvs-general-info .widget {
+div.post.country .dlvs-general-info .widget,
+div.post.country .dlvs-disclaimer-info .widget {
   margin-bottom: 0px;
+}
+div.post.country .post-content {
+  clear: both;
 }
 @media only screen and (max-width: 768px) {
   div.post.country .meta-boxes .box,

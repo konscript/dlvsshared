@@ -42,7 +42,6 @@ function dlvs_translate($key) {
 		"All travelers description" => "Omfatter forretnings- eller kongresrejse af nogle dages varighed til hovedstad eller anden
 storby. Er rejsen af særlig art med mulighed for intens smitteudsættelse, kan Gr. 1 suppleres
 med vacciner fra Gr. 2, 3 eller 4.",
-
 		"+2 weeks description" => "Omfatter arrangeret turistrejse af op til fire ugers varighed med dagsudflugter. Er rejsen af
 særlig art med mulighed for intens smitteudsættelse, kan Gr. 2 suppleres med vacciner fra Gr.
 3 eller 4. Det gælder fx indvandrere på familiebesøg (uanset rejsens varighed), ved seksuel
@@ -52,7 +51,9 @@ ved ophold med insekteksposition som fx trekkingtur (japansk encephalitis).",
 med mulighed for intens smitteudsættelse, kan Gr. 3 suppleres med vacciner fra Gr. 4. Det
 gælder fx indvandrere på familiebesøg (uanset rejsens varighed).",
 		"+6 months description" => "Omfatter langvarig individuel rejse i halve år, indvandrere på familiebesøg (uanset rejsens
-varighed), udstationering eller tilsvarende hyppigt gentagne besøg."
+varighed), udstationering eller tilsvarende hyppigt gentagne besøg.",
+		"See a map of malaria risk for this country" => "Kort over aktuel malariarisiko i landet",
+		"Information on outbreaks from NaTHNaC" => "Information om sygdomsudbrud i landet"
 	);
 
 	// get english translation
