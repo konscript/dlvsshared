@@ -16,7 +16,7 @@ if(get_field('xmedicus_id')){
 } else if (get_field("booking_url", $clinic->ID)) {
 	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/"><div class="button-book-title"> ' . dlvs_translate("Book vaccination") . '</div></a>';
 } else {
-	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="#"><div class="button-book-title">Call to book:<br />01462 459595</div></a>';
+	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="#"><div class="button-book-title">' . dlvs_translate("Call to book") . '<br />'.dlvs_translate("01462 459595").'</div></a>';
 }
 ?>
 

@@ -34,7 +34,7 @@ function dlvs_translate($key) {
 		"Type to search" => "Skriv for at søge",					// faq
 		"Updated Malaria Map" => "Opdateret Malaria kort",			// Country
 		"Latest Disease Surveillance" => "Sidste sygdomsovervågning", // Country
-		"Call to book" => "Ring for at booke vaccinationstid", 		// clinic,
+		"Call to book" => "Ring for at booke", 		// clinic,
 		"All travelers" => "Alle rejsende",
 		"+2 weeks" => "+2 uger",
 		"+3 months" => "+3 måneder",
@@ -53,7 +53,8 @@ gælder fx indvandrere på familiebesøg (uanset rejsens varighed).",
 		"+6 months description" => "Omfatter langvarig individuel rejse i halve år, indvandrere på familiebesøg (uanset rejsens
 varighed), udstationering eller tilsvarende hyppigt gentagne besøg.",
 		"See a map of malaria risk for this country" => "Kort over aktuel malariarisiko i landet",
-		"Information on outbreaks from NaTHNaC" => "Information om sygdomsudbrud i landet"
+		"Information on outbreaks from NaTHNaC" => "Information om sygdomsudbrud i landet",
+		"01462 459595" => "70 25 40 80"
 	);
 
 	// get english translation
