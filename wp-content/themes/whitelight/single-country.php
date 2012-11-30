@@ -194,10 +194,11 @@ $sidebar_country_meta .= '
 						endforeach;
 					</div>
 					*/ ?>
-
-					<div class="dlvs-general-info">
-						<?php dynamic_sidebar( 'vaccination-information' ); ?>
-					</div>
+					<?php if($_GET["gclid"]) { ?>
+						<div class="dlvs-general-info">
+							<?php dynamic_sidebar( 'vaccination-information' ); ?>
+						</div>
+					<?php } ?>
 
 					<div class="dlvs-disclaimer-info">
 						<?php dynamic_sidebar( 'vaccination-disclaimer' ); ?>

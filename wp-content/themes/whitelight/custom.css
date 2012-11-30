@@ -702,6 +702,7 @@ div.post.country table#vaccinations_groups tr td.vaccination-name {
 div.post.country .meta-boxes {
   display: block;
   width: 100%;
+  overflow: hidden;
 }
 div.post.country .meta-boxes .box {
   float: left;
