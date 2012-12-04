@@ -212,33 +212,34 @@
 		// 	margin-top: 10px;
 		// }
 
-		#vaccinations_groups {
+		table#vaccinations_groups {
 			// float: left;
 			// clear: both;
 			width: 100%;
 			border-top: 1px solid @color_secondary_c;
 			border-left: 1px solid @color_secondary_c;
 			margin-bottom: 20px;
-		}
 
-		table#vaccinations_groups thead tr td {
-			font-weight: bold;
-		}
+			thead tr td {
+				font-weight: bold;
+				cursor: help;
+			}
 
-		table#vaccinations_groups tr td:first-child	{
-			text-align: left;
-		}
+			tr td:first-child	{
+				text-align: left;
+			}
 
-		table#vaccinations_groups tr td{
-			text-align: center;
-			padding: 5px 10px;
-			border-bottom: 1px solid @color_secondary_c;
-			border-right: 1px solid @color_secondary_c;
+			tr td{
+				text-align: center;
+				padding: 5px 10px;
+				border-bottom: 1px solid @color_secondary_c;
+				border-right: 1px solid @color_secondary_c;
 
-			img {
-				margin-top: 5px;
-				width: 18px;
-				height: 18px;
+				img {
+					margin-top: 5px;
+					width: 18px;
+					height: 18px;
+				}
 			}
 		}
 
@@ -305,6 +306,10 @@
 			clear: both;
 		}
   }
+
+.vaccinationModal h1 {
+	margin: 1em 0;
+}
 
 @media only screen and (max-width: 768px) {
 	div.post.country{
