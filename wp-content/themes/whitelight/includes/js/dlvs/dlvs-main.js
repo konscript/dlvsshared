@@ -13,8 +13,8 @@ jQuery.noConflict();
 		$( ".accordion" ).accordion({
 			header: 'h4',
 			active: false,
-			collapsible: true,
-			autoHeight: false,
+			collapsible: false,
+			autoHeight: true,
 			clearStyle: true
 		});
 

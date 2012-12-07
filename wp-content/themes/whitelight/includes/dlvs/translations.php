@@ -34,23 +34,23 @@ function dlvs_translate($key) {
 		"Type to search" => "Skriv for at søge",					// faq
 		"Updated Malaria Map" => "Opdateret Malaria kort",			// Country
 		"Latest Disease Surveillance" => "Sidste sygdomsovervågning", // Country
-		"Call to book" => "Ring for at booke", 		// clinic,
-		"All travelers" => "Alle rejsende",
-		"+2 weeks" => "+2 uger",
-		"+3 months" => "+3 måneder",
-		"+6 months" => "+6 måneder",
-		"All travelers description" => "Omfatter forretnings- eller kongresrejse af nogle dages varighed til hovedstad eller anden
+		"Call to book" => "Ring for at booke", 						// clinic,
+		"All travelers" => "Gr. 1<br />Alle rejsende",
+		"+2 weeks" => "Gr. 2<br />1-4 uger",
+		"+3 months" => "Gr. 3<br />1-6 mdr.",
+		"+6 months" => "Gr. 4<br />6 mdr.",
+		"All travelers description" => "Alle rejsende. Omfatter forretnings- eller kongresrejse af nogle dages varighed til hovedstad eller anden
 storby. Er rejsen af særlig art med mulighed for intens smitteudsættelse, kan Gr. 1 suppleres
 med vacciner fra Gr. 2, 3 eller 4.",
-		"+2 weeks description" => "Omfatter arrangeret turistrejse af op til fire ugers varighed med dagsudflugter. Er rejsen af
+		"+2 weeks description" => "1-4 ugers rejsende. Omfatter arrangeret turistrejse af op til fire ugers varighed med dagsudflugter. Er rejsen af
 særlig art med mulighed for intens smitteudsættelse, kan Gr. 2 suppleres med vacciner fra Gr.
 3 eller 4. Det gælder fx indvandrere på familiebesøg (uanset rejsens varighed), ved seksuel
 kontakt med lokale, ved udtalt dårlig hygiejne (tyfus), ved tæt lokal personkontakt (hep. B),
 ved ophold med insekteksposition som fx trekkingtur (japansk encephalitis).",
-		"+3 months description" => "Omfatter individuel rejse af nogle måneders varighed, fx rygsækrejse. Er rejsen af særlig art
+		"+3 months description" => "1-6 måneders rejsende. Omfatter individuel rejse af nogle måneders varighed, fx rygsækrejse. Er rejsen af særlig art
 med mulighed for intens smitteudsættelse, kan Gr. 3 suppleres med vacciner fra Gr. 4. Det
 gælder fx indvandrere på familiebesøg (uanset rejsens varighed).",
-		"+6 months description" => "Omfatter langvarig individuel rejse i halve år, indvandrere på familiebesøg (uanset rejsens
+		"+6 months description" => "6 måneders rejsende. Omfatter langvarig individuel rejse i halve år, indvandrere på familiebesøg (uanset rejsens
 varighed), udstationering eller tilsvarende hyppigt gentagne besøg.",
 		"See a map of malaria risk for this country" => "Kort over aktuel malariarisiko i landet",
 		"Information on outbreaks from NaTHNaC" => "Information om sygdomsudbrud i landet",
