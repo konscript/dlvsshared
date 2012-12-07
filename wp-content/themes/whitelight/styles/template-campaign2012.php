@@ -12,6 +12,7 @@ h1 {
 }
 h1#top-header {
     font-size: 3em;
+    line-height: 1em;
 }
 .landingpage h1 {
     font-size: 3em;
@@ -47,6 +48,7 @@ h1#top-header {
                 <h2>Alle kan blive vaccineret hos os</h2>
                  Vi har gjort rejsevaccination enkelt og moderne. Du behøver ingen henvisning fra egen læge elller lignende. Du bestiller blot en tid og så klarer vi resten. <img style="float: right;" src="<?php bloginfo('template_directory'); ?>/images/dlvs_logo_long.png" alt="" />
             </div>
+        </section>
     </div>
 </div>
 
