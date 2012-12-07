@@ -33,6 +33,24 @@ if ( empty($withcomments) && !is_single() ) {
 
 </style>
 
+<!-- Adform Tracking Code BEGIN -->
+<script type="text/javascript">
+var _adftrack = {
+    pm: $campaignid,
+id: $pointid,
+};
+(function(){var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https
+://track.adform.net/serving/scripts/trackpoint/async/';var x = document.getElementsByTagName('script'
+)[0];x.parentNode.insertBefore(s, x);})();
+</script>
+<noscript>
+    <p style="margin:0;padding:0;border:0;">
+        <img src="https://track.adform.net/Serving/TrackPoint/?pm=$campaignid&amp;lid=$pointid"
+        width="1" height="1" alt="" />
+    </p>
+</noscript>
+<!-- Adform Tracking Code END -->
+
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 
 <?php wp_head(); ?>
