@@ -105,12 +105,12 @@ $sidebar_country_meta .= '
 					<table id="vaccinations_groups">
 						<thead>
 							<tr>
-								<td>Vaccination</td>
+								<td class="vaccination-list">Vaccination</td>
 								<?php foreach($vaccinations_groups_info as $info):
 									$label = $info[0];
 									$tooltip = $info[1];
 								?>
-									<td><span class="vaccination-group" title="<?=$tooltip?>"><?=$label?></span></td>
+									<td class="vaccination-group"><span class="vaccination-group" title="<?=$tooltip?>"><?=$label?></span></td>
 								<?php endforeach; ?>
 							</tr>
 						</thead>
