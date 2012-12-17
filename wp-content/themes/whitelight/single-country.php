@@ -64,6 +64,11 @@ $sidebar_country_meta .= '
 					<div class="post-content">
 
 						<div class="the-content">
+							<?php if($_GET["gclid"]) { ?>
+								<div class="dlvs-general-info">
+									<?php dynamic_sidebar( 'vaccination-information' ); ?>
+								</div>
+							<?php } ?>
 							<?php echo get_field('extra_country_info'); ?>
 						</div>
 
@@ -194,11 +199,6 @@ $sidebar_country_meta .= '
 						endforeach;
 					</div>
 					*/ ?>
-					<?php if($_GET["gclid"]) { ?>
-						<div class="dlvs-general-info">
-							<?php dynamic_sidebar( 'vaccination-information' ); ?>
-						</div>
-					<?php } ?>
 
 					<div class="dlvs-disclaimer-info">
 						<?php dynamic_sidebar( 'vaccination-disclaimer' ); ?>
