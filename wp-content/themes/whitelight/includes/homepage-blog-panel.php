@@ -90,7 +90,7 @@
 					<img src="<?php bloginfo('wpurl'); ?>/wp-content/themes/whitelight/styles/red/ico-more.png" />
 					<?php if (dlvssite() == "sikkerrejse") { ?>
 						<h3><a target="_blank" href="http://www.hpvvaccination.dk">HPV Vaccination</a></h3>
-						<p>Hvert år er der omkring 100 danskere som smittes med malaria på rejser. Lær hvordan du undgår at blive smittet.</p>
+						<p>Vaccination mod livmoderhalskræft (HPV) er gratis for piger født i perioden 1. januar 1985 til 31. december 1992.</p>
 					<?php } else { ?>
 						<h3><a href="faq/">Frequently Asked Questions</a></h3>
 						<p>Answers to frequently asked questions by travelers on vaccinations and travel health.</p>
