@@ -697,6 +697,10 @@ div.post.country table#vaccinations_groups tr td img {
   width: 18px;
   height: 18px;
 }
+div.post.country table#vaccinations_groups tr td img.group_5 {
+  width: 22px;
+  height: 22px;
+}
 div.post.country table#vaccinations_groups tr td.vaccination-name {
   width: 30%;
 }

@@ -95,6 +95,7 @@ $sidebar_country_meta .= '
 						$vaccinations_groups[2] = get_field('group_2');
 						$vaccinations_groups[3] = get_field('group_3');
 						$vaccinations_groups[4] = get_field('group_4');
+						$vaccinations_groups[5] = get_field('group_5');
 					?>
 
 					<table id="vaccinations_groups">
@@ -123,13 +124,20 @@ $sidebar_country_meta .= '
 												<?php
 												// output cell with vaccination indicator
 												$checkmark = '<img src="'.get_bloginfo("template_url").'/img/checkmark.png"/>';
+												$checkmark_group5 = '<img class="group_5" src="'.get_bloginfo("template_url").'/img/thumbs_up.png"/>';
 
 												$repeat_in_next_group = false;
-												for ( $counter = 1; $counter <= count($vaccinations_groups_info); $counter++) {
+												for ( $counter = 1; $counter <= 4; $counter++) {
 													echo "<td>";
+
+													// group 1-4
 													if($counter == $group_id || $repeat_in_next_group === true){
 														$repeat_in_next_group = true;
 														echo $checkmark;
+
+													// group 5
+													}elseif($group_id == 5){
+														echo $checkmark_group5;
 													}else{
 														echo "-";
 													}
