@@ -162,10 +162,6 @@
  * Country
  **********************************/
 
-  	.post.country header {
-  		float:left;
-  	}
-
 	.country-meta-header {
 		// @include column(@sidebar_columns);
 		text-align: center;
@@ -206,11 +202,31 @@
 
   div.post.country{
 
-		// h1 {
-		// 	//float: left;
-		// 	// @include column(18);
-		// 	margin-top: 10px;
-		// }
+  		#chosen_countries_info {
+  			clear: both;
+			float: left;
+			background-color: whiteSmoke;
+			margin: 10px 0;
+			border: 1px solid #DDD;
+			overflow: hidden;
+
+  			.chosen_country {
+  				width: 110px;
+  				float:left;
+  				margin: 10px 10px;
+  				text-align: center;
+
+  				h3 {
+  					font-size: 0.9em;
+  					height: 20px;
+  				}
+
+	  			img {
+	  				height: 30px;
+	  			}
+
+  			}
+  		}
 
 		table#vaccinations_groups {
 			// float: left;
@@ -246,11 +262,12 @@
 					height: 22px;
 				}
 			}
+
+			tr td.vaccination-name {
+				width: 30%;
+			}
 		}
 
-		table#vaccinations_groups tr td.vaccination-name {
-			width: 30%;
-		}
 
 		.meta-boxes {
 			display: block;

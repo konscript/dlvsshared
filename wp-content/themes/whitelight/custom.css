@@ -647,9 +647,6 @@ table.zebra tbody tr:nth-child(odd) {
 /***
  * Country
  **********************************/
-.post.country header {
-  float: left;
-}
 .country-meta-header {
   text-align: center;
   margin: 0 0 20px 0;
@@ -672,6 +669,27 @@ table.zebra tbody tr:nth-child(odd) {
 }
 .country-flag img {
   width: 100%;
+}
+div.post.country #chosen_countries_info {
+  clear: both;
+  float: left;
+  background-color: whiteSmoke;
+  margin: 10px 0;
+  border: 1px solid #DDD;
+  overflow: hidden;
+}
+div.post.country #chosen_countries_info .chosen_country {
+  width: 110px;
+  float: left;
+  margin: 10px 10px;
+  text-align: center;
+}
+div.post.country #chosen_countries_info .chosen_country h3 {
+  font-size: 0.9em;
+  height: 20px;
+}
+div.post.country #chosen_countries_info .chosen_country img {
+  height: 30px;
 }
 div.post.country table#vaccinations_groups {
   width: 100%;

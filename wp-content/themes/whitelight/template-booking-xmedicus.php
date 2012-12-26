@@ -12,6 +12,8 @@
 			// destination
 			$clinic_param = urldecode($wp_query->query_vars['clinic_param']);
 
+			debug($clinic_param);
+
 			if($clinic_param){
 				$clinic_query = "/booking?ou=" . $clinic_param . ".php";
 			}else{
