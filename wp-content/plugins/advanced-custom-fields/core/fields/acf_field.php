@@ -115,6 +115,19 @@ class acf_Field
 		$value = stripslashes_deep($value);
 		
 		
+		// apply filters
+		$value = apply_filters('acf_update_value', $value, $field, $post_id );
+		
+		$keys = array('type', 'name', 'key');
+		foreach( $keys as $key )
+		{
+			if( isset($field[ $key ]) )
+			{
+				$value = apply_filters('acf_update_value-' . $field[ $key ], $value, $field, $post_id);
+			}
+		}
+				
+		
 		// if $post_id is a string, then it is used in the everything fields and can be found in the options table
 		if( is_numeric($post_id) )
 		{
@@ -140,21 +153,6 @@ class acf_Field
 	}
 	
 	
-	/*--------------------------------------------------------------------------------------
-	*
-	*	pre_save_field
-	*	- called just before saving the field to the database.
-	*
-	*	@author Elliot Condon
-	*	@since 2.2.0
-	* 
-	*-------------------------------------------------------------------------------------*/
-	
-	function pre_save_field($field)
-	{
-		return $field;
-	}
-	
 	
 	/*--------------------------------------------------------------------------------------
 	*
@@ -175,7 +173,7 @@ class acf_Field
 			$value = get_post_meta( $post_id, $field['name'], false );
 			
 			// value is an array, check and assign the real value / default value
-			if( empty($value) )
+			if( !isset($value[0]) )
 			{
 				if( isset($field['default_value']) )
 				{
@@ -198,7 +196,7 @@ class acf_Field
 			$value = get_user_meta( $post_id, $field['name'], false );
 			
 			// value is an array, check and assign the real value / default value
-			if( empty($value) )
+			if( !isset($value[0]) )
 			{
 				if( isset($field['default_value']) )
 				{
@@ -235,7 +233,21 @@ class acf_Field
 		
 		// if value was duplicated, it may now be a serialized string!
 		$value = maybe_unserialize($value);
-
+		
+		
+		// apply filters
+		$value = apply_filters('acf_load_value', $value, $field, $post_id );
+		
+		$keys = array('type', 'name', 'key');
+		foreach( $keys as $key )
+		{
+			if( isset($field[ $key ]) )
+			{
+				$value = apply_filters('acf_load_value-' . $field[ $key ], $value, $field, $post_id);
+			}
+		}
+		
+		
 		
 		return $value;
 	}
