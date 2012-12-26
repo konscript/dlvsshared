@@ -61,8 +61,6 @@ $sidebar_country_meta .= '
 						//echo $book_button;
 					?>
 
-					 <?php echo get_the_ID(); ?>
-
 					<div class="post-content">
 
 						<div class="the-content">

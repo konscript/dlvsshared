@@ -18,6 +18,7 @@
 
 <title><?php woo_title(); ?></title>
 <?php woo_meta(); ?>
+<meta name="google-site-verification" content="e2Fhsifb9d-7YDPoN16fyux7Ma6kkhf3LTWLW-y5yfI" />
 <base href="<?php echo get_bloginfo('url'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" media="screen" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/includes/css/jquery-ui-1.9.1.custom.css" media="screen" />
