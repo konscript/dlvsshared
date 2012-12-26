@@ -701,6 +701,9 @@ div.post.country table#vaccinations_groups thead tr td {
   font-weight: bold;
   cursor: help;
 }
+div.post.country table#vaccinations_groups thead tr td.vaccination-group {
+  width: 15%;
+}
 div.post.country table#vaccinations_groups tr td:first-child {
   text-align: left;
 }

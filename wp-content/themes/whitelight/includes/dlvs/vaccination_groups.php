@@ -23,59 +23,60 @@ function vaccination_groups($vaccinations_groups){
     );
 ?>
 
-    <table id="vaccinations_groups">
-        <thead>
-            <tr>
-                <td>Vaccination</td>
-                <?php foreach($vaccinations_groups_info as $info):
-                    $label = $info[0];
-                    $tooltip = $info[1];
-                ?>
-                    <td><span class="vaccination-group" title="<?=$tooltip?>"><?=$label?></span></td>
-                <?php endforeach; ?>
-            </tr>
-        </thead>
-        <tbody>
-        <?php foreach($vaccinations_groups as $group_id => $group): ?>
-            <?php if(!empty($group)): ?>
-                <?php foreach($group as $vaccination): ?>
-                    <?php
-                        // make sure every vaccine is only outputted once (somebody may have added a vaccine to multiple groups)
-                        if(!in_array($vaccination->ID, $already_outputted)):
-                            $already_outputted[] = $vaccination->ID;
-                            ?>
-                            <tr>
-                                <td class="vaccination-name"><a href="<?php echo get_permalink( $vaccination->ID ); ?>"><?php echo $vaccination->post_title; ?></a></td>
-                                <?php
-                                // output cell with vaccination indicator
-                                $checkmark = '<img src="'.get_bloginfo("template_url").'/img/checkmark.png"/>';
-                                $checkmark_group5 = '<img class="group_5" src="'.get_bloginfo("template_url").'/img/thumbs_up.png"/>';
+<table id="vaccinations_groups">
+    <thead>
+        <tr>
+            <td class="vaccination-list">Vaccination</td>
+            <?php foreach($vaccinations_groups_info as $info):
+                $label = $info[0];
+                $tooltip = $info[1];
+            ?>
+            <td class="vaccination-group"><span class="vaccination-group" title="<?=$tooltip?>"><?=$label?></span></td>
 
-                                $repeat_in_next_group = false;
-                                for ( $counter = 1; $counter <= 4; $counter++) {
-                                    echo "<td>";
+            <?php endforeach; ?>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($vaccinations_groups as $group_id => $group): ?>
+        <?php if(!empty($group)): ?>
+            <?php foreach($group as $vaccination): ?>
+                <?php
+                    // make sure every vaccine is only outputted once (somebody may have added a vaccine to multiple groups)
+                    if(!in_array($vaccination->ID, $already_outputted)):
+                        $already_outputted[] = $vaccination->ID;
+                        ?>
+                        <tr>
+                            <td class="vaccination-name"><a href="<?php echo get_permalink( $vaccination->ID ); ?>"><?php echo $vaccination->post_title; ?></a></td>
+                            <?php
+                            // output cell with vaccination indicator
+                            $checkmark = '<img src="'.get_bloginfo("template_url").'/img/checkmark.png"/>';
+                            $checkmark_group5 = '<img class="group_5" src="'.get_bloginfo("template_url").'/img/thumbs_up.png"/>';
 
-                                    // group 1-4
-                                    if($counter == $group_id || $repeat_in_next_group === true){
-                                        $repeat_in_next_group = true;
-                                        echo $checkmark;
+                            $repeat_in_next_group = false;
+                            for ( $counter = 1; $counter <= 4; $counter++) {
+                                echo "<td>";
 
-                                    // group 5
-                                    }elseif($group_id == 5){
-                                        echo $checkmark_group5;
-                                    }else{
-                                        echo "-";
-                                    }
-                                    echo "</td>";
+                                // group 1-4
+                                if($counter == $group_id || $repeat_in_next_group === true){
+                                    $repeat_in_next_group = true;
+                                    echo $checkmark;
+
+                                // group 5
+                                }elseif($group_id == 5){
+                                    echo $checkmark_group5;
+                                }else{
+                                    echo "-";
                                 }
-                                ?>
-                            </tr>
-                        <?php endif; ?>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        <?php endforeach; ?>
-        </tbody>
-    </table>
+                                echo "</td>";
+                            }
+                            ?>
+                        </tr>
+                    <?php endif; ?>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    <?php endforeach; ?>
+    </tbody>
+</table>
 
 <?php
 }
