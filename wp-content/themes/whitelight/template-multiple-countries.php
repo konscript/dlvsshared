@@ -12,6 +12,7 @@ var multipleCountries = {
 
         jQuery( "#country-recommendation" ).autocomplete({
             source: self.countries,
+            minLength: 0,
 
             select: function(event, ui) {
                 self.chosenCountries.push(ui.item.country_id);
@@ -21,6 +22,9 @@ var multipleCountries = {
                 window.location.href = url;
                 return false;
             },
+        }).focus(function(){
+            jQuery(this).autocomplete( "search", "" );
+            //jQuery(this).data("autocomplete").search($(this).val());
         });
     }
 };
@@ -67,7 +71,7 @@ jQuery(function($) {
                 <header><h1><?php the_title(); ?></h1></header>
 
                 <div>
-                    <label for="country-recommendation">Indtast et land: </label>
+                    <label for="country-recommendation">Vælg et land: </label>
                     <input id="country-recommendation" />
                 </div>
 
@@ -125,7 +129,7 @@ jQuery(function($) {
                             $remove_link = get_bloginfo('url') . '/multiple-countries/';
                         }
                         echo
-                            '<div class="chosen_country">
+                            '<div class="chosen_country" title="' . $country_name . '">
                                 <h3>' . $country_name . '</h3>
                                 <img height="50" src="' . $country_flag . '">
                                 <p><a href="' . $remove_link . '">Fjern</a></p>

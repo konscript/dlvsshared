@@ -50,7 +50,7 @@ function vaccination_groups($vaccinations_groups){
                             <?php
                             // output cell with vaccination indicator
                             $checkmark = '<img src="'.get_bloginfo("template_url").'/img/checkmark.png"/>';
-                            $checkmark_group5 = '<img class="group_5" src="'.get_bloginfo("template_url").'/img/thumbs_up.png"/>';
+                            $checkmark_group5 = '<span class="question-mark-circle">?</span>';
 
                             $repeat_in_next_group = false;
                             for ( $counter = 1; $counter <= 4; $counter++) {
@@ -77,6 +77,14 @@ function vaccination_groups($vaccinations_groups){
     <?php endforeach; ?>
     </tbody>
 </table>
+
+<div id="legend">
+    <h3>Symbolforklaring</h3>
+    <table>
+        <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td>Vaccinationen er nødvendig</td></tr>
+        <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td> Vaccinationen bør overvejes</td></tr>
+    </table>
+</div>
 
 <?php
 }
