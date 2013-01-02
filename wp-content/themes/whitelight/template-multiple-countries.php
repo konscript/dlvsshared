@@ -15,6 +15,16 @@ var multipleCountries = {
             minLength: 0,
 
             select: function(event, ui) {
+
+                // loading spinner
+                jQuery( "#loading-dialog" ).dialog({
+                    modal: true,
+                    width: 50,
+                    height: 120,
+                    resizable: false
+                });
+
+                // add country to list
                 self.chosenCountries.push(ui.item.country_id);
 
                 // update window
@@ -24,7 +34,6 @@ var multipleCountries = {
             },
         }).focus(function(){
             jQuery(this).autocomplete( "search", "" );
-            //jQuery(this).data("autocomplete").search($(this).val());
         });
     }
 };
@@ -63,15 +72,23 @@ jQuery(function($) {
 
 </script>
 
-
+<div id="loading-dialog" title="Vent venligst" style="display:none;text-align: center;">
+    <img src="<?php bloginfo('template_directory'); ?>/img/loading.gif">
+</div>
 <div id="content">
     <div class="page col-full">
         <section id="main" class="col-left">
             <div class="post country col-full">
                 <header><h1><?php the_title(); ?></h1></header>
 
+                <?php if($_GET["gclid"]) { ?>
+                    <div class="dlvs-general-info">
+                        <?php dynamic_sidebar( 'vaccination-information' ); ?>
+                    </div>
+                <?php } ?>
+
                 <div>
-                    <label for="country-recommendation">Vælg et land: </label>
+                    <label for="country-recommendation">Vælg et land af gangen: </label>
                     <input id="country-recommendation" />
                 </div>
 
@@ -145,6 +162,19 @@ jQuery(function($) {
                     }
 
                 ?>
+
+                <div class="dlvs-disclaimer-info">
+                    <?php dynamic_sidebar( 'vaccination-disclaimer' ); ?>
+                </div>
+
+                <div id="legend">
+                    <h3>Symbolforklaring</h3>
+                    <table>
+                        <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td>Anbefalet</td></tr>
+                        <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td> Bør overvejes</td></tr>
+                    </table>
+                </div>
+
             </div>
         </section>
     </div>

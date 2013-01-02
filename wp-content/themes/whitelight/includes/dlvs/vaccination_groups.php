@@ -78,14 +78,6 @@ function vaccination_groups($vaccinations_groups){
     </tbody>
 </table>
 
-<div id="legend">
-    <h3>Symbolforklaring</h3>
-    <table>
-        <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td>Vaccinationen er nødvendig</td></tr>
-        <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td> Vaccinationen bør overvejes</td></tr>
-    </table>
-</div>
-
 <?php
 }
 ?>
