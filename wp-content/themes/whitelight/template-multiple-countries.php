@@ -129,51 +129,54 @@ jQuery(function($) {
                             $vaccinations_groups[5] = array_merge($vaccinations_groups[5], $group_5);
                         }
                     }
+                    ?>
 
-                    // get info of chosen countries
-                    echo '<div id="chosen_countries_info">';
-                    foreach($chosen_countries as $index => $country_id){
-                        $country_name = get_the_title($country_id);
-                        $country_flag = get_field('flag', $country_id);
+                    <div id="chosen_countries_info">
+                        <?php
+                        // get info of chosen countries
+                        foreach($chosen_countries as $index => $country_id){
+                            $country_name = get_the_title($country_id);
+                            $country_flag = get_field('flag', $country_id);
 
-                        // remove current country from list
-                        $chosen_countries_minus_current = $chosen_countries;
-                        array_splice($chosen_countries_minus_current, $index, 1);
+                            // remove current country from list
+                            $chosen_countries_minus_current = $chosen_countries;
+                            array_splice($chosen_countries_minus_current, $index, 1);
 
-                        if(count($chosen_countries_minus_current) > 0) {
-                            $remove_link = get_bloginfo('url') . '/multiple-countries/countries/' . implode(",",$chosen_countries_minus_current);
-                        }else{
-                            $remove_link = get_bloginfo('url') . '/multiple-countries/';
+                            if(count($chosen_countries_minus_current) > 0) {
+                                $remove_link = get_bloginfo('url') . '/multiple-countries/countries/' . implode(",",$chosen_countries_minus_current);
+                            }else{
+                                $remove_link = get_bloginfo('url') . '/multiple-countries/';
+                            }
+                            echo
+                                '<div class="chosen_country" title="' . $country_name . '">
+                                    <h3>' . $country_name . '</h3>
+                                    <img height="50" src="' . $country_flag . '">
+                                    <p><a href="' . $remove_link . '">Fjern</a></p>
+                                </div>
+                            ';
+
                         }
-                        echo
-                            '<div class="chosen_country" title="' . $country_name . '">
-                                <h3>' . $country_name . '</h3>
-                                <img height="50" src="' . $country_flag . '">
-                                <p><a href="' . $remove_link . '">Fjern</a></p>
-                            </div>
-                        ';
+                        ?>
+                    </div>
 
-                    }
-                    echo "</div>";
 
-                    // output vaccination table
-                    if(count($chosen_countries) > 0 ){
-                        vaccination_groups($vaccinations_groups);
-                    }
+                    <?php if(count($chosen_countries) > 0 ): ?>
+                        <?php vaccination_groups($vaccinations_groups); ?>
 
-                ?>
+                        <div class="dlvs-disclaimer-info">
+                            <?php dynamic_sidebar( 'vaccination-disclaimer' ); ?>
+                        </div>
 
-                <div class="dlvs-disclaimer-info">
-                    <?php dynamic_sidebar( 'vaccination-disclaimer' ); ?>
-                </div>
+                        <div id="legend">
+                            <h3>Symbolforklaring</h3>
+                            <table>
+                                <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td>Anbefalet</td></tr>
+                                <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td> Bør overvejes</td></tr>
+                            </table>
+                        </div>
+                    <?php endif; ?>
 
-                <div id="legend">
-                    <h3>Symbolforklaring</h3>
-                    <table>
-                        <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td>Anbefalet</td></tr>
-                        <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td> Bør overvejes</td></tr>
-                    </table>
-                </div>
+
 
             </div>
         </section>
