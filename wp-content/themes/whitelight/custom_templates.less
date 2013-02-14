@@ -162,10 +162,6 @@
  * Country
  **********************************/
 
-  	.post.country header {
-  		float:left;
-  	}
-
 	.country-meta-header {
 		// @include column(@sidebar_columns);
 		text-align: center;
@@ -206,49 +202,118 @@
 
   div.post.country{
 
-		// h1 {
-		// 	//float: left;
-		// 	// @include column(18);
-		// 	margin-top: 10px;
-		// }
+  		input#country-recommendation {
+  			width: 150px;
+  		}
 
-		#vaccinations_groups {
+  		#chosen_countries_info {
+  			clear: both;
+			float: left;
+			background-color: whiteSmoke;
+			margin: 10px 0;
+			border: 1px solid #DDD;
+			overflow: hidden;
+
+  			.chosen_country {
+  				width: 110px;
+  				float:left;
+  				margin: 10px 10px;
+  				text-align: center;
+
+  				h3 {
+  					font-size: 0.9em;
+  					height: 20px;
+  					overflow: hidden;
+  				}
+
+	  			img {
+	  				height: 30px;
+	  			}
+
+  			}
+  		}
+
+		table#vaccinations_groups {
 			// float: left;
 			// clear: both;
 			width: 100%;
 			border-top: 1px solid @color_secondary_c;
 			border-left: 1px solid @color_secondary_c;
 			margin-bottom: 20px;
-		}
 
-		table#vaccinations_groups thead tr td {
-			font-weight: bold;
-		}
+			thead tr td {
+				font-weight: bold;
+				cursor: help;
 
-		table#vaccinations_groups tr td:first-child	{
-			text-align: left;
-		}
+				&.vaccination-group {
+					width: 15%;
+				}
+			}
 
-		table#vaccinations_groups tr td{
-			text-align: center;
-			padding: 5px 10px;
-			border-bottom: 1px solid @color_secondary_c;
-			border-right: 1px solid @color_secondary_c;
+			tr td:first-child	{
+				text-align: left;
+			}
 
-			img {
-				margin-top: 5px;
-				width: 18px;
-				height: 18px;
+			tr td{
+				text-align: center;
+				padding: 5px 10px;
+				border-bottom: 1px solid @color_secondary_c;
+				border-right: 1px solid @color_secondary_c;
+
+				img {
+					margin-top: 5px;
+					width: 18px;
+					height: 18px;
+				}
+
+				img.group_5 {
+					width: 22px;
+					height: 22px;
+				}
+			}
+
+			tr td.vaccination-name {
+				width: 30%;
 			}
 		}
 
-		table#vaccinations_groups tr td.vaccination-name {
-			width: 30%;
+		.question-mark-circle {
+			text-align:center;
+			display:block;
+			background-color: red;
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			color: white;
+			font-weight: bold;
+			margin:auto;
 		}
+
+		div#legend {
+			padding: 5px;
+			float: left;
+			border: 1px solid #EEE;
+			margin-bottom: 20px;
+
+			h3 {
+				margin-bottom: 5px;
+			}
+
+			table {
+				td {
+					padding-bottom: 5px;
+				}
+				.symbol {
+					padding-right: 10px;
+				}
+			}
+		}
+
 
 		.meta-boxes {
 			display: block;
 			width: 100%;
+			overflow: hidden;
 
 			.box {
 				float: left;
@@ -293,13 +358,21 @@
 			margin-bottom: 20px;
 		}
 
-		.dlvs-general-info {
+		.dlvs-general-info, .dlvs-disclaimer-info {
 			list-style:none;
 			margin-bottom: 20px;
 
 			.widget { margin-bottom: 0px; }
 		}
+
+		.post-content {
+			clear: both;
+		}
   }
+
+.vaccinationModal h1 {
+	margin: 1em 0;
+}
 
 @media only screen and (max-width: 768px) {
 	div.post.country{

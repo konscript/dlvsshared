@@ -41,7 +41,8 @@ array_splice($includes, count($includes), 0, array(
 	'includes/dlvs/rewrite.php',
 	'includes/dlvs/setup.php',
 	'includes/dlvs/utilities.php',
-	'includes/dlvs/translations.php'
+	'includes/dlvs/translations.php',
+	'includes/dlvs/vaccination_groups.php'
 ));
 
 
@@ -62,9 +63,15 @@ if ( !function_exists( 'child_theme_setup' ) ):
 function child_theme_setup() {
 
 	register_sidebar( array(
-		'name' => __( 'Vaccination information', 'whitelight' ),
+		'name' => __( 'Country vaccination information', 'whitelight' ),
 		'id' => 'vaccination-information',
-		'description' => __( 'Add boilerplate information to all vaccinations', 'whitelight' ),
+		'description' => __( 'Will be shown on the country page for AdWords referrals', 'whitelight' ),
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Country vaccination disclaimer', 'whitelight' ),
+		'id' => 'vaccination-disclaimer',
+		'description' => __( 'Standard disclaimer shown at the bottom of the country page', 'whitelight' ),
 	) );
 
 }

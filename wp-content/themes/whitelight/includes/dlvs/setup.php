@@ -72,7 +72,7 @@ add_filter('admin_footer_text', 'remove_footer_admin');
 function debug($output){
 	$debug = "<hr><pre>";
 	$debug .= print_r($output, true);
-	$debug .= "<pre>";
+	$debug .= "</pre>";
 	echo $debug;
 }
 ?>

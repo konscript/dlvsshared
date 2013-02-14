@@ -63,82 +63,30 @@ $sidebar_country_meta .= '
 
 					<div class="post-content">
 
-					<?php
-						$already_outputted = array();
+						<div class="the-content">
+							<?php if($_GET["gclid"]) { ?>
+								<div class="dlvs-general-info">
+									<?php dynamic_sidebar( 'vaccination-information' ); ?>
+								</div>
+							<?php } ?>
+							<?php echo get_field('extra_country_info'); ?>
+						</div>
 
-						$vaccinations_groups_info = array(
-							array(
-								dlvs_translate("All travelers"),
-								dlvs_translate("Ipsum lorem"),
-							),
-							array(
-								dlvs_translate("+2 weeks"),
-								dlvs_translate("Ipsum lorem"),
-							),
-							array(
-								dlvs_translate("+3 months"),
-								dlvs_translate("Ipsum lorem"),
-							),
-							array(
-								dlvs_translate("+6 months"),
-								dlvs_translate("Ipsum lorem"),
-							)
-						);
+					<?php
 
 						// vaccinations for groups
 						$vaccinations_groups = array();
+
 						$vaccinations_groups[1] = get_field('group_1');
 						$vaccinations_groups[2] = get_field('group_2');
 						$vaccinations_groups[3] = get_field('group_3');
 						$vaccinations_groups[4] = get_field('group_4');
+						$vaccinations_groups[5] = get_field('group_5');
+
+						// output vaccination table
+						vaccination_groups($vaccinations_groups);
 					?>
 
-					<table id="vaccinations_groups">
-						<thead>
-							<tr>
-								<td>Vaccination</td>
-								<?php foreach($vaccinations_groups_info as $info):
-									$label = $info[0];
-									$tooltip = $info[1];
-								?>
-									<td><span class="vaccination-group" title="<?=$tooltip?>"><?=$label?></span></td>
-								<?php endforeach; ?>
-							</tr>
-						</thead>
-						<tbody>
-						<?php foreach($vaccinations_groups as $group_id => $group): ?>
-							<?php if(!empty($group)): ?>
-								<?php foreach($group as $vaccination): ?>
-									<?php
-										// make sure every vaccine is only outputted once (somebody may have added a vaccine to multiple groups)
-										if(!in_array($vaccination->ID, $already_outputted)):
-											$already_outputted[] = $vaccination->ID;
-											?>
-											<tr>
-												<td class="vaccination-name"><a href="<?php echo get_permalink( $vaccination->ID ); ?>"><?php echo $vaccination->post_title; ?></a></td>
-												<?php
-												// output cell with vaccination indicator
-												$checkmark = '<img src="'.get_bloginfo("template_url").'/img/checkmark.png"/>';
-
-												$repeat_in_next_group = false;
-												for ( $counter = 1; $counter <= count($vaccinations_groups_info); $counter++) {
-													echo "<td>";
-													if($counter == $group_id || $repeat_in_next_group === true){
-														$repeat_in_next_group = true;
-														echo $checkmark;
-													}else{
-														echo "-";
-													}
-													echo "</td>";
-												}
-												?>
-											</tr>
-										<?php endif; ?>
-								<?php endforeach; ?>
-							<?php endif; ?>
-						<?php endforeach; ?>
-						</tbody>
-					</table>
 					<?php if(dlvssite() == "flufighters") { ?>
 						<br />
 						<div class="disclaimer">
@@ -162,7 +110,7 @@ $sidebar_country_meta .= '
 							</a>
 							<div class="text">
 								<a href="<?php echo get_field('updated_malaria_map'); ?>" target="_blank"><?php echo dlvs_translate('Updated Malaria Map'); ?></a><br />
-								<span>See a map of malaria risk for this country</span>
+								<span><?php echo dlvs_translate('See a map of malaria risk for this country'); ?></span>
 							</div>
 						</div>
 					<?php } ?>
@@ -174,7 +122,7 @@ $sidebar_country_meta .= '
 							</a>
 							<div class="text">
 								<a href="<?php echo get_field('latest_disease_surveillance'); ?>" target="_blank"><?php echo dlvs_translate('Latest Disease Surveillance'); ?></a><br />
-								<span>Information on outbreaks from NaTHNaC</span>
+								<span><?php echo dlvs_translate('Information on outbreaks from NaTHNaC'); ?></span>
 							</div>
 						</div>
 					<?php } ?>
@@ -191,13 +139,17 @@ $sidebar_country_meta .= '
 					</div>
 					*/ ?>
 
-					<div class="the-content">
-						<?php echo get_field('extra_country_info'); ?>
+					<div class="dlvs-disclaimer-info">
+						<?php dynamic_sidebar( 'vaccination-disclaimer' ); ?>
 					</div>
 
-					<div class="dlvs-general-info">
-						<?php dynamic_sidebar( 'vaccination-information' ); ?>
-					</div>
+	                <div id="legend">
+	                    <h3>Symbolforklaring</h3>
+	                    <table>
+	                        <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td>Anbefalet</td></tr>
+	                        <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td> Bør overvejes</td></tr>
+	                    </table>
+	                </div>
 
 			    </div><!--#end post-->
 	        <?php endwhile; endif; ?>

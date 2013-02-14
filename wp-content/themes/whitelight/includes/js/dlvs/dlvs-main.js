@@ -10,7 +10,13 @@ jQuery.noConflict();
 		searchFaq();
 
 		// accordion slidedown
-		$( ".accordion" ).accordion({ header: 'h4', active: false, collapsible: true });
+		$( ".accordion" ).accordion({
+			header: 'h4',
+			active: false,
+			collapsible: false,
+			autoHeight: true,
+			clearStyle: true
+		});
 
 		// add tabs on frontpage
 		$("#tabs").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 7000, true);
@@ -30,7 +36,9 @@ jQuery.noConflict();
 		// misc css styling
 		miscStyles();
 
+		// toolstips
 		$( '.vaccination-group' ).tooltip();
+		$( '#chosen_countries_info .chosen_country' ).tooltip();
 	});
 
 	/*
@@ -193,7 +201,7 @@ jQuery.noConflict();
 
 			// load content into window
 			vaccinationModalElm.load(url,	function(responseText, textStatus, XMLHttpRequest) {
-			$(vaccinationModalElm).dialog('open');
+				$(vaccinationModalElm).dialog('open');
 
 				// remove id attribute "content" ot remove fixed width
 				$(this).children('#content').removeAttr('id');

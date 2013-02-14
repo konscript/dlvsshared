@@ -5,19 +5,24 @@
 		<section class="col-full template booking">
 			<header><h1><?php the_title(); ?></h1></header>
 			<?php while ( have_posts() ) { the_post(); $count++;
-				the_content(); 
+				the_content();
 			}?>
 
 			<?php
 			// destination
-			$clinic_param = urldecode($wp_query->query_vars['clinic_param']);		
-			$destination_param = urldecode($wp_query->query_vars['destination_param']);
+			$clinic_param = urldecode($wp_query->query_vars['clinic_param']);
+
+			if($clinic_param){
+				$clinic_query = "/booking?ou=" . $clinic_param . ".php";
+			}else{
+				$clinic_query = "";
+			}
 
 			?>
 
-			<iframe src="http://tid.dlvs.dk:8080/booking?ou=<?= $clinic_param ?>.php" frameborder="0" width="100%" height="1000"></iframe>
+			<iframe src="http://tid.dlvs.dk<?php echo $clinic_query; ?>" frameborder="0" width="100%" height="1000"></iframe>
 
-		</section>	
+		</section>
 	</div>
 </div>
 

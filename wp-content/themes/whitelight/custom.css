@@ -619,9 +619,6 @@ table.zebra tbody tr:nth-child(odd) {
 /***
  * Country
  **********************************/
-.post.country header {
-  float: left;
-}
 .country-meta-header {
   text-align: center;
   margin: 0 0 20px 0;
@@ -645,7 +642,32 @@ table.zebra tbody tr:nth-child(odd) {
 .country-flag img {
   width: 100%;
 }
-div.post.country #vaccinations_groups {
+div.post.country input#country-recommendation {
+  width: 150px;
+}
+div.post.country #chosen_countries_info {
+  clear: both;
+  float: left;
+  background-color: whiteSmoke;
+  margin: 10px 0;
+  border: 1px solid #DDD;
+  overflow: hidden;
+}
+div.post.country #chosen_countries_info .chosen_country {
+  width: 110px;
+  float: left;
+  margin: 10px 10px;
+  text-align: center;
+}
+div.post.country #chosen_countries_info .chosen_country h3 {
+  font-size: 0.9em;
+  height: 20px;
+  overflow: hidden;
+}
+div.post.country #chosen_countries_info .chosen_country img {
+  height: 30px;
+}
+div.post.country table#vaccinations_groups {
   width: 100%;
   border-top: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
@@ -653,6 +675,10 @@ div.post.country #vaccinations_groups {
 }
 div.post.country table#vaccinations_groups thead tr td {
   font-weight: bold;
+  cursor: help;
+}
+div.post.country table#vaccinations_groups thead tr td.vaccination-group {
+  width: 15%;
 }
 div.post.country table#vaccinations_groups tr td:first-child {
   text-align: left;
@@ -668,12 +694,43 @@ div.post.country table#vaccinations_groups tr td img {
   width: 18px;
   height: 18px;
 }
+div.post.country table#vaccinations_groups tr td img.group_5 {
+  width: 22px;
+  height: 22px;
+}
 div.post.country table#vaccinations_groups tr td.vaccination-name {
   width: 30%;
+}
+div.post.country .question-mark-circle {
+  text-align: center;
+  display: block;
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-weight: bold;
+  margin: auto;
+}
+div.post.country div#legend {
+  padding: 5px;
+  float: left;
+  border: 1px solid #EEE;
+  margin-bottom: 20px;
+}
+div.post.country div#legend h3 {
+  margin-bottom: 5px;
+}
+div.post.country div#legend table td {
+  padding-bottom: 5px;
+}
+div.post.country div#legend table .symbol {
+  padding-right: 10px;
 }
 div.post.country .meta-boxes {
   display: block;
   width: 100%;
+  overflow: hidden;
 }
 div.post.country .meta-boxes .box {
   float: left;
@@ -710,12 +767,20 @@ div.post.country .disclaimer ul li {
 div.post.country .the-content {
   margin-bottom: 20px;
 }
-div.post.country .dlvs-general-info {
+div.post.country .dlvs-general-info,
+div.post.country .dlvs-disclaimer-info {
   list-style: none;
   margin-bottom: 20px;
 }
-div.post.country .dlvs-general-info .widget {
+div.post.country .dlvs-general-info .widget,
+div.post.country .dlvs-disclaimer-info .widget {
   margin-bottom: 0px;
+}
+div.post.country .post-content {
+  clear: both;
+}
+.vaccinationModal h1 {
+  margin: 1em 0;
 }
 @media only screen and (max-width: 768px) {
   div.post.country .meta-boxes .box, div.post.country .meta-boxes .malaria-box {
