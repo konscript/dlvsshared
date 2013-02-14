@@ -144,12 +144,10 @@ table.zebra tbody tr:nth-child(odd) {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-#sidebar li.categories,
-#sidebar li.pagenav {
+#sidebar li.categories, #sidebar li.pagenav {
   list-style-type: none;
 }
-#sidebar li.categories h2,
-#sidebar li.pagenav h2 {
+#sidebar li.categories h2, #sidebar li.pagenav h2 {
   display: none;
 }
 #sidebar ul {
@@ -176,9 +174,7 @@ table.zebra tbody tr:nth-child(odd) {
   padding: 0;
   line-height: inherit;
 }
-#sidebar ul li a:hover,
-#sidebar ul .current-menu-item a,
-#sidebar ul .current-cat a {
+#sidebar ul li a:hover, #sidebar ul .current-menu-item a, #sidebar ul .current-cat a {
   background: url('img/submenu_on.gif') no-repeat;
   background-position: 0 50%;
   text-decoration: none;
@@ -215,6 +211,7 @@ table.zebra tbody tr:nth-child(odd) {
     float: right;
     margin-right: 10%;
     background: #ffffff;
+    background: #ffffff;
     background: rgba(255, 255, 255, 0.7);
   }
   #featured article header {
@@ -228,8 +225,7 @@ table.zebra tbody tr:nth-child(odd) {
     padding: 30px 30px 0 30px;
     text-shadow: none;
   }
-  #featured article header h1,
-  #featured article header .entry {
+  #featured article header h1, #featured article header .entry {
     height: auto;
   }
   #featured article header h1 {
@@ -276,6 +272,7 @@ table.zebra tbody tr:nth-child(odd) {
     background: #fff;
   }
   #featured article header {
+    text-shadow: none;
     height: auto;
     background-color: transparent;
     color: black;
@@ -502,22 +499,16 @@ table.zebra tbody tr:nth-child(odd) {
 /***
  * Home & Region
  **********************************/
-.home .region-map,
-.region .region-map,
-.page-template-template-vaccination-recommendations-php .region-map {
+.home .region-map, .region .region-map, .page-template-template-vaccination-recommendations-php .region-map {
   display: block;
   margin: 0 auto;
 }
-.home .country-wrapper,
-.region .country-wrapper,
-.page-template-template-vaccination-recommendations-php .country-wrapper {
+.home .country-wrapper, .region .country-wrapper, .page-template-template-vaccination-recommendations-php .country-wrapper {
   overflow: hidden;
   border-left: 1px solid #eeeeee;
   border-top: 1px solid #eeeeee;
 }
-.home .country,
-.region .country,
-.page-template-template-vaccination-recommendations-php .country {
+.home .country, .region .country, .page-template-template-vaccination-recommendations-php .country {
   display: block;
   float: left;
   width: 156px;
@@ -527,16 +518,12 @@ table.zebra tbody tr:nth-child(odd) {
   border-bottom: 1px solid #eeeeee;
   padding: 10px;
 }
-.home .country img,
-.region .country img,
-.page-template-template-vaccination-recommendations-php .country img {
+.home .country img, .region .country img, .page-template-template-vaccination-recommendations-php .country img {
   width: 40px;
   float: left;
   margin-right: 10px;
 }
-.home .country span,
-.region .country span,
-.page-template-template-vaccination-recommendations-php .country span {
+.home .country span, .region .country span, .page-template-template-vaccination-recommendations-php .country span {
   display: block;
   width: 106px;
   float: left;
@@ -544,9 +531,7 @@ table.zebra tbody tr:nth-child(odd) {
   height: 28px;
   overflow: hidden;
 }
-.home .map-header,
-.region .map-header,
-.page-template-template-vaccination-recommendations-php .map-header {
+.home .map-header, .region .map-header, .page-template-template-vaccination-recommendations-php .map-header {
   display: block;
   padding: 30px 0 0px 0;
   margin: 0;
@@ -556,20 +541,14 @@ table.zebra tbody tr:nth-child(odd) {
   font-weight: normal;
   text-align: center;
 }
-.home .map-form-container,
-.region .map-form-container,
-.page-template-template-vaccination-recommendations-php .map-form-container {
+.home .map-form-container, .region .map-form-container, .page-template-template-vaccination-recommendations-php .map-form-container {
   text-align: center;
   margin-top: 20px;
 }
-.home .map-form,
-.region .map-form,
-.page-template-template-vaccination-recommendations-php .map-form {
+.home .map-form, .region .map-form, .page-template-template-vaccination-recommendations-php .map-form {
   display: inline;
 }
-.home #map-wrapper,
-.region #map-wrapper,
-.page-template-template-vaccination-recommendations-php #map-wrapper {
+.home #map-wrapper, .region #map-wrapper, .page-template-template-vaccination-recommendations-php #map-wrapper {
   -webkit-border-top-right-radius: 3px;
   -webkit-border-bottom-right-radius: 3px;
   -webkit-border-bottom-left-radius: 3px;
@@ -595,9 +574,7 @@ table.zebra tbody tr:nth-child(odd) {
   background-image: -ms-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
   background-image: radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
 }
-.home #map-wrapper h3,
-.region #map-wrapper h3,
-.page-template-template-vaccination-recommendations-php #map-wrapper h3 {
+.home #map-wrapper h3, .region #map-wrapper h3, .page-template-template-vaccination-recommendations-php #map-wrapper h3 {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   display: block;
   padding: 30px 0 0px 0;
@@ -609,17 +586,13 @@ table.zebra tbody tr:nth-child(odd) {
   text-align: center;
   font-family: Georgia, serif;
 }
-.home #map-continents #continents li .bg,
-.region #map-continents #continents li .bg,
-.page-template-template-vaccination-recommendations-php #map-continents #continents li .bg {
+.home #map-continents #continents li .bg, .region #map-continents #continents li .bg, .page-template-template-vaccination-recommendations-php #map-continents #continents li .bg {
   -moz-opacity: 0;
   -khtml-opacity: 0;
   -webkit-opacity: 0;
   opacity: 0;
 }
-.home #map-continents #continents li:hover .bg,
-.region #map-continents #continents li:hover .bg,
-.page-template-template-vaccination-recommendations-php #map-continents #continents li:hover .bg {
+.home #map-continents #continents li:hover .bg, .region #map-continents #continents li:hover .bg, .page-template-template-vaccination-recommendations-php #map-continents #continents li:hover .bg {
   -moz-opacity: 1;
   -khtml-opacity: 1;
   -webkit-opacity: 1;
@@ -634,8 +607,7 @@ table.zebra tbody tr:nth-child(odd) {
 .contact p.telephone {
   background: url('img/icon-telephone-20px.png') no-repeat left center;
 }
-.contact p.telephone,
-.contact p.address {
+.contact p.telephone, .contact p.address {
   padding-left: 27px;
   margin-bottom: 20px;
   min-height: 20px;
@@ -647,9 +619,6 @@ table.zebra tbody tr:nth-child(odd) {
 /***
  * Country
  **********************************/
-.post.country header {
-  float: left;
-}
 .country-meta-header {
   text-align: center;
   margin: 0 0 20px 0;
@@ -672,6 +641,31 @@ table.zebra tbody tr:nth-child(odd) {
 }
 .country-flag img {
   width: 100%;
+}
+div.post.country input#country-recommendation {
+  width: 150px;
+}
+div.post.country #chosen_countries_info {
+  clear: both;
+  float: left;
+  background-color: whiteSmoke;
+  margin: 10px 0;
+  border: 1px solid #DDD;
+  overflow: hidden;
+}
+div.post.country #chosen_countries_info .chosen_country {
+  width: 110px;
+  float: left;
+  margin: 10px 10px;
+  text-align: center;
+}
+div.post.country #chosen_countries_info .chosen_country h3 {
+  font-size: 0.9em;
+  height: 20px;
+  overflow: hidden;
+}
+div.post.country #chosen_countries_info .chosen_country img {
+  height: 30px;
 }
 div.post.country table#vaccinations_groups {
   width: 100%;
@@ -700,8 +694,38 @@ div.post.country table#vaccinations_groups tr td img {
   width: 18px;
   height: 18px;
 }
+div.post.country table#vaccinations_groups tr td img.group_5 {
+  width: 22px;
+  height: 22px;
+}
 div.post.country table#vaccinations_groups tr td.vaccination-name {
   width: 30%;
+}
+div.post.country .question-mark-circle {
+  text-align: center;
+  display: block;
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  color: white;
+  font-weight: bold;
+  margin: auto;
+}
+div.post.country div#legend {
+  padding: 5px;
+  float: left;
+  border: 1px solid #EEE;
+  margin-bottom: 20px;
+}
+div.post.country div#legend h3 {
+  margin-bottom: 5px;
+}
+div.post.country div#legend table td {
+  padding-bottom: 5px;
+}
+div.post.country div#legend table .symbol {
+  padding-right: 10px;
 }
 div.post.country .meta-boxes {
   display: block;
@@ -759,8 +783,7 @@ div.post.country .post-content {
   margin: 1em 0;
 }
 @media only screen and (max-width: 768px) {
-  div.post.country .meta-boxes .box,
-  div.post.country .meta-boxes .malaria-box {
+  div.post.country .meta-boxes .box, div.post.country .meta-boxes .malaria-box {
     width: 100%;
     margin-right: 0px;
   }
@@ -835,6 +858,7 @@ div.post.country .post-content {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  background: #e9e9e9;
   background-color: #e9e9e9;
   color: black!important;
   padding: 4px 8px;
@@ -855,8 +879,7 @@ div.post.country .post-content {
 #navigation .nav li.parent > a::after {
   right: 8px;
 }
-#navigation .nav li a:hover::after,
-#navigation .nav li:hover > a::after {
+#navigation .nav li a:hover::after, #navigation .nav li:hover > a::after {
   border-color: #B72020 transparent transparent transparent!important;
 }
 /**********************************************

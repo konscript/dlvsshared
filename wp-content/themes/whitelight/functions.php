@@ -41,7 +41,8 @@ array_splice($includes, count($includes), 0, array(
 	'includes/dlvs/rewrite.php',
 	'includes/dlvs/setup.php',
 	'includes/dlvs/utilities.php',
-	'includes/dlvs/translations.php'
+	'includes/dlvs/translations.php',
+	'includes/dlvs/vaccination_groups.php'
 ));
 
 

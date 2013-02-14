@@ -3,6 +3,11 @@
  * @package Admin
  */
 
+if ( !defined('WPSEO_VERSION') ) {
+	header('HTTP/1.0 403 Forbidden');
+	die;
+}
+
 /**
  * This class handles the pointers used in the introduction tour.
  *
@@ -14,6 +19,10 @@ class WPSEO_Pointers {
 	 * Class constructor.
 	 */
 	function __construct() {
+		global $wp_version;
+		if ( version_compare($wp_version, '3.4', '<') )
+			return false;
+
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
 	}
 
@@ -21,36 +30,42 @@ class WPSEO_Pointers {
 	 * Enqueue styles and scripts needed for the pointers.
 	 */
 	function enqueue() {
+		if ( ! current_user_can('manage_options') )
+			return;
+			
 		$options = get_option( 'wpseo' );
-		if ( !isset( $options['presstrends'] ) || ( !isset( $options['ignore_tour'] ) || !$options['ignore_tour'] ) ) {
+		if ( !isset( $options['yoast_tracking'] ) || ( !isset( $options['ignore_tour'] ) || !$options['ignore_tour'] ) ) {
 			wp_enqueue_style( 'wp-pointer' );
 			wp_enqueue_script( 'jquery-ui' );
 			wp_enqueue_script( 'wp-pointer' );
 			wp_enqueue_script( 'utils' );
 		}
-		if ( !isset( $options['presstrends_popup'] ) && !isset( $_GET['allow_tracking'] ) ) {
-			add_action( 'admin_print_footer_scripts', array( $this, 'presstrends_request' ) );
+		if ( !isset( $options['tracking_popup'] ) && !isset( $_GET['allow_tracking'] ) ) {
+			add_action( 'admin_print_footer_scripts', array( $this, 'tracking_request' ) );
 		} else if ( !isset( $options['ignore_tour'] ) || !$options['ignore_tour'] ) {
 			add_action( 'admin_print_footer_scripts', array( $this, 'intro_tour' ) );
 			add_action( 'admin_head', array( $this, 'admin_head' ) );
 		}
 	}
 
-	function presstrends_request() {
+	/**
+	 * Shows a popup that asks for permission to allow tracking.
+	 */
+	function tracking_request() {
 		$id      = '#wpadminbar';
-		$content = '<h3>' . __( 'Help us improve WordPress SEO', 'wordpress-seo' ) . '</h3>';
-		$content .= '<p>' . __( 'You\'ve just installed WordPress SEO by Yoast. Please helps us improve it by allowing us to gather anonymous usage stats so we know which plugins and themes to test with.', 'wordpress-seo' ) . '</p>';
+		$content = '<h3>' . __( 'Help improve WordPress SEO', 'wordpress-seo' ) . '</h3>';
+		$content .= '<p>' . __( 'You\'ve just installed WordPress SEO by Yoast. Please helps us improve it by allowing us to gather anonymous usage stats so we know which configurations, plugins and themes to test with.', 'wordpress-seo' ) . '</p>';
 		$opt_arr   = array(
 			'content'  => $content,
 			'position' => array( 'edge' => 'top', 'align' => 'center' )
 		);
-		$button2   = __( "Allow", 'wordpress-seo' );
-		$nonce     = wp_create_nonce( 'wpseo_activate_presstrends' );
+		$button2   = __( 'Allow tracking', 'wordpress-seo' );
+		$nonce     = wp_create_nonce( 'wpseo_activate_tracking' );
 
 		$function2 = 'document.location="' . admin_url( 'admin.php?page=wpseo_dashboard&allow_tracking=yes&nonce='.$nonce ) . '";';
 		$function1 = 'document.location="' . admin_url( 'admin.php?page=wpseo_dashboard&allow_tracking=no&nonce='.$nonce ) . '";';
 
-		$this->print_scripts( $id, $opt_arr, __( "Do not allow", 'wordpress-seo' ), $button2, $function2, $function1 );
+		$this->print_scripts( $id, $opt_arr, __( 'Do not allow tracking', 'wordpress-seo' ), $button2, $function2, $function1 );
 	}
 
 	/**
@@ -70,8 +85,8 @@ class WPSEO_Pointers {
 					__( 'If you would like to keep up to date regarding the WordPress SEO plugin and other plugins by Yoast, subscribe to the newsletter:', 'wordpress-seo' ) . '</p>' .
 					'<form action="http://yoast.us1.list-manage.com/subscribe/post?u=ffa93edfe21752c921f860358&amp;id=972f1c9122" method="post" id="newsletter-form">' .
 					'<p>' .
-					'<label for="newsletter-name">' . __( 'Name', 'wordpress-seo' ) . ':</label><input style="color:#666" name="MMERGE9" value="' . $current_user->display_name . '" id="newsletter-name" placeholder="' . __( 'Name', 'wordpress-seo' ) . '"/><br/>' .
-					'<label for="newsletter-email">' . __( 'Email', 'wordpress-seo' ) . ':</label><input style="color:#666" name="EMAIL" value="' . $current_user->user_email . '" id="newsletter-email" placeholder="' . __( 'Email', 'wordpress-seo' ) . '"/><br/>' .
+					'<label for="newsletter-name">' . __( 'Name', 'wordpress-seo' ) . ':</label><input style="color:#666" name="MMERGE9" value="' . esc_attr( $current_user->display_name ) . '" id="newsletter-name" placeholder="' . __( 'Name', 'wordpress-seo' ) . '"/><br/>' .
+					'<label for="newsletter-email">' . __( 'Email', 'wordpress-seo' ) . ':</label><input style="color:#666" name="EMAIL" value="' . esc_attr( $current_user->user_email ) . '" id="newsletter-email" placeholder="' . __( 'Email', 'wordpress-seo' ) . '"/><br/>' .
 					'<input type="hidden" name="group" value="2"/>' .
 					'<button type="submit" class="button-primary">' . __( 'Subscribe', 'wordpress-seo' ) . '</button>' .
 					'</p></form>',
@@ -215,13 +230,13 @@ class WPSEO_Pointers {
 				<?php if ( $button2 ) { ?>
 					jQuery('#pointer-close').after('<a id="pointer-primary" class="button-primary">' + '<?php echo $button2; ?>' + '</a>');
 					jQuery('#pointer-primary').click(function () {
-						<?php echo $button2_function; ?>
+						<?php echo esc_js( $button2_function ); ?>
 					});
 					jQuery('#pointer-close').click(function () {
 						<?php if ( $button1_function == '' ) { ?>
 							wpseo_setIgnore("tour", "wp-pointer-0", "<?php echo wp_create_nonce( 'wpseo-ignore' ); ?>");
 							<?php } else { ?>
-							<?php echo $button1_function; ?>
+							<?php echo esc_js( $button1_function ); ?>
 							<?php } ?>
 					});
 					<?php } ?>
