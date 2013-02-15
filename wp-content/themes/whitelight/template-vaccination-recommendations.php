@@ -35,7 +35,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 						</select>
 					  <input type="Submit" value="Find">
 					</form>
-					<a href="<?php bloginfo('wpurl'); ?>/trekkingguide/" class="map-text"><?php echo dlvs_translate("or try the Trekkingguide if you're visiting multiple countries"); ?></a>
+					<a href="<?php bloginfo('wpurl'); ?>/multiple-countries/" class="map-text"><?php echo dlvs_translate("or try the Trekkingguide if you're visiting multiple countries"); ?></a>
 				</div>
 
 				 <div id="map-continents">

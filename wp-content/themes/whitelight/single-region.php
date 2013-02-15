@@ -45,7 +45,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 						  <input type="Submit" value="Find">
 						</form>
 
-						&nbsp;&nbsp;<a href="<?php bloginfo('wpurl'); ?>/trekkingguide/" class="map-text" style="display: inline"><?php echo dlvs_translate("or try the Trekkingguide if you're visiting multiple countries"); ?></a>
+						&nbsp;&nbsp;<a href="<?php bloginfo('wpurl'); ?>/multiple-countries/" class="map-text" style="display: inline"><?php echo dlvs_translate("or try the Trekkingguide if you're visiting multiple countries"); ?></a>
 
 						<!-- <img class="region-map" src="<?php bloginfo('template_directory'); ?>/img/continents-<?php echo basename(get_permalink()); ?>.png" alt="<?php echo basename(get_permalink()); ?>" /> -->
 		      			<br /><br />
