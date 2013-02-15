@@ -28,7 +28,7 @@ var multipleCountries = {
                 self.chosenCountries.push(ui.item.country_id);
 
                 // update window
-                var url = jQuery('base').attr('href') + '/multiple-countries/countries/' + self.chosenCountries.join();
+                var url = jQuery('base').attr('href') + '/' + '<?php echo basename(get_permalink()); ?>' + '/countries/' + self.chosenCountries.join();
                 window.location.href = url;
                 return false;
             },
@@ -87,8 +87,8 @@ jQuery(function($) {
                     </div>
                 <?php } ?>
 
-                <div>
-                    <label for="country-recommendation">Vælg et land af gangen: </label>
+                <div class="country-selector">
+                    <label for="country-recommendation"><?php echo dlvs_translate("Type and choose one country at the time:"); ?></label>
                     <input id="country-recommendation" />
                 </div>
 
@@ -131,35 +131,6 @@ jQuery(function($) {
                     }
                     ?>
 
-                    <div id="chosen_countries_info">
-                        <?php
-                        // get info of chosen countries
-                        foreach($chosen_countries as $index => $country_id){
-                            $country_name = get_the_title($country_id);
-                            $country_flag = get_field('flag', $country_id);
-
-                            // remove current country from list
-                            $chosen_countries_minus_current = $chosen_countries;
-                            array_splice($chosen_countries_minus_current, $index, 1);
-
-                            if(count($chosen_countries_minus_current) > 0) {
-                                $remove_link = get_bloginfo('url') . '/multiple-countries/countries/' . implode(",",$chosen_countries_minus_current);
-                            }else{
-                                $remove_link = get_bloginfo('url') . '/multiple-countries/';
-                            }
-                            echo
-                                '<div class="chosen_country" title="' . $country_name . '">
-                                    <h3>' . $country_name . '</h3>
-                                    <img height="50" src="' . $country_flag . '">
-                                    <p><a href="' . $remove_link . '">Fjern</a></p>
-                                </div>
-                            ';
-
-                        }
-                        ?>
-                    </div>
-
-
                     <?php if(count($chosen_countries) > 0 ): ?>
                         <?php vaccination_groups($vaccinations_groups); ?>
 
@@ -168,18 +139,57 @@ jQuery(function($) {
                         </div>
 
                         <div id="legend">
-                            <h3>Symbolforklaring</h3>
+                            <h3><?php echo dlvs_translate("Explanation of symbols"); ?></h3>
                             <table>
-                                <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td>Anbefalet</td></tr>
-                                <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td> Bør overvejes</td></tr>
+                                <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td><?php echo dlvs_translate("Recommended"); ?></td></tr>
+                                <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td><?php echo dlvs_translate("Should be considered"); ?></td></tr>
                             </table>
                         </div>
                     <?php endif; ?>
 
-
-
             </div>
         </section>
+
+        <?php $sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>'; ?>
+
+        <?php
+        // get info of chosen countries
+        $chosen_countries_output = "";
+        if (!empty($chosen_countries)) {
+            $chosen_countries_output .= '<div id="chosen_countries_info"><h3 class="title">' . dlvs_translate("Chosen countries:") . '</h3>';
+        }
+        foreach($chosen_countries as $index => $country_id){
+            $country_name = get_the_title($country_id);
+            $country_flag = get_field('flag', $country_id);
+
+            // remove current country from list
+            $chosen_countries_minus_current = $chosen_countries;
+            array_splice($chosen_countries_minus_current, $index, 1);
+
+            if(count($chosen_countries_minus_current) > 0) {
+                $remove_link = get_bloginfo('url') . '/' . basename(get_permalink()) . '/countries/' . implode(",",$chosen_countries_minus_current);
+            }else{
+                $remove_link = get_bloginfo('url') . '/' . basename(get_permalink()) . '/';
+            }
+            $chosen_countries_output .=
+                '<div class="chosen_country" title="' . $country_name . '">
+                    <h3>' . $country_name . '</h3>';
+            if ($country_flag) {
+                $chosen_countries_output .=
+                    '<img src="' . $country_flag . '">';
+            }
+            $chosen_countries_output .=
+                    '<p><a href="' . $remove_link . '">' . dlvs_translate("Remove") .'</a></p>
+                </div>
+            ';
+        }
+        if (!empty($chosen_countries)) {
+            $chosen_countries_output .= '</div';
+        }
+        ?>
+
+        <?php sidebar($sidebar_button . $chosen_countries_output); ?>
+
     </div>
 </div>
 

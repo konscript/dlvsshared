@@ -1,6 +1,6 @@
 <?php /* Template Name: Vaccination recommendations */ ?>
 <?php get_header(); ?>
-<?php 
+<?php
 $args = array(
 	'post_type'	=>'region',
 	'title_li'	=> '&nbsp;',
@@ -12,30 +12,30 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 <div id="content">
 	<div class="page col-full">
 		<section id="main" class="col-left">
-			
+
 			<header><h1><?php the_title(); ?></h1></header>
 			<?php while ( have_posts() ) { the_post(); $count++;
-				the_content(); 
-			}?>	
+				the_content();
+			}?>
 			<div id="map-wrapper">
-			
+
 				<div class="map-form-container">
 					<form method="GET" class="map-form" action="<?php bloginfo('wpurl'); ?>">
 					  <select name="Country" id="country-selector">
 						<option value="" selected="selected"><?php echo dlvs_translate("Choose country"); ?></option>
-						<?php $countries = getCountries(); ?>	
+						<?php $countries = getCountries(); ?>
 						<?php foreach($countries as $country): ?>
-							<?php 
+							<?php
 								$country_name = $country->post_title;
-								$country_slug = get_permalink($country->ID);				
+								$country_slug = get_permalink($country->ID);
 								$country_id = $country->ID;
-							?>					
-						<option value="<?= $country_slug; ?>"><?=$country_name; ?></option>					
+							?>
+						<option value="<?= $country_slug; ?>"><?=$country_name; ?></option>
 						<?php endforeach; ?>
 						</select>
 					  <input type="Submit" value="Find">
 					</form>
-					<span class="map-text"><?php echo dlvs_translate("or click on the map"); ?>:</span>
+					<a href="<?php bloginfo('wpurl'); ?>/trekkingguide/" class="map-text"><?php echo dlvs_translate("or try the Trekkingguide if you're visiting multiple countries"); ?></a>
 				</div>
 
 				 <div id="map-continents">
@@ -49,7 +49,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 				 </ul>
 				</div>
 
-			</div>		
+			</div>
 		</section>
 		<?php sidebar($sidebar_menu, true, false); ?>
 	</div>
@@ -58,11 +58,11 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 <script type="text/javascript">
 jQuery.noConflict();
 (function($){
-	$(document).ready(function() {	
+	$(document).ready(function() {
 		$('#map-continents').cssMap({'size' : 540});
 	});
 })(jQuery);
-	
+
 </script>
 
 

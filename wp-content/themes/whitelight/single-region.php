@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php 
+<?php
 $args = array(
 	'post_type'	=>'region',
 	'title_li'	=> '&nbsp;',
@@ -16,13 +16,13 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 					<header><h1><?php the_title(); ?></h1></header>
 					<div class="post-content">
 
-						<?php 
+						<?php
 						$region_serialized = get_post_custom_values('countries');
 
 						try {
 							$region = unserialize($region_serialized[0]);
 							if($region === false){
-						        throw new Exception('Not a serialized array');		
+						        throw new Exception('Not a serialized array');
 							}
 						} catch (Exception $e) {
 							$region = $region_serialized[0];
@@ -34,18 +34,18 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 						  <select name="Country" id="country-selector">
 					    <option value="" selected="selected"><?php echo dlvs_translate("Choose country"); ?></option>
 							<?php foreach($countries as $country): ?>
-								<?php 
+								<?php
 									$country_name = $country->post_title;
-									$country_slug = get_permalink($country->ID);				
+									$country_slug = get_permalink($country->ID);
 									$country_id = $country->ID;
-								?>					
-							    <option value="<?= $country_slug; ?>"><?=$country_name; ?></option>					
+								?>
+							    <option value="<?= $country_slug; ?>"><?=$country_name; ?></option>
 							<?php endforeach; ?>
 						  </select>
 						  <input type="Submit" value="Find">
-						</form>	
+						</form>
 
-						<span> <?php echo dlvs_translate("to learn more about the recommended vaccinations."); ?></span>
+						&nbsp;&nbsp;<a href="<?php bloginfo('wpurl'); ?>/trekkingguide/" class="map-text" style="display: inline"><?php echo dlvs_translate("or try the Trekkingguide if you're visiting multiple countries"); ?></a>
 
 						<!-- <img class="region-map" src="<?php bloginfo('template_directory'); ?>/img/continents-<?php echo basename(get_permalink()); ?>.png" alt="<?php echo basename(get_permalink()); ?>" /> -->
 		      			<br /><br />
@@ -61,7 +61,7 @@ $sidebar_menu = wp_list_pages( $args ); ?>
 							</a>
 						<?php } endforeach; ?>
 						</div>
-						
+
 					</div>
 				</div><!--#end post-->
 			<?php endwhile; endif; ?>

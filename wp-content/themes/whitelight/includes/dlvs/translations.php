@@ -54,7 +54,14 @@ gælder fx indvandrere på familiebesøg (uanset rejsens varighed).",
 varighed), udstationering eller tilsvarende hyppigt gentagne besøg.",
 		"See a map of malaria risk for this country" => "Kort over aktuel malariarisiko i landet",
 		"Information on outbreaks from NaTHNaC" => "Information om sygdomsudbrud i landet",
-		"01462 459595" => "70 25 40 80"
+		"01462 459595" => "70 25 40 80",
+		"Type and choose one country at the time:" => "Tast og vælg et land af gangen:",
+		"Remove" => "Fjern",
+		"Explanation of symbols" => "Symbolforklaring",
+		"Recommended" => "Anbefalet",
+		"Should be considered" => "Bør overvejes",
+		"Chosen countries:" => "Valgte lande:",
+		"or try the Trekkingguide if you're visiting multiple countries" => "eller prøv Trekkingguiden hvis du besøger flere lande"
 	);
 
 	// get english translation
