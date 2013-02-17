@@ -184,7 +184,7 @@ jQuery(function($) {
             ';
         }
         if (!empty($chosen_countries)) {
-            $chosen_countries_output .= '</div';
+            $chosen_countries_output .= '</div>';
         }
         ?>
 
