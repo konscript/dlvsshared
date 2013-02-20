@@ -150,7 +150,7 @@ jQuery(function($) {
             </div>
         </section>
 
-        <?php $sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>'; ?>
+        <?php $sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/'.'"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>'; ?>
 
         <?php
         // get info of chosen countries
