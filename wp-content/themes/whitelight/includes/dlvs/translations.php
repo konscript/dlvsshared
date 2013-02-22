@@ -61,7 +61,8 @@ varighed), udstationering eller tilsvarende hyppigt gentagne besøg.",
 		"Recommended" => "Anbefalet",
 		"Should be considered" => "Bør overvejes",
 		"Chosen countries:" => "Valgte lande:",
-		"or try the Trekkingguide if you're visiting multiple countries" => "eller prøv Trekkingguiden hvis du besøger flere lande"
+		"or try the Trekkingguide if you're visiting multiple countries" => "eller prøv Trekkingguiden hvis du besøger flere lande",
+		"Please wait" => "Vent venligst"
 	);
 
 	// get english translation

@@ -72,7 +72,7 @@ jQuery(function($) {
 
 </script>
 
-<div id="loading-dialog" title="Vent venligst" style="display:none;text-align: center;">
+<div id="loading-dialog" title="<?php echo dlvs_translate("Please wait"); ?>" style="display:none;text-align: center;">
     <img src="<?php bloginfo('template_directory'); ?>/img/loading.gif">
 </div>
 <div id="content">

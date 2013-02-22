@@ -143,13 +143,13 @@ $sidebar_country_meta .= '
 						<?php dynamic_sidebar( 'vaccination-disclaimer' ); ?>
 					</div>
 
-	                <div id="legend">
-	                    <h3>Symbolforklaring</h3>
-	                    <table>
-	                        <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td>Anbefalet</td></tr>
-	                        <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td> Bør overvejes</td></tr>
-	                    </table>
-	                </div>
+                    <div id="legend">
+                        <h3><?php echo dlvs_translate("Explanation of symbols"); ?></h3>
+                        <table>
+                            <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td><?php echo dlvs_translate("Recommended"); ?></td></tr>
+                            <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td><?php echo dlvs_translate("Should be considered"); ?></td></tr>
+                        </table>
+                    </div>
 
 			    </div><!--#end post-->
 	        <?php endwhile; endif; ?>
