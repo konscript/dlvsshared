@@ -1,6 +1,6 @@
 .DS_Store
 
-# Dynamic folders
+# Writable dirs
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/
@@ -9,11 +9,11 @@ wp-content/cache/
 wp-content/backups/
 wp-content/writable/
 
-*.log
-wp-config.php
-
 # Dynamic files
 sitemap.xml
 sitemap.xml.gz
 wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
+
+*.log
+wp-config.php

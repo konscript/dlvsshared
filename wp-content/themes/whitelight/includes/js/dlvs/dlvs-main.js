@@ -38,7 +38,7 @@ jQuery.noConflict();
 
 		// toolstips
 		$( '.vaccination-group' ).tooltip();
-		$( '#chosen_countries_info .chosen_country' ).tooltip();
+		//$( '#chosen_countries_info .chosen_country' ).tooltip();
 	});
 
 	/*

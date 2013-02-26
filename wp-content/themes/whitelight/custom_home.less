@@ -1,4 +1,4 @@
-/********************************************** 
+/**********************************************
  * Homepage
  **********************************************/
 
@@ -6,7 +6,7 @@
 	padding-bottom: 0;
 }
 
-/********************************************** 
+/**********************************************
  * Featured slider on homepage
  **********************************************/
 
@@ -64,26 +64,9 @@
 		line-height: 1.5em;
 		color: black;
 	}
-	#featured article header .calltoaction {
-		position: absolute;
-		bottom: 60px;
-		width: 240px;
-		display: block;
-		text-align: center;
-	}
-	#featured article header .calltoaction a {
-		display: block;
-		font-size: 1.1em;
-		background-color: #B72020;
-		border-radius: 3px;
-		padding: 10px 20px;
-		width: auto;
-
-		&:hover {
-			background-color: lighten(#B72020, 10%);
-			text-decoration: none;
-			.transition(all, 0.2s);
-		}
+	#featured img.button-book-icon { //overwrite
+		top: 50%;
+		margin-top: -10px;
 	}
 }
 
@@ -109,30 +92,13 @@
 	#featured article header .entry {
 		display: none;
 	}
-	#featured article header .calltoaction {
-		position: absolute;
-		bottom: 15px;
-		width: 240px;
-		display: block;
-		text-align: center;
-	}
-	#featured article header .calltoaction a {
-		display: block;
-		font-size: 1.1em;
-		background-color: #B72020;
-		border-radius: 3px;
-		padding: 10px 20px;
-		width: auto;
-
-		&:hover {
-			background-color: lighten(#B72020, 10%);
-			text-decoration: none;
-			.transition(all, 0.2s);
-		}
+	#featured img.button-book-icon { //overwrite
+		top: 50%;
+		margin-top: -10px;
 	}
 	.controls-container .flex-control-nav {
 		display: none;
-	}	
+	}
 }
 
 // Hide the content bar in slider when too tight (between 768px & 920px)
@@ -151,7 +117,7 @@
 	right: auto;
 }
 
-/********************************************** 
+/**********************************************
  * Features area on homepage
  **********************************************/
 
@@ -166,9 +132,9 @@
 	width: 100%;
 }
 
-.home-section#features li p img {
+.home-section#features li p img.feature-icon {
 	margin-right: 10px;
-	margin-bottom: 40px
+	margin-bottom: 60px
 }
 
 .home-section li h2 {
@@ -203,7 +169,18 @@
 	}
 }
 
-/********************************************** 
+.home-section#features li p a.feature-readmore {
+	display: block;
+	padding: 5px 0;
+
+	img {
+		margin: 0;
+		margin-left: 7px;
+		float: none;
+	}
+}
+
+/**********************************************
  * Alt Blogpost area on homepage (picture with news)
  **********************************************/
 
@@ -220,7 +197,7 @@
 		li {
 			.thumbnail {
 				display: none;
-			}	
+			}
 		}
 	}
 }
@@ -251,7 +228,7 @@
 
 }
 
-/********************************************** 
+/**********************************************
  * Blogpost area on homepage (interactive map)
  **********************************************/
 
@@ -281,8 +258,8 @@
 					//font-style: italic;
 					text-decoration: underline;
 					font-family: @typography-family-secondary;
-					font-size: 1.1em;	
-					color: black;				
+					font-size: 1.1em;
+					color: black;
 				}
 			}
 			p {
@@ -300,7 +277,7 @@
 	.home-section#blog {
 
 		header {
-			float: left;		
+			float: left;
 			width: 68%;
 			margin-right: 2%;
 		}
@@ -315,7 +292,7 @@
 	}
 }
 
-/********************************************** 
+/**********************************************
  * Streamer (mobile app) area on homepage
  **********************************************/
 
@@ -348,7 +325,7 @@
 	.home-section#streamer {
 
 		h1 {
-			float: left;		
+			float: left;
 			margin-bottom: 1.5em;
 		}
 
@@ -368,7 +345,7 @@
 					display: block;
 					margin: 5px 0;
 				}
-			}		
+			}
 		}
 	}
 }

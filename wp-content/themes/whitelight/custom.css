@@ -31,7 +31,7 @@ WOO CUSTOM STYLESHEET (for DLVS)
 /**
  * Utilities (_utilities.less)
  */
-a.button-book {
+.button-book, a.button-book, div.button-book {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -48,14 +48,14 @@ a.button-book {
   border-top: 1px solid #f25e53;
   border-bottom: 1px solid #88130b;
 }
-a.button-book:hover {
+.button-book:hover, a.button-book:hover, div.button-book:hover {
   background-color: #DB2F2F;
   border-top: 1px solid #cf1c10;
   border-bottom: 1px solid #e72012;
   color: #fff;
   text-decoration: none;
 }
-a.button-book .button-book-title {
+.button-book .button-book-title, a.button-book .button-book-title, div.button-book .button-book-title {
   text-align: center;
   color: #f6f6f6;
   line-height: 1.3em;
@@ -63,8 +63,54 @@ a.button-book .button-book-title {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   letter-spacing: 0.05em;
   font-size: 17px;
-  padding: 16px 24px 16px 24px;
+  padding: 20px 52px 20px 24px;
   margin: 0 auto;
+}
+.button-book .button-book-icon, a.button-book .button-book-icon, div.button-book .button-book-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -11px;
+}
+a.button-book-step {
+  margin-top: 5px;
+}
+a.button-book-step .button-book-title {
+  font-size: 1em;
+}
+a.button-alternate {
+  background-color: #333;
+  display: block;
+  float: left;
+  margin: 0 0 20px 0;
+  cursor: pointer;
+  border-top: 1px solid #4d4d4d;
+  border-bottom: 1px solid #1a1a1a;
+}
+a.button-alternate:hover {
+  background-color: #444;
+  border-top: 1px solid #2b2b2b;
+  border-bottom: 1px solid #5e5e5e;
+  color: #fff;
+  text-decoration: none;
+}
+a.button-book-table {
+  height: 40px;
+  margin: 2px;
+  float: none;
+  margin-bottom: 0;
+  min-width: 140px;
+}
+a.button-book-table .button-book-title {
+  font-size: 1em;
+  line-height: 40px;
+  padding: 0px 38px 0 0;
+}
+a.button-book-table .button-book-icon {
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin-top: -10px;
 }
 body.home #column-right a.button-book {
   width: 100%;
@@ -83,23 +129,6 @@ body.home #column-right a.button-book .button-book-meta {
   font-size: 10px;
   text-transform: lowercase;
   color: #ffffff;
-}
-a.button-book-step {
-  margin-top: 5px;
-}
-a.button-book-step .button-book-title {
-  font-size: 1em;
-}
-a.button-book-table {
-  height: 40px;
-  margin: 2px;
-  float: none;
-  margin-bottom: 0;
-}
-a.button-book-table .button-book-title {
-  font-size: 1em;
-  line-height: 40px;
-  padding: 0px 5px;
 }
 /*****
 	 * Table even/odd colored rows
@@ -144,12 +173,10 @@ table.zebra tbody tr:nth-child(odd) {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-#sidebar li.categories,
-#sidebar li.pagenav {
+#sidebar li.categories, #sidebar li.pagenav {
   list-style-type: none;
 }
-#sidebar li.categories h2,
-#sidebar li.pagenav h2 {
+#sidebar li.categories h2, #sidebar li.pagenav h2 {
   display: none;
 }
 #sidebar ul {
@@ -167,8 +194,8 @@ table.zebra tbody tr:nth-child(odd) {
   float: left;
   text-decoration: none;
   width: 100%;
-  background: url('img/submenu_off.gif') no-repeat;
-  background-position: 7px 50%;
+  background: url('img/icon-submenu-off.png') no-repeat;
+  background-position: 5px 50%;
   text-indent: 25px;
   border-bottom: 1px solid #eeeeee;
   height: 30px;
@@ -176,21 +203,20 @@ table.zebra tbody tr:nth-child(odd) {
   padding: 0;
   line-height: inherit;
 }
-#sidebar ul li a:hover,
-#sidebar ul .current-menu-item a,
-#sidebar ul .current-cat a {
-  background: url('img/submenu_on.gif') no-repeat;
-  background-position: 0 50%;
+#sidebar ul li a:hover, #sidebar ul .current-menu-item a, #sidebar ul .current-cat a {
+  background: url('img/icon-submenu-on.png') no-repeat;
+  background-position: 5px 50%;
   text-decoration: none;
   font-weight: normal;
+  color: #B72020;
 }
-/********************************************** 
+/**********************************************
  * Homepage
  **********************************************/
 .home #content {
   padding-bottom: 0;
 }
-/********************************************** 
+/**********************************************
  * Featured slider on homepage
  **********************************************/
 #featured {
@@ -215,6 +241,7 @@ table.zebra tbody tr:nth-child(odd) {
     float: right;
     margin-right: 10%;
     background: #ffffff;
+    background: #ffffff;
     background: rgba(255, 255, 255, 0.7);
   }
   #featured article header {
@@ -228,8 +255,7 @@ table.zebra tbody tr:nth-child(odd) {
     padding: 30px 30px 0 30px;
     text-shadow: none;
   }
-  #featured article header h1,
-  #featured article header .entry {
+  #featured article header h1, #featured article header .entry {
     height: auto;
   }
   #featured article header h1 {
@@ -243,32 +269,9 @@ table.zebra tbody tr:nth-child(odd) {
     line-height: 1.5em;
     color: black;
   }
-  #featured article header .calltoaction {
-    position: absolute;
-    bottom: 60px;
-    width: 240px;
-    display: block;
-    text-align: center;
-  }
-  #featured article header .calltoaction a {
-    display: block;
-    font-size: 1.1em;
-    background-color: #B72020;
-    border-radius: 3px;
-    padding: 10px 20px;
-    width: auto;
-  }
-  #featured article header .calltoaction a:hover {
-    background-color: #db2f2f;
-    text-decoration: none;
-    -webkit-transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s 0.2s;
-    -o-transition: all 0.2s 0.2s;
-    transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+  #featured img.button-book-icon {
+    top: 50%;
+    margin-top: -10px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -276,6 +279,7 @@ table.zebra tbody tr:nth-child(odd) {
     background: #fff;
   }
   #featured article header {
+    text-shadow: none;
     height: auto;
     background-color: transparent;
     color: black;
@@ -291,32 +295,9 @@ table.zebra tbody tr:nth-child(odd) {
   #featured article header .entry {
     display: none;
   }
-  #featured article header .calltoaction {
-    position: absolute;
-    bottom: 15px;
-    width: 240px;
-    display: block;
-    text-align: center;
-  }
-  #featured article header .calltoaction a {
-    display: block;
-    font-size: 1.1em;
-    background-color: #B72020;
-    border-radius: 3px;
-    padding: 10px 20px;
-    width: auto;
-  }
-  #featured article header .calltoaction a:hover {
-    background-color: #db2f2f;
-    text-decoration: none;
-    -webkit-transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s 0.2s;
-    -o-transition: all 0.2s 0.2s;
-    transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+  #featured img.button-book-icon {
+    top: 50%;
+    margin-top: -10px;
   }
   .controls-container .flex-control-nav {
     display: none;
@@ -334,7 +315,7 @@ table.zebra tbody tr:nth-child(odd) {
   left: 20px;
   right: auto;
 }
-/********************************************** 
+/**********************************************
  * Features area on homepage
  **********************************************/
 .home-section#features li h2 a {
@@ -345,9 +326,9 @@ table.zebra tbody tr:nth-child(odd) {
 .home-section#features li p {
   width: 100%;
 }
-.home-section#features li p img {
+.home-section#features li p img.feature-icon {
   margin-right: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .home-section li h2 {
   margin-bottom: 1em;
@@ -375,7 +356,16 @@ table.zebra tbody tr:nth-child(odd) {
     margin: 0!important;
   }
 }
-/********************************************** 
+.home-section#features li p a.feature-readmore {
+  display: block;
+  padding: 5px 0;
+}
+.home-section#features li p a.feature-readmore img {
+  margin: 0;
+  margin-left: 7px;
+  float: none;
+}
+/**********************************************
  * Alt Blogpost area on homepage (picture with news)
  **********************************************/
 .home-section#blog-alt li h2 a {
@@ -404,7 +394,7 @@ table.zebra tbody tr:nth-child(odd) {
     margin-right: 0;
   }
 }
-/********************************************** 
+/**********************************************
  * Blogpost area on homepage (interactive map)
  **********************************************/
 .home-section#blog {
@@ -455,7 +445,7 @@ table.zebra tbody tr:nth-child(odd) {
     margin-bottom: 2em;
   }
 }
-/********************************************** 
+/**********************************************
  * Streamer (mobile app) area on homepage
  **********************************************/
 .home-section#streamer {
@@ -502,22 +492,16 @@ table.zebra tbody tr:nth-child(odd) {
 /***
  * Home & Region
  **********************************/
-.home .region-map,
-.region .region-map,
-.page-template-template-vaccination-recommendations-php .region-map {
+.home .region-map, .region .region-map, .page-template-template-vaccination-recommendations-php .region-map {
   display: block;
   margin: 0 auto;
 }
-.home .country-wrapper,
-.region .country-wrapper,
-.page-template-template-vaccination-recommendations-php .country-wrapper {
+.home .country-wrapper, .region .country-wrapper, .page-template-template-vaccination-recommendations-php .country-wrapper {
   overflow: hidden;
   border-left: 1px solid #eeeeee;
   border-top: 1px solid #eeeeee;
 }
-.home .country,
-.region .country,
-.page-template-template-vaccination-recommendations-php .country {
+.home .country, .region .country, .page-template-template-vaccination-recommendations-php .country {
   display: block;
   float: left;
   width: 156px;
@@ -527,16 +511,12 @@ table.zebra tbody tr:nth-child(odd) {
   border-bottom: 1px solid #eeeeee;
   padding: 10px;
 }
-.home .country img,
-.region .country img,
-.page-template-template-vaccination-recommendations-php .country img {
+.home .country img, .region .country img, .page-template-template-vaccination-recommendations-php .country img {
   width: 40px;
   float: left;
   margin-right: 10px;
 }
-.home .country span,
-.region .country span,
-.page-template-template-vaccination-recommendations-php .country span {
+.home .country span, .region .country span, .page-template-template-vaccination-recommendations-php .country span {
   display: block;
   width: 106px;
   float: left;
@@ -544,9 +524,7 @@ table.zebra tbody tr:nth-child(odd) {
   height: 28px;
   overflow: hidden;
 }
-.home .map-header,
-.region .map-header,
-.page-template-template-vaccination-recommendations-php .map-header {
+.home .map-header, .region .map-header, .page-template-template-vaccination-recommendations-php .map-header {
   display: block;
   padding: 30px 0 0px 0;
   margin: 0;
@@ -556,20 +534,20 @@ table.zebra tbody tr:nth-child(odd) {
   font-weight: normal;
   text-align: center;
 }
-.home .map-form-container,
-.region .map-form-container,
-.page-template-template-vaccination-recommendations-php .map-form-container {
+.home .map-form-container, .region .map-form-container, .page-template-template-vaccination-recommendations-php .map-form-container {
   text-align: center;
   margin-top: 20px;
 }
-.home .map-form,
-.region .map-form,
-.page-template-template-vaccination-recommendations-php .map-form {
+.home .map-text, .region .map-text, .page-template-template-vaccination-recommendations-php .map-text {
+  display: block;
+  color: #555;
+  text-decoration: underline;
+  padding: 5px 0;
+}
+.home .map-form, .region .map-form, .page-template-template-vaccination-recommendations-php .map-form {
   display: inline;
 }
-.home #map-wrapper,
-.region #map-wrapper,
-.page-template-template-vaccination-recommendations-php #map-wrapper {
+.home #map-wrapper, .region #map-wrapper, .page-template-template-vaccination-recommendations-php #map-wrapper {
   -webkit-border-top-right-radius: 3px;
   -webkit-border-bottom-right-radius: 3px;
   -webkit-border-bottom-left-radius: 3px;
@@ -595,9 +573,7 @@ table.zebra tbody tr:nth-child(odd) {
   background-image: -ms-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
   background-image: radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
 }
-.home #map-wrapper h3,
-.region #map-wrapper h3,
-.page-template-template-vaccination-recommendations-php #map-wrapper h3 {
+.home #map-wrapper h3, .region #map-wrapper h3, .page-template-template-vaccination-recommendations-php #map-wrapper h3 {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   display: block;
   padding: 30px 0 0px 0;
@@ -609,17 +585,13 @@ table.zebra tbody tr:nth-child(odd) {
   text-align: center;
   font-family: Georgia, serif;
 }
-.home #map-continents #continents li .bg,
-.region #map-continents #continents li .bg,
-.page-template-template-vaccination-recommendations-php #map-continents #continents li .bg {
+.home #map-continents #continents li .bg, .region #map-continents #continents li .bg, .page-template-template-vaccination-recommendations-php #map-continents #continents li .bg {
   -moz-opacity: 0;
   -khtml-opacity: 0;
   -webkit-opacity: 0;
   opacity: 0;
 }
-.home #map-continents #continents li:hover .bg,
-.region #map-continents #continents li:hover .bg,
-.page-template-template-vaccination-recommendations-php #map-continents #continents li:hover .bg {
+.home #map-continents #continents li:hover .bg, .region #map-continents #continents li:hover .bg, .page-template-template-vaccination-recommendations-php #map-continents #continents li:hover .bg {
   -moz-opacity: 1;
   -khtml-opacity: 1;
   -webkit-opacity: 1;
@@ -634,8 +606,7 @@ table.zebra tbody tr:nth-child(odd) {
 .contact p.telephone {
   background: url('img/icon-telephone-20px.png') no-repeat left center;
 }
-.contact p.telephone,
-.contact p.address {
+.contact p.telephone, .contact p.address {
   padding-left: 27px;
   margin-bottom: 20px;
   min-height: 20px;
@@ -647,6 +618,13 @@ table.zebra tbody tr:nth-child(odd) {
 /***
  * Country
  **********************************/
+body.single-country .sidebar-menu {
+  overflow: hidden;
+}
+.country-back-button {
+  margin: 6px 0 24px 0;
+  float: left;
+}
 .country-meta-header {
   text-align: center;
   margin: 0 0 20px 0;
@@ -664,46 +642,26 @@ table.zebra tbody tr:nth-child(odd) {
 }
 .country-flag {
   text-align: right;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  border: 1px solid #eeeeee;
 }
 .country-flag img {
   width: 100%;
 }
+div.post.country .country-selector {
+  margin-bottom: 15px;
+}
 div.post.country input#country-recommendation {
   width: 150px;
-}
-div.post.country #chosen_countries_info {
-  clear: both;
-  float: left;
-  background-color: whiteSmoke;
-  margin: 10px 0;
-  border: 1px solid #DDD;
-  overflow: hidden;
-}
-div.post.country #chosen_countries_info .chosen_country {
-  width: 110px;
-  float: left;
-  margin: 10px 10px;
-  text-align: center;
-}
-div.post.country #chosen_countries_info .chosen_country h3 {
-  font-size: 0.9em;
-  height: 20px;
-  overflow: hidden;
-}
-div.post.country #chosen_countries_info .chosen_country img {
-  height: 30px;
 }
 div.post.country table#vaccinations_groups {
   width: 100%;
   border-top: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
   margin-bottom: 20px;
 }
 div.post.country table#vaccinations_groups thead tr td {
-  font-weight: bold;
   cursor: help;
+  font-size: 1.1em;
+  line-height: 2em;
 }
 div.post.country table#vaccinations_groups thead tr td.vaccination-group {
   width: 15%;
@@ -713,14 +671,15 @@ div.post.country table#vaccinations_groups tr td:first-child {
 }
 div.post.country table#vaccinations_groups tr td {
   text-align: center;
-  padding: 5px 10px;
+  padding: 0.7em 0;
   border-bottom: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
+  font-size: 1.1em;
+  line-height: 1.5em;
 }
 div.post.country table#vaccinations_groups tr td img {
-  margin-top: 5px;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
 }
 div.post.country table#vaccinations_groups tr td img.group_5 {
   width: 22px;
@@ -732,22 +691,25 @@ div.post.country table#vaccinations_groups tr td.vaccination-name {
 div.post.country .question-mark-circle {
   text-align: center;
   display: block;
-  background-color: red;
+  background-color: #4E4E4E;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   color: white;
   font-weight: bold;
   margin: auto;
+  line-height: 22px;
+  font-size: 11px;
 }
 div.post.country div#legend {
-  padding: 5px;
+  padding: 10px;
   float: left;
   border: 1px solid #EEE;
   margin-bottom: 20px;
 }
 div.post.country div#legend h3 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 1em;
 }
 div.post.country div#legend table td {
   padding-bottom: 5px;
@@ -795,24 +757,50 @@ div.post.country .disclaimer ul li {
 div.post.country .the-content {
   margin-bottom: 20px;
 }
-div.post.country .dlvs-general-info,
-div.post.country .dlvs-disclaimer-info {
+div.post.country .dlvs-general-info, div.post.country .dlvs-disclaimer-info {
   list-style: none;
   margin-bottom: 20px;
 }
-div.post.country .dlvs-general-info .widget,
-div.post.country .dlvs-disclaimer-info .widget {
+div.post.country .dlvs-general-info .widget, div.post.country .dlvs-disclaimer-info .widget {
   margin-bottom: 0px;
 }
 div.post.country .post-content {
   clear: both;
 }
+#chosen_countries_info {
+  clear: both;
+  float: left;
+  background-color: whiteSmoke;
+  margin: 10px 0;
+  border: 1px solid #DDD;
+  overflow: hidden;
+  padding: 10px 0;
+}
+#chosen_countries_info h3.title {
+  font-size: 1em;
+  padding: 10px;
+  text-align: center;
+  font-weight: normal;
+}
+#chosen_countries_info .chosen_country {
+  width: 205px;
+  float: left;
+  margin: 10px 0px;
+  text-align: center;
+}
+#chosen_countries_info .chosen_country h3 {
+  font-size: 0.9em;
+  height: 20px;
+  overflow: hidden;
+}
+#chosen_countries_info .chosen_country img {
+  height: 50px;
+}
 .vaccinationModal h1 {
   margin: 1em 0;
 }
 @media only screen and (max-width: 768px) {
-  div.post.country .meta-boxes .box,
-  div.post.country .meta-boxes .malaria-box {
+  div.post.country .meta-boxes .box, div.post.country .meta-boxes .malaria-box {
     width: 100%;
     margin-right: 0px;
   }
@@ -887,12 +875,13 @@ div.post.country .post-content {
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  background: #e9e9e9;
   background-color: #e9e9e9;
   color: black!important;
-  padding: 4px 8px;
+  padding: 8px 10px;
 }
 #navigation .nav > li > a {
-  padding: 4px 8px;
+  padding: 8px 10px;
 }
 #navigation .nav li.current_page_item a,
 #navigation .nav li.current_page_parent a,
@@ -907,8 +896,7 @@ div.post.country .post-content {
 #navigation .nav li.parent > a::after {
   right: 8px;
 }
-#navigation .nav li a:hover::after,
-#navigation .nav li:hover > a::after {
+#navigation .nav li a:hover::after, #navigation .nav li:hover > a::after {
   border-color: #B72020 transparent transparent transparent!important;
 }
 /**********************************************

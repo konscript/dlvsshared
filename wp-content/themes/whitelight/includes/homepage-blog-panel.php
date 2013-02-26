@@ -46,7 +46,7 @@
 							</select>
 						  <input type="Submit" value="Find">
 						</form>
-						<span class="map-text"><?php echo dlvs_translate("or click on the map"); ?>:</span>
+						<a href="<?php bloginfo('wpurl'); ?>/multiple-countries/" class="map-text"><?php echo dlvs_translate("or try the Trekkingguide if you're visiting multiple countries"); ?></a>
 					</div>
 
 					 <div id="map-continents">

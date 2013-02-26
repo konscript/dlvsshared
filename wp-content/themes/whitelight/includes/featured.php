@@ -3,7 +3,7 @@
  * Homepage Slider
  */
 	global $wp_query, $post, $panel_error_message;
-	
+
 	$settings = array(
 					'featured_type' => 'Full',
 					'featured_entries' => 3,
@@ -21,9 +21,9 @@
 					'featured_nextprev' => 'true',
 					'featured_opacity' => '0.5'
 					);
-					
+
 	$settings = woo_get_dynamic_values( $settings );
-	
+
 	$count = 0;
 ?>
 
@@ -37,20 +37,20 @@
 <?php $slides = get_posts(array('post_type' => 'slide', 'numberposts' => $featposts, 'order' => $settings['featured_order'], 'orderby' => $orderby, 'suppress_filters' => 0)); ?>
 
 <?php if ( count($slides) > 0 ) { ?>
-    
+
     <?php $slidertype = $settings['featured_type']; ?>
-    
+
 	<?php if ( $slidertype != "full" ) { ?>
 	<div class="featured-wrap carousel faded">
 	<?php } ?>
     <div class="controls-container <?php if( $slidertype != "full" ) { echo "col-full"; } ?>">
 	<section id="featured">
 	    <ul class="slides fix">
-	        
-            <?php foreach($slides as $post) : setup_postdata($post); $count++; ?>    
-	            
+
+            <?php foreach($slides as $post) : setup_postdata($post); $count++; ?>
+
 	            <li id="slide-<?php echo $count; ?>" class="slide slide-id-<?php the_ID(); ?>" <?php if ( $slidertype != "full" ) echo 'style="opacity: ' . $settings['featured_opacity'] . ';"'; ?>>
-	        		
+
     				<?php $url = get_post_meta($post->ID, 'url', true); ?>
 
     	    		<?php
@@ -60,19 +60,19 @@
 	    	    			$has_embed = woo_embed( 'width=960&height=' . $settings['featured_height'] . '&class=slide-video-carousel' );
 	    	    		}
 	        			if ( $has_embed ) {
-	        				echo $has_embed; 
+	        				echo $has_embed;
 	        			} else {
-	        				
+
 	        				if ( isset($url) && $url != '' ) { ?>
 	        				<a href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 	        				<?php }
-	        				
+
 	        				if ( $slidertype != "full" ) {
 	        					woo_image( 'width=960&height=' . $settings['featured_height'] . '&class=slide-image&link=img&noheight=true' );
 	        				} else {
 	        					woo_image( 'width=2560&height=' . $settings['featured_height'] . '&class=slide-image full&link=img&noheight=true' );
 	        				}
-    	    				
+
     	    				if ( isset($url) && $url != '' ) { ?></a><?php }
 	        			}
 	        		?>
@@ -80,16 +80,16 @@
     	    		<?php if ( !$has_embed OR ( $has_embed && $settings['slider_video_title'] != "true" ) )  { // Hide title/description if video post ?>
     	    		<div class="slide-content-container">
 	    	    	<article class="slide-content col-full <?php if ( !$has_embed ) { echo "not-video"; } ?>">
-	    	    		
+
 	    	    		<header>
-	    	    			
+
 	    	    			<h1>
 		    					<?php
 		    						$slide_title = get_the_title();
 		    						echo woo_text_trim ( $slide_title, 25 );
 		    					?>
 	    	    			</h1>
-	    	    			
+
 	    	    			<div class="entry">
 	    	    				<?php
 	    	    					$slide_excerpt = get_the_excerpt();
@@ -97,34 +97,33 @@
 	    	    				?>
 	    	    			</div>
 	    	    			<br />
-	    	    			<div class="calltoaction">
-	    	    				<?php if ( isset($url) && $url != '' ) { ?>
-	    	    					<a href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-	    	    						<?php echo get_post_meta($post->ID, 'button_text', true); ?>
-	    	    					</a>
-	    	    				<?php } ?>
-	    	    			</div>
+	    	    			<?php if ( isset($url) && $url != '' ) { ?>
+		    	    			<a class="button-book" href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+		    	    				<div class="button-book-title"><?php echo get_post_meta($post->ID, 'button_text', true); ?></div>
+		    	    				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-rightarrow-white.png" class="button-book-icon" />
+		    	    			</a>
+	    	    			<?php } ?>
 	    	    		</header>
-	    	    		
+
 	    	    	</article>
 	    	    	</div>
 	    	    	<?php } ?>
-	            	
+
 	            </li><!--/.slide-->
-	            
-			<?php endforeach; ?> 
-			
+
+			<?php endforeach; ?>
+
 	    </ul><!-- /.slides -->
-	    
+
 	    <?php if ( $slidertype == "full" ) { ?><div class="col-full controls-inner"></div><?php } ?>
-	    
+
 	</section><!-- /#featured -->
 	</div>
 	<?php if ( $slidertype != "full" ) { ?>
 	</div>
 	<?php } ?>
 
-<?php 
+<?php
 // Slider Settings
 /*
 $slideDirection = $settings['featured_sliding_direction'];
@@ -137,7 +136,7 @@ $touchSwipe = $settings['featured_touchswipe'];
 $slideshowSpeed = $settings['featured_speed'] * 1000; // milliseconds
 $animationDuration = $settings['featured_animation_speed'] * 1000; // milliseconds
 $pagination = $settings['featured_pagination'];
-$nextprev = $settings['featured_nextprev']; 
+$nextprev = $settings['featured_nextprev'];
 ?>
 
 <script type="text/javascript">
@@ -150,7 +149,7 @@ $nextprev = $settings['featured_nextprev'];
    		directionNav: <?php echo $nextprev; ?>,
    		controlNav: <?php echo $pagination; ?>,
    		pauseOnHover: <?php echo $pauseOnHover; ?>,
-   		slideshowSpeed: <?php echo $slideshowSpeed; ?>, 
+   		slideshowSpeed: <?php echo $slideshowSpeed; ?>,
    		animationDuration: <?php echo $animationDuration; ?><?php if ( $slidertype != "full" ) { echo ','; } ?>
    		<?php if ( $slidertype != "full" ) { ?>
 	   		start: function(slider) {
@@ -166,9 +165,9 @@ $nextprev = $settings['featured_nextprev'];
    	});
    	jQuery('#slides').addClass('loaded');
    });
-	
+
 </script>
 
 <?php } else { ?>
 	<div class="col-full"><?php echo do_shortcode('[box type="info"]Please add some slides in the WordPress admin backend to show in the Featured Slider.[/box]'); ?></div>
-<?php } ?> 
+<?php } ?>
