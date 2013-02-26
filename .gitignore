@@ -1,14 +1,19 @@
 .DS_Store
+
+# Dynamic folders
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/
 wp-content/backup-db/
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
 wp-content/cache/
 wp-content/backups/
+wp-content/writable/
+
+*.log
+wp-config.php
+
+# Dynamic files
 sitemap.xml
 sitemap.xml.gz
-*.log
-/wp-config.php
-/.htaccess
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
