@@ -4,12 +4,12 @@
 
 
 if (dlvssite() == "sikkerrejse") {
-	$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/vaccinationsanbefaling/" style="margin-bottom:10px;float:left">Tilbage til landeoversigten</a><br />';
+	$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/vaccinationsanbefaling/" class="country-back-button">Tilbage til landeoversigten</a>';
 } else {
-	$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/recommendation/" style="margin-bottom:10px;float:left">Go back to the map</a><br />';
+	$sidebar_back = '<a href="'. get_bloginfo("wpurl") . '/recommended-vaccinations/" class="country-back-button">Go back to the map</a>';
 }
 $destination = urlencode(the_title('', '', false));
-$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>';
+$sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div><img src="' . get_template_directory_uri() . '/img/icon-rightarrow-white.png" class="button-book-icon" /></a>';
 
 //$sidebar_country_meta = '<h3>Lande fakta</h3>';
 if(get_field('flag')) {
@@ -146,8 +146,8 @@ $sidebar_country_meta .= '
                     <div id="legend">
                         <h3><?php echo dlvs_translate("Explanation of symbols"); ?></h3>
                         <table>
-                            <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td><?php echo dlvs_translate("Recommended"); ?></td></tr>
-                            <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td><?php echo dlvs_translate("Should be considered"); ?></td></tr>
+                            <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png" title="<?php echo dlvs_translate("Recommended"); ?>"/></td><td><?php echo dlvs_translate("Recommended"); ?></td></tr>
+                            <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/plusmark.png" title="<?php echo dlvs_translate("Should be considered"); ?>"/></td><td><?php echo dlvs_translate("Should be considered"); ?></td></tr>
                         </table>
                     </div>
 

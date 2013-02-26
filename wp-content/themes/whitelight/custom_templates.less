@@ -167,6 +167,17 @@
  * Country
  **********************************/
 
+body.single-country {
+	.sidebar-menu {
+		overflow: hidden;
+	}
+}
+
+	.country-back-button {
+		 margin: 6px 0 24px 0;
+		 float:left
+	}
+
 	.country-meta-header {
 		// @include column(@sidebar_columns);
 		text-align: center;
@@ -194,10 +205,8 @@
 	}
 
 	.country-flag {
-
 		text-align: right;
-		margin-top: 10px;
-		margin-bottom: 10px;
+		border: 1px solid @color_secondary_c;
 
 		img {
 			width: 100%;
@@ -220,12 +229,13 @@
 		// clear: both;
 		width: 100%;
 		border-top: 1px solid @color_secondary_c;
-		border-left: 1px solid @color_secondary_c;
+		//border-left: 1px solid @color_secondary_c;
 		margin-bottom: 20px;
 
 		thead tr td {
-			font-weight: bold;
 			cursor: help;
+			font-size: 1.1em;
+			line-height: 2em;
 
 			&.vaccination-group {
 				width: 15%;
@@ -238,14 +248,16 @@
 
 		tr td{
 			text-align: center;
-			padding: 5px 10px;
+			padding: 0.7em 0;
 			border-bottom: 1px solid @color_secondary_c;
-			border-right: 1px solid @color_secondary_c;
+			//border-right: 1px solid @color_secondary_c;
+			font-size: 1.1em;
+			line-height: 1.5em;
 
 			img {
-				margin-top: 5px;
-				width: 18px;
-				height: 18px;
+				width: 22px;
+				height: 22px;
+				vertical-align: middle;
 			}
 
 			img.group_5 {
@@ -260,15 +272,17 @@
 	}
 
 	.question-mark-circle {
-		text-align:center;
-		display:block;
-		background-color: red;
+		text-align: center;
+		display: block;
+		background-color: #4E4E4E;
 		border-radius: 50%;
-		width: 20px;
-		height: 20px;
+		width: 22px;
+		height: 22px;
 		color: white;
 		font-weight: bold;
-		margin:auto;
+		margin: auto;
+		line-height: 22px;
+		font-size: 11px;
 	}
 
 	div#legend {

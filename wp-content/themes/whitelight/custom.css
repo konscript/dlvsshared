@@ -31,7 +31,7 @@ WOO CUSTOM STYLESHEET (for DLVS)
 /**
  * Utilities (_utilities.less)
  */
-a.button-book {
+.button-book, a.button-book, div.button-book {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -48,14 +48,14 @@ a.button-book {
   border-top: 1px solid #f25e53;
   border-bottom: 1px solid #88130b;
 }
-a.button-book:hover {
+.button-book:hover, a.button-book:hover, div.button-book:hover {
   background-color: #DB2F2F;
   border-top: 1px solid #cf1c10;
   border-bottom: 1px solid #e72012;
   color: #fff;
   text-decoration: none;
 }
-a.button-book .button-book-title {
+.button-book .button-book-title, a.button-book .button-book-title, div.button-book .button-book-title {
   text-align: center;
   color: #f6f6f6;
   line-height: 1.3em;
@@ -63,8 +63,54 @@ a.button-book .button-book-title {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   letter-spacing: 0.05em;
   font-size: 17px;
-  padding: 16px 24px 16px 24px;
+  padding: 20px 52px 20px 24px;
   margin: 0 auto;
+}
+.button-book .button-book-icon, a.button-book .button-book-icon, div.button-book .button-book-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -11px;
+}
+a.button-book-step {
+  margin-top: 5px;
+}
+a.button-book-step .button-book-title {
+  font-size: 1em;
+}
+a.button-alternate {
+  background-color: #333;
+  display: block;
+  float: left;
+  margin: 0 0 20px 0;
+  cursor: pointer;
+  border-top: 1px solid #4d4d4d;
+  border-bottom: 1px solid #1a1a1a;
+}
+a.button-alternate:hover {
+  background-color: #444;
+  border-top: 1px solid #2b2b2b;
+  border-bottom: 1px solid #5e5e5e;
+  color: #fff;
+  text-decoration: none;
+}
+a.button-book-table {
+  height: 40px;
+  margin: 2px;
+  float: none;
+  margin-bottom: 0;
+  min-width: 140px;
+}
+a.button-book-table .button-book-title {
+  font-size: 1em;
+  line-height: 40px;
+  padding: 0px 38px 0 0;
+}
+a.button-book-table .button-book-icon {
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  margin-top: -10px;
 }
 body.home #column-right a.button-book {
   width: 100%;
@@ -83,23 +129,6 @@ body.home #column-right a.button-book .button-book-meta {
   font-size: 10px;
   text-transform: lowercase;
   color: #ffffff;
-}
-a.button-book-step {
-  margin-top: 5px;
-}
-a.button-book-step .button-book-title {
-  font-size: 1em;
-}
-a.button-book-table {
-  height: 40px;
-  margin: 2px;
-  float: none;
-  margin-bottom: 0;
-}
-a.button-book-table .button-book-title {
-  font-size: 1em;
-  line-height: 40px;
-  padding: 0px 5px;
 }
 /*****
 	 * Table even/odd colored rows
@@ -165,8 +194,8 @@ table.zebra tbody tr:nth-child(odd) {
   float: left;
   text-decoration: none;
   width: 100%;
-  background: url('img/submenu_off.gif') no-repeat;
-  background-position: 7px 50%;
+  background: url('img/icon-submenu-off.png') no-repeat;
+  background-position: 5px 50%;
   text-indent: 25px;
   border-bottom: 1px solid #eeeeee;
   height: 30px;
@@ -175,18 +204,19 @@ table.zebra tbody tr:nth-child(odd) {
   line-height: inherit;
 }
 #sidebar ul li a:hover, #sidebar ul .current-menu-item a, #sidebar ul .current-cat a {
-  background: url('img/submenu_on.gif') no-repeat;
-  background-position: 0 50%;
+  background: url('img/icon-submenu-on.png') no-repeat;
+  background-position: 5px 50%;
   text-decoration: none;
   font-weight: normal;
+  color: #B72020;
 }
-/********************************************** 
+/**********************************************
  * Homepage
  **********************************************/
 .home #content {
   padding-bottom: 0;
 }
-/********************************************** 
+/**********************************************
  * Featured slider on homepage
  **********************************************/
 #featured {
@@ -239,32 +269,9 @@ table.zebra tbody tr:nth-child(odd) {
     line-height: 1.5em;
     color: black;
   }
-  #featured article header .calltoaction {
-    position: absolute;
-    bottom: 60px;
-    width: 240px;
-    display: block;
-    text-align: center;
-  }
-  #featured article header .calltoaction a {
-    display: block;
-    font-size: 1.1em;
-    background-color: #B72020;
-    border-radius: 3px;
-    padding: 10px 20px;
-    width: auto;
-  }
-  #featured article header .calltoaction a:hover {
-    background-color: #db2f2f;
-    text-decoration: none;
-    -webkit-transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s 0.2s;
-    -o-transition: all 0.2s 0.2s;
-    transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+  #featured img.button-book-icon {
+    top: 50%;
+    margin-top: -10px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -288,32 +295,9 @@ table.zebra tbody tr:nth-child(odd) {
   #featured article header .entry {
     display: none;
   }
-  #featured article header .calltoaction {
-    position: absolute;
-    bottom: 15px;
-    width: 240px;
-    display: block;
-    text-align: center;
-  }
-  #featured article header .calltoaction a {
-    display: block;
-    font-size: 1.1em;
-    background-color: #B72020;
-    border-radius: 3px;
-    padding: 10px 20px;
-    width: auto;
-  }
-  #featured article header .calltoaction a:hover {
-    background-color: #db2f2f;
-    text-decoration: none;
-    -webkit-transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s 0.2s;
-    -o-transition: all 0.2s 0.2s;
-    transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+  #featured img.button-book-icon {
+    top: 50%;
+    margin-top: -10px;
   }
   .controls-container .flex-control-nav {
     display: none;
@@ -331,7 +315,7 @@ table.zebra tbody tr:nth-child(odd) {
   left: 20px;
   right: auto;
 }
-/********************************************** 
+/**********************************************
  * Features area on homepage
  **********************************************/
 .home-section#features li h2 a {
@@ -342,9 +326,9 @@ table.zebra tbody tr:nth-child(odd) {
 .home-section#features li p {
   width: 100%;
 }
-.home-section#features li p img {
+.home-section#features li p img.feature-icon {
   margin-right: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .home-section li h2 {
   margin-bottom: 1em;
@@ -372,7 +356,16 @@ table.zebra tbody tr:nth-child(odd) {
     margin: 0!important;
   }
 }
-/********************************************** 
+.home-section#features li p a.feature-readmore {
+  display: block;
+  padding: 5px 0;
+}
+.home-section#features li p a.feature-readmore img {
+  margin: 0;
+  margin-left: 7px;
+  float: none;
+}
+/**********************************************
  * Alt Blogpost area on homepage (picture with news)
  **********************************************/
 .home-section#blog-alt li h2 a {
@@ -401,7 +394,7 @@ table.zebra tbody tr:nth-child(odd) {
     margin-right: 0;
   }
 }
-/********************************************** 
+/**********************************************
  * Blogpost area on homepage (interactive map)
  **********************************************/
 .home-section#blog {
@@ -452,7 +445,7 @@ table.zebra tbody tr:nth-child(odd) {
     margin-bottom: 2em;
   }
 }
-/********************************************** 
+/**********************************************
  * Streamer (mobile app) area on homepage
  **********************************************/
 .home-section#streamer {
@@ -625,6 +618,13 @@ table.zebra tbody tr:nth-child(odd) {
 /***
  * Country
  **********************************/
+body.single-country .sidebar-menu {
+  overflow: hidden;
+}
+.country-back-button {
+  margin: 6px 0 24px 0;
+  float: left;
+}
 .country-meta-header {
   text-align: center;
   margin: 0 0 20px 0;
@@ -642,8 +642,7 @@ table.zebra tbody tr:nth-child(odd) {
 }
 .country-flag {
   text-align: right;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  border: 1px solid #eeeeee;
 }
 .country-flag img {
   width: 100%;
@@ -657,12 +656,12 @@ div.post.country input#country-recommendation {
 div.post.country table#vaccinations_groups {
   width: 100%;
   border-top: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
   margin-bottom: 20px;
 }
 div.post.country table#vaccinations_groups thead tr td {
-  font-weight: bold;
   cursor: help;
+  font-size: 1.1em;
+  line-height: 2em;
 }
 div.post.country table#vaccinations_groups thead tr td.vaccination-group {
   width: 15%;
@@ -672,14 +671,15 @@ div.post.country table#vaccinations_groups tr td:first-child {
 }
 div.post.country table#vaccinations_groups tr td {
   text-align: center;
-  padding: 5px 10px;
+  padding: 0.7em 0;
   border-bottom: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
+  font-size: 1.1em;
+  line-height: 1.5em;
 }
 div.post.country table#vaccinations_groups tr td img {
-  margin-top: 5px;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
 }
 div.post.country table#vaccinations_groups tr td img.group_5 {
   width: 22px;
@@ -691,13 +691,15 @@ div.post.country table#vaccinations_groups tr td.vaccination-name {
 div.post.country .question-mark-circle {
   text-align: center;
   display: block;
-  background-color: red;
+  background-color: #4E4E4E;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   color: white;
   font-weight: bold;
   margin: auto;
+  line-height: 22px;
+  font-size: 11px;
 }
 div.post.country div#legend {
   padding: 10px;
@@ -876,10 +878,10 @@ div.post.country .post-content {
   background: #e9e9e9;
   background-color: #e9e9e9;
   color: black!important;
-  padding: 4px 8px;
+  padding: 8px 10px;
 }
 #navigation .nav > li > a {
-  padding: 4px 8px;
+  padding: 8px 10px;
 }
 #navigation .nav li.current_page_item a,
 #navigation .nav li.current_page_parent a,

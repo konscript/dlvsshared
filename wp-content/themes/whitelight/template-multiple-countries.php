@@ -141,8 +141,8 @@ jQuery(function($) {
                         <div id="legend">
                             <h3><?php echo dlvs_translate("Explanation of symbols"); ?></h3>
                             <table>
-                                <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png"/></td><td><?php echo dlvs_translate("Recommended"); ?></td></tr>
-                                <tr><td class="symbol"><span class="question-mark-circle">?</span></td><td><?php echo dlvs_translate("Should be considered"); ?></td></tr>
+                                <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/checkmark.png" title="<?php echo dlvs_translate("Recommended"); ?>"/></td><td><?php echo dlvs_translate("Recommended"); ?></td></tr>
+                                <tr><td class="symbol"><img src="<?php echo get_bloginfo("template_url"); ?>/img/plusmark.png" title="<?php echo dlvs_translate("Should be considered"); ?>"/></td><td><?php echo dlvs_translate("Should be considered"); ?></td></tr>
                             </table>
                         </div>
                     <?php endif; ?>
@@ -150,7 +150,7 @@ jQuery(function($) {
             </div>
         </section>
 
-        <?php $sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/'.'"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div></a>'; ?>
+        <?php $sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/'.'"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div><img src="' . get_template_directory_uri() . '/img/icon-rightarrow-white.png" class="button-book-icon" /></a>'; ?>
 
         <?php
         // get info of chosen countries

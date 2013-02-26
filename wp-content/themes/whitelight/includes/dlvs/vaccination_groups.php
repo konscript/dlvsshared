@@ -49,8 +49,8 @@ function vaccination_groups($vaccinations_groups){
                             <td class="vaccination-name"><a href="<?php echo get_permalink( $vaccination->ID ); ?>"><?php echo $vaccination->post_title; ?></a></td>
                             <?php
                             // output cell with vaccination indicator
-                            $checkmark = '<img src="'.get_bloginfo("template_url").'/img/checkmark.png"/>';
-                            $checkmark_group5 = '<span class="question-mark-circle">?</span>';
+                            $checkmark = '<img src="'.get_bloginfo("template_url").'/img/checkmark.png" title="' . dlvs_translate("Recommended") . '"/>';
+                            $checkmark_group5 = '<img src="'.get_bloginfo("template_url").'/img/plusmark.png"  title="' . dlvs_translate("Should be considered") . '"/>';
 
                             $repeat_in_next_group = false;
                             for ( $counter = 1; $counter <= 4; $counter++) {

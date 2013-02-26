@@ -3,12 +3,14 @@
  */
 
 	// Book button
-	a.button-book {
+	.button-book,
+	a.button-book,
+	div.button-book {
 		//.gradient(@color_contrast, @color_contrast, @color_contrast_b);
 		.rounded(3px);
 		// @include box-shadow(0px 1px 4px rgba(000,000,000,0.3),0px 0px 1px rgba(255,255,255,0.7));
 		position: relative;
-		width: 100%;		
+		width: 100%;
 		background-color: #B72020;
 		display: block;
 		float: left;
@@ -22,81 +24,120 @@
 		&:hover {
 			// @include background-image(linear-gradient());
 			//.gradient(lighten(@color_contrast_b, 5%), lighten(@color_contrast_b, 5%), lighten(@color_contrast, 5%));
-			// @include box-shadow(0px 1px 4px rgba(000,000,000,0.4), 1px 0px 2px rgba(255,255,255,0.7));		
+			// @include box-shadow(0px 1px 4px rgba(000,000,000,0.4), 1px 0px 2px rgba(255,255,255,0.7));
 			background-color: #DB2F2F;
 			border-top: 1px solid darken(@color_contrast_b, 10%);
-			border-bottom: 1px solid lighten(@color_contrast, 10%);					
+			border-bottom: 1px solid lighten(@color_contrast, 10%);
 			//border: 1px solid #208c0b;
 			color: #fff;
 			text-decoration: none;
-			//top: 1px;			
+			//top: 1px;
 		}
-				
+
 		.button-book-title {
-			// @include text-shadow(0 1px 0 rgba(000,000,000,0.3));		
+			// @include text-shadow(0 1px 0 rgba(000,000,000,0.3));
 			//float: left;
 			text-align: center;
 			color: @color_secondary_b;
-			line-height: 1.3em;			
+			line-height: 1.3em;
 			font-weight: normal;
-			//font-style: italic;			
+			//font-style: italic;
 			//text-transform: uppercase;
 			font-family: 'Helvetica Neue', Helvetica, sans-serif;
 			letter-spacing: 0.05em;
 			font-size: 17px;
-			padding: 16px 24px 16px 24px;
-			margin: 0 auto;	
+			padding: 20px 52px 20px 24px;
+			margin: 0 auto;
 		}
-				
-	}
-	
-	// Book button on Frontpage
-	body.home #column-right a.button-book {
-		width: 100%;
 
-		.button-book-title {
-			font-size: 22px;
-			padding: 25px 0 24px 34px;		
-			margin: 0;
+		.button-book-icon {
+			position: absolute;
+			right: 15px;
+			top: 50%;
+			margin-top: -11px;
 		}
-		
-		.button-book-meta {
-			//@include text-shadow(0 -2px 0px rgba(000,000,000,0.2), 0 1px 0 rgba(255,255,255,0));		
-			//@include text-shadow(0 1px 0 rgba(255,255,255,0.3));					
-			padding: 20px 34px 20px 0;			
-			float:right;
-			font-style: italic;						
-			text-align: right;
-			line-height: 1.5em;
-			font-size: 10px;
-			text-transform: lowercase;			
-			color: rgba(255,255,255,1);
-		}
-		
+
 	}
-	
+
+
 	a.button-book-step {
 		margin-top: 5px;
-		
+
 		.button-book-title {
-			font-size: 1em;			
+			font-size: 1em;
 		}
 	}
-	
+
+	a.button-alternate {
+		background-color: #333;
+		display: block;
+		float: left;
+		margin: 0 0 20px 0;
+		cursor: pointer;
+		border-top: 1px solid lighten(#333, 10%);
+		border-bottom: 1px solid darken(#333, 10%);
+		//clear: both;
+		//border: 1px solid #187805;
+
+		&:hover {
+			// @include background-image(linear-gradient());
+			//.gradient(lighten(@color_contrast_b, 5%), lighten(@color_contrast_b, 5%), lighten(@color_contrast, 5%));
+			// @include box-shadow(0px 1px 4px rgba(000,000,000,0.4), 1px 0px 2px rgba(255,255,255,0.7));
+			background-color: #444;
+			border-top: 1px solid darken(#444, 10%);
+			border-bottom: 1px solid lighten(#444, 10%);
+			//border: 1px solid #208c0b;
+			color: #fff;
+			text-decoration: none;
+			//top: 1px;
+		}
+	}
+
 	// small button book
 	a.button-book-table {
 		height: 40px;
 		margin: 2px;
 		float: none;
 		margin-bottom: 0;
+		min-width: 140px;
 
-		.button-book-title {		
+		.button-book-title {
 			font-size: 1em;
 			line-height: 40px;
-			padding: 0px 5px;			
-		}		
-	}	
+			padding: 0px 38px 0 0;
+		}
 
+		.button-book-icon {
+			width: 20px;
+			height: 20px;
+			top: 50%;
+			margin-top: -10px;
+		}
+	}
+	// Book button on Frontpage
+	body.home #column-right a.button-book {
+		width: 100%;
+
+		.button-book-title {
+			font-size: 22px;
+			padding: 25px 0 24px 34px;
+			margin: 0;
+		}
+
+		.button-book-meta {
+			//@include text-shadow(0 -2px 0px rgba(000,000,000,0.2), 0 1px 0 rgba(255,255,255,0));
+			//@include text-shadow(0 1px 0 rgba(255,255,255,0.3));
+			padding: 20px 34px 20px 0;
+			float:right;
+			font-style: italic;
+			text-align: right;
+			line-height: 1.5em;
+			font-size: 10px;
+			text-transform: lowercase;
+			color: rgba(255,255,255,1);
+		}
+
+	}
 
 	/*****
 	 * Table even/odd colored rows
@@ -107,10 +148,10 @@
 		margin-bottom: 10px;
 		border-top: 1px solid @color_secondary_c;
 		border-right: 1px solid @color_secondary_c;
-  	
+
   		thead tr td {
 				font-weight: bold; }
-  		
+
   		td {
   			line-height: 25px;
 			padding: 5px 15px;
@@ -118,7 +159,7 @@
 			border-left: 1px solid @color_secondary_c;
 			vertical-align: top;
 		}
-  		
+
   		tbody tr:nth-child(odd){
   			background-color: #f6f6f6; }
   }
@@ -133,7 +174,7 @@
 			overflow: hidden;
 			padding-top: 19px;
 		}
-	}	 
+	}
 
 	.sidebar-menu {
 		padding-bottom: 20px;
@@ -144,7 +185,7 @@
 
 		img {
 			.rounded();
-		}		
+		}
 	}
 
 	// hide category name in submenu
@@ -154,7 +195,7 @@
 		list-style-type: none;
 
 		h2 { display:none; }
-	}			
+	}
 
 	#sidebar ul {
 		list-style-type: none;
@@ -172,20 +213,21 @@
 		float:left;
 		text-decoration:none;
 		width:100%;
-		background:url('img/submenu_off.gif') no-repeat;
-		background-position:7px 50%;
+		background:url('img/icon-submenu-off.png') no-repeat;
+		background-position:5px 50%;
 		text-indent: 25px;
 		border-bottom: 1px solid @color_secondary_c;
 		height: 30px;
-		overflow: hidden;		
+		overflow: hidden;
 		padding: 0;
 		line-height: inherit;
 	}
 	#sidebar ul li a:hover,
 	#sidebar ul .current-menu-item a,
 	#sidebar ul .current-cat a {
-		background:url('img/submenu_on.gif') no-repeat;
-		background-position:0 50%;
+		background:url('img/icon-submenu-on.png') no-repeat;
+		background-position:5px 50%;
 		text-decoration: none;
 		font-weight: normal;
+		color: #B72020;
 	}
