@@ -13,8 +13,8 @@ $clinic = basename(get_permalink());
 // If the site uses xmedicus, book button should link directly to
 if(get_field('xmedicus_id')){
 	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/clinic/' . get_field('xmedicus_id') . '"><div class="button-book-title"> ' . dlvs_translate("Book vaccination") . '</div><img src="' . get_template_directory_uri() . '/img/icon-rightarrow-white.png" class="button-book-icon" /></a>';
-} else if (get_field("booking_url", $clinic->ID)) {
-	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/"><div class="button-book-title"> ' . dlvs_translate("Book vaccination") . '</div><img src="' . get_template_directory_uri() . '/img/icon-rightarrow-white.png" class="button-book-icon" /></a>';
+} else if (get_field("booking_url")) {
+	$sidebar_button = '<a class="button-book" style="margin-bottom:5px" href="' . get_bloginfo('wpurl') . '/booking/?clinic_param=' . $clinic . '"><div class="button-book-title"> ' . dlvs_translate("Book vaccination") . '</div><img src="' . get_template_directory_uri() . '/img/icon-rightarrow-white.png" class="button-book-icon" /></a>';
 } else {
 	$sidebar_button = '<a class="button-book button-alternate" style="margin-bottom:5px" href="' . get_permalink() . '"><div class="button-book-title">' . dlvs_translate("Call to book") . '<br />'.dlvs_translate("01462 459595").'</div><img src="' . get_template_directory_uri() . '/img/icon-phone-white.png" class="button-book-icon" /></a>';
 }
