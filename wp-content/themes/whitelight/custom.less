@@ -96,37 +96,60 @@ WOO CUSTOM STYLESHEET (for DLVS)
 #header hgroup { margin-bottom: 0px; }
 
 /**********************************************
- * Top Navigaton
- **********************************************/
-
-#top #top-nav {
-    float: right;
-}
-
-/**********************************************
  * Main Navigaton
  **********************************************/
 
+ #navigation {
+    width: 100%;
+    min-height: 1px;
+    padding: 0px;
+    position: relative;
+    clear: both;
+    z-index: 1000;
+    display: block;
+    margin: 0 auto;
+    float: none;
+    z-index: 999;
+ }
+
 // Push top menu to the outmost right and align with logo
 #navigation ul#main-nav {
-	float: right;
-	margin-top: 20px
+    margin: 0 auto;
+    zoom: 1;
+    float: none;
+}
+
+#navigation ul#side-nav {
+    margin: 0 auto;
+    zoom: 1;
+    float: right;
 }
 
 // Make main nav hovering more subtle
-#navigation .nav > li:hover > a {
+#navigation .nav > li:hover {
 	.transition(all, 0.2s);
-    background: #e9e9e9;
-	background-color: #e9e9e9;
-	color: black!important;
-    padding: 8px 10px;
+    //background: #f6f6f0;
+	//background-color: #f6f6f0;
+    color: gray;
+
+    > a {
+        color: black!important;
+        background: none;
+        background-color: none;
+    }
 }
-#navigation .nav > li > a {
-    padding: 8px 10px;
+#navigation .nav > li {
+    padding: 15px 5px 13px;
 }
-#navigation { .nav li.current_page_item a, .nav li.current_page_parent a, .nav li.current-menu-ancestor a, .nav li.current-cat a, .nav li.li.current-menu-item a {
-	color: white!important;
-}}
+#navigation .nav li ul {
+    li.current_page_item a,
+    li.current_page_parent a,
+    li.current-menu-ancestor a,
+    li.current-cat a,
+    li.li.current-menu-item a {
+	   color: white!important;
+    }
+}
 
 #navigation .nav li.parent > a {
     padding-right: 1.4em;
@@ -139,6 +162,13 @@ WOO CUSTOM STYLESHEET (for DLVS)
 #navigation .nav li a:hover::after,
 #navigation .nav li:hover > a::after {
 	border-color: #B72020 transparent transparent transparent!important;
+}
+
+#navigation .nav li ul {
+    z-index: 999;
+    margin: 13px -5px;
+    border-radius: 0px 0px 3px 3px;
+    border-bottom: 1px solid #88130B;
 }
 
 /**********************************************

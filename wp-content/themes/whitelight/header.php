@@ -77,20 +77,6 @@
 			<?php } ?>
 		</div><!-- /#topad -->
         <?php } ?>
-		<nav id="navigation" role="navigation">
-			<?php
-			if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
-				wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fl', 'theme_location' => 'primary-menu' ) );
-			} else {
-			?>
-    	    <ul id="main-nav" class="nav fl">
-				<?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
-				<li class="<?php echo $highlight; ?>"><a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
-				<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
-			</ul><!-- /#nav -->
-    	    <?php } ?>
-
-		</nav><!-- /#navigation -->
 
 		<?php if ( isset( $woo_options['woo_header_search'] ) && $woo_options['woo_header_search'] == 'true' ) { ?>
 		<div class="search_main fix">
@@ -104,6 +90,24 @@
 		</div><!-- /.col-full -->
 
 	</header><!-- /#header -->
+
+	<nav id="navigation" role="navigation">
+		<?php
+		if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
+			wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fl col-full', 'theme_location' => 'primary-menu' ) );
+		} else {
+		?>
+	    <ul id="main-nav" class="nav fl col-full">
+			<?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
+			<li class="<?php echo $highlight; ?>"><a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
+			<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
+		</ul><!-- /#nav -->
+	    <?php } ?>
+	    <ul id="side-nav" class="side-nav">
+	    	<li class=""><span><?php echo dlvs_translate('Get help'); ?></span></li>
+	    </ul>
+
+	</nav><!-- /#navigation -->
 
 	<?php
 		// Featured Slider
