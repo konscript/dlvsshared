@@ -37,6 +37,9 @@
 
 	<div id="top">
 		<nav class="col-full" role="navigation">
+			<div class="top-nav-brand">
+				<?php echo dlvs_translate("A part of European LifeCare Group"); ?>
+			</div>
 			<?php wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'top-nav', 'menu_class' => 'nav fl', 'theme_location' => 'top-menu' ) ); ?>
 		</nav>
 	</div><!-- /#top -->
@@ -87,24 +90,33 @@
 		</div><!--/.search_main-->
 		<?php } ?>
 
+		<ul class="header-widget-area">
+			<?php woo_sidebar( 'header' ); ?>
+		</ul>
+
+   		<img src="<?php echo get_template_directory_uri(); ?>/images/dlvs/header-arrowaction.png" class="header-arrowaction" />
+
 		</div><!-- /.col-full -->
 
 	</header><!-- /#header -->
 
-	<nav id="navigation" role="navigation">
+	<nav id="navigation" class="col-full" role="navigation">
 		<?php
 		if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
-			wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fl col-full', 'theme_location' => 'primary-menu' ) );
+			wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fl', 'theme_location' => 'primary-menu' ) );
 		} else {
 		?>
-	    <ul id="main-nav" class="nav fl col-full">
+	    <ul id="main-nav" class="nav fl">
 			<?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
 			<li class="<?php echo $highlight; ?>"><a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
 			<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
 		</ul><!-- /#nav -->
 	    <?php } ?>
-	    <ul id="side-nav" class="side-nav">
-	    	<li class=""><span><?php echo dlvs_translate('Get help'); ?></span></li>
+
+	    <ul id="side-nav" class="side-nav nav fl">
+	    	<li class="">
+	    		<span><?php echo dlvs_translate("We're here to help, call us 8-17 all days"); ?></span>
+	    	</li>
 	    </ul>
 
 	</nav><!-- /#navigation -->

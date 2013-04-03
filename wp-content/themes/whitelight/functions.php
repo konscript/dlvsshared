@@ -74,6 +74,12 @@ function child_theme_setup() {
 		'description' => __( 'Standard disclaimer shown at the bottom of the country page', 'whitelight' ),
 	) );
 
+	register_sidebar( array(
+		'name' => __( 'Header', 'whitelight' ),
+		'id' => 'header',
+		'description' => __( 'Top right area in header for info card', 'whitelight' ),
+	) );
+
 }
 endif;
 

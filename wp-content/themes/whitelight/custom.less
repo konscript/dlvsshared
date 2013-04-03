@@ -96,79 +96,138 @@ WOO CUSTOM STYLESHEET (for DLVS)
 #header hgroup { margin-bottom: 0px; }
 
 /**********************************************
+ * Top Navigaton
+ **********************************************/
+
+#top #top-nav {
+    float: right;
+}
+#top .top-nav-brand {
+    padding: 6px 10px;
+    color: #FAFAFA;
+    float: left;
+    line-height: 1.4em;
+}
+
+/**********************************************
  * Main Navigaton
  **********************************************/
 
- #navigation {
-    width: 100%;
-    min-height: 1px;
-    padding: 0px;
-    position: relative;
-    clear: both;
-    z-index: 1000;
-    display: block;
-    margin: 0 auto;
-    float: none;
-    z-index: 999;
- }
-
-// Push top menu to the outmost right and align with logo
-#navigation ul#main-nav {
-    margin: 0 auto;
-    zoom: 1;
-    float: none;
+#navigation {
+    padding: 15px;
 }
 
 #navigation ul#side-nav {
-    margin: 0 auto;
-    zoom: 1;
-    float: right;
+    display: none;
 }
 
-// Make main nav hovering more subtle
-#navigation .nav > li:hover {
-	.transition(all, 0.2s);
-    //background: #f6f6f0;
-	//background-color: #f6f6f0;
-    color: gray;
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
 
-    > a {
-        color: black!important;
-        background: none;
-        background-color: none;
+    #navigation {
+        z-index: 999;
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    // Push top menu to the outmost right and align with logo
+    #navigation ul#main-nav {
+        margin: 0 auto;
+        zoom: 1;
+        float: left;
+    }
+
+    // Make main nav hovering more subtle
+    #navigation .nav > li:hover {
+    	.transition(all, 0.2s);
+        //background: #f6f6f0;
+    	//background-color: #f6f6f0;
+
+        > a {
+            color: black!important;
+            background: none;
+            background-color: none;
+        }
+    }
+    #navigation .nav > li {
+        padding: 15px 5px 13px 0px;
+    }
+    #navigation .nav li ul {
+        li.current_page_item a,
+        li.current_page_parent a,
+        li.current-menu-ancestor a,
+        li.current-cat a,
+        li.li.current-menu-item a {
+    	   color: white!important;
+        }
+    }
+
+    #navigation .nav li.parent > a {
+        padding-right: 1.4em;
+    }
+    #navigation .nav li.parent > a::after {
+        right: 8px;
+    }
+
+    // Recolor little small arrow when dropdown
+    #navigation .nav li a:hover::after,
+    #navigation .nav li:hover > a::after {
+    	border-color: #B72020 transparent transparent transparent!important;
+    }
+
+    #navigation .nav li ul {
+        z-index: 999;
+        margin: 13px -5px;
+        border-radius: 0px 0px 3px 3px;
+        border-bottom: 1px solid #88130B;
+    }
+
+    #navigation .nav span {
+        position: relative;
+        display: block;
+        z-index: 100;
+        padding: 4px 0px 4px 0px;
+        line-height: 1.7em;
+        text-decoration: none;
+        font-size: 0.8em;
     }
 }
-#navigation .nav > li {
-    padding: 15px 5px 13px;
+
+.header-widget-area,
+.header-arrowaction {
+    display: none;
 }
-#navigation .nav li ul {
-    li.current_page_item a,
-    li.current_page_parent a,
-    li.current-menu-ancestor a,
-    li.current-cat a,
-    li.li.current-menu-item a {
-	   color: white!important;
+
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 900px) {
+
+    .header-widget-area {
+        display: block;
+        float: right;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            margin-bottom: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
     }
-}
 
-#navigation .nav li.parent > a {
-    padding-right: 1.4em;
-}
-#navigation .nav li.parent > a::after {
-    right: 8px;
-}
+    .header-arrowaction {
+        display: block;
+        position: absolute;
+        right: -25px;
+        top: 83px
+    }
 
-// Recolor little small arrow when dropdown
-#navigation .nav li a:hover::after,
-#navigation .nav li:hover > a::after {
-	border-color: #B72020 transparent transparent transparent!important;
-}
-
-#navigation .nav li ul {
-    z-index: 999;
-    margin: 13px -5px;
-    border-radius: 0px 0px 3px 3px;
-    border-bottom: 1px solid #88130B;
+    #navigation ul#side-nav {
+        display: block;
+        margin: 0 auto;
+        zoom: 1;
+        float: right;
+    }
 }
 
 /**********************************************

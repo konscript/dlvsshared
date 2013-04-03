@@ -256,10 +256,10 @@ table.zebra tbody tr:nth-child(odd) {
     margin-right: 10%;
     background: #ffffff;
     background: rgba(255, 255, 255, 0.7);
+    overflow: auto;
   }
   #featured article header {
     position: relative;
-    height: 100%;
     background-color: transparent;
     color: black;
     bottom: 0;
@@ -303,7 +303,7 @@ table.zebra tbody tr:nth-child(odd) {
     font-family: Georgia, serif;
     font-size: 2.5em;
     color: black;
-    margin-bottom: 35px;
+    margin-bottom: 0px;
   }
   #featured article header .entry {
     display: none;
@@ -897,71 +897,119 @@ div.post.country .post-content {
   margin-bottom: 0px;
 }
 /**********************************************
+ * Top Navigaton
+ **********************************************/
+#top #top-nav {
+  float: right;
+}
+#top .top-nav-brand {
+  padding: 6px 10px;
+  color: #FAFAFA;
+  float: left;
+  line-height: 1.4em;
+}
+/**********************************************
  * Main Navigaton
  **********************************************/
 #navigation {
-  width: 100%;
-  min-height: 1px;
-  padding: 0px;
-  position: relative;
-  clear: both;
-  z-index: 1000;
-  display: block;
-  margin: 0 auto;
-  float: none;
-  z-index: 999;
-}
-#navigation ul#main-nav {
-  margin: 0 auto;
-  zoom: 1;
-  float: none;
+  padding: 15px;
 }
 #navigation ul#side-nav {
-  margin: 0 auto;
-  zoom: 1;
-  float: right;
+  display: none;
 }
-#navigation .nav > li:hover {
-  -webkit-transition: all 0.2s 0.2s;
-  -moz-transition: all 0.2s 0.2s;
-  -o-transition: all 0.2s 0.2s;
-  transition: all 0.2s 0.2s;
-  -moz-transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: gray;
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+  #navigation {
+    z-index: 999;
+    margin-top: 0px;
+    padding: 0px;
+  }
+  #navigation ul#main-nav {
+    margin: 0 auto;
+    zoom: 1;
+    float: left;
+  }
+  #navigation .nav > li:hover {
+    -webkit-transition: all 0.2s 0.2s;
+    -moz-transition: all 0.2s 0.2s;
+    -o-transition: all 0.2s 0.2s;
+    transition: all 0.2s 0.2s;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  #navigation .nav > li:hover > a {
+    color: black!important;
+    background: none;
+    background-color: none;
+  }
+  #navigation .nav > li {
+    padding: 15px 5px 13px 0px;
+  }
+  #navigation .nav li ul li.current_page_item a,
+  #navigation .nav li ul li.current_page_parent a,
+  #navigation .nav li ul li.current-menu-ancestor a,
+  #navigation .nav li ul li.current-cat a,
+  #navigation .nav li ul li.li.current-menu-item a {
+    color: white!important;
+  }
+  #navigation .nav li.parent > a {
+    padding-right: 1.4em;
+  }
+  #navigation .nav li.parent > a::after {
+    right: 8px;
+  }
+  #navigation .nav li a:hover::after,
+  #navigation .nav li:hover > a::after {
+    border-color: #B72020 transparent transparent transparent!important;
+  }
+  #navigation .nav li ul {
+    z-index: 999;
+    margin: 13px -5px;
+    border-radius: 0px 0px 3px 3px;
+    border-bottom: 1px solid #88130B;
+  }
+  #navigation .nav span {
+    position: relative;
+    display: block;
+    z-index: 100;
+    padding: 4px 0px 4px 0px;
+    line-height: 1.7em;
+    text-decoration: none;
+    font-size: 0.8em;
+  }
 }
-#navigation .nav > li:hover > a {
-  color: black!important;
-  background: none;
-  background-color: none;
+.header-widget-area,
+.header-arrowaction {
+  display: none;
 }
-#navigation .nav > li {
-  padding: 15px 5px 13px;
-}
-#navigation .nav li ul li.current_page_item a,
-#navigation .nav li ul li.current_page_parent a,
-#navigation .nav li ul li.current-menu-ancestor a,
-#navigation .nav li ul li.current-cat a,
-#navigation .nav li ul li.li.current-menu-item a {
-  color: white!important;
-}
-#navigation .nav li.parent > a {
-  padding-right: 1.4em;
-}
-#navigation .nav li.parent > a::after {
-  right: 8px;
-}
-#navigation .nav li a:hover::after,
-#navigation .nav li:hover > a::after {
-  border-color: #B72020 transparent transparent transparent!important;
-}
-#navigation .nav li ul {
-  z-index: 999;
-  margin: 13px -5px;
-  border-radius: 0px 0px 3px 3px;
-  border-bottom: 1px solid #88130B;
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 900px) {
+  .header-widget-area {
+    display: block;
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .header-widget-area li {
+    margin-bottom: 0px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .header-arrowaction {
+    display: block;
+    position: absolute;
+    right: -25px;
+    top: 83px;
+  }
+  #navigation ul#side-nav {
+    display: block;
+    margin: 0 auto;
+    zoom: 1;
+    float: right;
+  }
 }
 /**********************************************
  * Mixins
