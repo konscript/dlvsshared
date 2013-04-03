@@ -236,6 +236,8 @@ table.zebra tbody tr:nth-child(odd) {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -o-box-shadow: none;
+  background: white;
+  background-color: white;
 }
 #featured article header .button {
   display: none;
