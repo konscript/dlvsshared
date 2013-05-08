@@ -315,9 +315,12 @@ table.zebra tbody tr:nth-child(odd) {
     display: none;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 960px) {
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
   #featured article header .entry {
     display: none;
+  }
+  #featured article header h1 {
+    font-size: 1.8em;
   }
 }
 .home #intro h1 {
@@ -911,7 +914,7 @@ div.post.country .post-content {
   float: left;
   line-height: 1.4em;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   #top .top-nav-brand {
     display: none;
   }
@@ -997,7 +1000,7 @@ div.post.country .post-content {
   display: none;
 }
 /* Only apply to iPad portrait and up */
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 768px) {
   .header-widget-area {
     display: block;
     float: right;
@@ -1022,6 +1025,12 @@ div.post.country .post-content {
     zoom: 1;
     float: right;
     margin-right: 20px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+  .header-arrowaction,
+  #navigation ul#side-nav {
+    display: none;
   }
 }
 /**********************************************
