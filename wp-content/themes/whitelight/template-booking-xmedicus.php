@@ -9,15 +9,9 @@
 			}?>
 
 			<?php
-			// destination
+			// clinic
 			$clinic_param = urldecode($wp_query->query_vars['clinic_param']);
-
-			if($clinic_param){
-				$clinic_query = "/booking?ou=" . $clinic_param . ".php";
-			}else{
-				$clinic_query = "";
-			}
-
+			$clinic_query = $clinic_param ? "/booking?ou=" . $clinic_param . ".php" : "";
 			?>
 
 			<iframe src="http://tid.dlvs.dk<?php echo $clinic_query; ?>" frameborder="0" width="100%" height="1000"></iframe>

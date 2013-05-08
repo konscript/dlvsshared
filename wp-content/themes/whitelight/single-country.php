@@ -11,6 +11,7 @@ if (dlvssite() == "sikkerrejse") {
 $destination = urlencode(the_title('', '', false));
 $sidebar_button = '<a class="button-book" href="'.get_bloginfo("wpurl").'/booking/destination/' . $destination . '"><div class="button-book-title">' . dlvs_translate("Book vaccination") . '</div><img src="' . get_template_directory_uri() . '/img/icon-rightarrow-white.png" class="button-book-icon" /></a>';
 
+
 //$sidebar_country_meta = '<h3>Lande fakta</h3>';
 if(get_field('flag')) {
 	$sidebar_country_meta = '
