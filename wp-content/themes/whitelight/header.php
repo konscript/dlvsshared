@@ -102,25 +102,26 @@
 
 	</header><!-- /#header -->
 
-	<nav id="navigation" class="col-full" role="navigation">
-		<?php
-		if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
-			wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fl', 'theme_location' => 'primary-menu' ) );
-		} else {
-		?>
-	    <ul id="main-nav" class="nav fl">
-			<?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
-			<li class="<?php echo $highlight; ?>"><a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
-			<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
-		</ul><!-- /#nav -->
-	    <?php } ?>
+	<nav id="navigation" role="navigation">
+		<div class="col-full">
+			<?php
+			if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
+				wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'main-nav', 'menu_class' => 'nav fl', 'theme_location' => 'primary-menu' ) );
+			} else {
+			?>
+		    <ul id="main-nav" class="nav fl">
+				<?php if ( is_page() ) $highlight = 'page_item'; else $highlight = 'page_item current_page_item'; ?>
+				<li class="<?php echo $highlight; ?>"><a href="<?php echo home_url( '/' ); ?>"><?php _e( 'Home', 'woothemes' ); ?></a></li>
+				<?php wp_list_pages( 'sort_column=menu_order&depth=6&title_li=&exclude=' ); ?>
+			</ul><!-- /#nav -->
+		    <?php } ?>
 
-	    <ul id="side-nav" class="side-nav nav fl">
-	    	<li class="">
-	    		<span><?php echo dlvs_translate("We're here to help, call us 8-17 all days"); ?></span>
-	    	</li>
-	    </ul>
-
+		    <ul id="side-nav" class="side-nav nav fl">
+		    	<li class="">
+		    		<span><?php echo dlvs_translate("We're here to help, call us 8-17 all days"); ?></span>
+		    	</li>
+		    </ul>
+		</div>
 	</nav><!-- /#navigation -->
 
 	<?php

@@ -250,7 +250,7 @@ table.zebra tbody tr:nth-child(odd) {
     top: 0;
   }
   #featured article {
-    overflow: auto;
+    overflow: hidden;
     height: 100%;
   }
   #featured article header {
@@ -352,11 +352,11 @@ table.zebra tbody tr:nth-child(odd) {
   font-size: 1em;
   font-weight: bold;
 }
+.home-section#features header {
+  display: none;
+}
 /* Only apply to iPad portrait and up */
 @media only screen and (min-width: 768px) {
-  .home-section.count4 header {
-    display: none;
-  }
   .home-section.count4 ul {
     float: left;
     width: 100%;
@@ -415,6 +415,9 @@ table.zebra tbody tr:nth-child(odd) {
 .home-section#blog {
   display: block;
   padding-bottom: 2em;
+}
+.home-section#blog #map-wrapper {
+  overflow: hidden;
 }
 .home-section#blog ul.entries {
   margin-top: 15px;
@@ -919,12 +922,12 @@ div.post.country .post-content {
     display: none;
   }
 }
+#top .nav a {
+  font-size: 1em;
+}
 /**********************************************
  * Main Navigaton
  **********************************************/
-#navigation {
-  padding: 15px;
-}
 #navigation ul#side-nav {
   display: none;
 }
@@ -934,6 +937,7 @@ div.post.country .post-content {
     z-index: 999;
     margin-top: 0px;
     padding: 0px;
+    border-bottom: 1px solid #E1E1E1;
   }
   #navigation ul#main-nav {
     margin: 0 auto;

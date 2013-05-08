@@ -31,7 +31,7 @@
 		top: 0;
 	}
 	#featured article {
-		overflow: auto;
+		overflow: hidden;
 		height: 100%;
 	}
 	#featured article header {
@@ -101,7 +101,7 @@
 	}
 }
 
-// Hide the content bar in slider when too tight (between 768px & 920px)
+// Hide the content bar in slider when too tight (between 768px & 1200px)
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
 	#featured article header .entry {
 		display: none;
@@ -149,11 +149,12 @@
 	font-weight: bold;
 }
 
+.home-section#features header { display: none; }
+
 /* Only apply to iPad portrait and up */
 @media only screen and (min-width: 768px) {
 
 	.home-section.count4  {
-		header  { display: none; }
 		ul  {
 			float: left;
 			width: 100%;
@@ -238,6 +239,10 @@
 .home-section#blog {
 	display: block;
 	padding-bottom: 2em;
+
+	#map-wrapper {
+		overflow: hidden;
+	}
 
 	ul.entries {
 		margin-top: 15px;
