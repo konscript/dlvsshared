@@ -952,7 +952,11 @@ div.post.country .post-content {
     background-color: none;
   }
   #navigation .nav > li {
-    padding: 15px 5px 13px 0px;
+    padding: 15px 0px 13px 0px;
+  }
+  #navigation .nav > li a {
+    padding: 5px 10px;
+    margin-right: 0;
   }
   #navigation .nav li ul li.current_page_item a,
   #navigation .nav li ul li.current_page_parent a,
