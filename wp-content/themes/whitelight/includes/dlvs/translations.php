@@ -64,7 +64,8 @@ varighed), udstationering eller tilsvarende hyppigt gentagne besøg.",
 		"or try the Trekkingguide if you're visiting multiple countries" => "eller prøv Trekkingguiden hvis du besøger flere lande",
 		"Please wait" => "Vent venligst",
 		"We're here to help, call us 8-17 all days" => "Få hjælp til din bestilling, tlf. åbent 8-17 alle hverdage",
-		"A part of European LifeCare Group" => "En del af European LifeCare Group"
+		"A part of" => "En del af",
+		"European LifeCare Group" => "European LifeCare Group"
 	);
 
 	// get english translation

@@ -38,7 +38,9 @@
 	<div id="top">
 		<nav class="col-full" role="navigation">
 			<div class="top-nav-brand">
-				<?php echo dlvs_translate("A part of European LifeCare Group"); ?>
+				<span><?php echo dlvs_translate("A part of"); ?></span>
+				<img class="topbar-logo" src="<?php echo get_template_directory_uri(); ?>/images/dlvs/logo-topbar-white.png" />
+				<span><?php echo dlvs_translate("European LifeCare Group"); ?></span>
 			</div>
 			<?php wp_nav_menu( array( 'depth' => 6, 'sort_column' => 'menu_order', 'container' => 'ul', 'menu_id' => 'top-nav', 'menu_class' => 'nav fl', 'theme_location' => 'top-menu' ) ); ?>
 		</nav>
