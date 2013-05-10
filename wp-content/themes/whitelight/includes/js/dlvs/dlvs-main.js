@@ -21,135 +21,24 @@ jQuery.noConflict();
 		// add tabs on frontpage
 		$("#tabs").tabs({fx:{opacity: "toggle"}}).tabs("rotate", 7000, true);
 
-		// process buttons (jquery ui)
-		//$( "a.button" ).button();
-
-		// Booking: load iframe and disable form
-		bookingNavigate();
-
 		// booking iframe
-		bookingIframe();
+		$('.template.booking a.button-book.iframe').click(function(e){
+			e.preventDefault();
+			var booking_url = $(this).attr('href');
+			loadBookingIframe(booking_url);
+		});
 
 		// vaccination lightbox
 		vaccinationLightbox();
 
-		// misc css styling
-		miscStyles();
-
 		// toolstips
 		$( '.vaccination-group' ).tooltip();
-		//$( '#chosen_countries_info .chosen_country' ).tooltip();
 	});
 
 	/*
 	 * functions begin
 	 **************************************************************************************/
 
-	// load iframe
-	function bookingIframe(){
-		$('.template.booking a.button-book.iframe').click(function(){
-			var booking_url = $(this).attr('href');
-
-
-			$('.zebra').fadeOut('fast', function() {
-				$('.template.booking iframe').attr('src', booking_url).show();
-			});
-			return false;
-		});
-	}
-
-	// Booking: load iframe when clinic is selected
-	function bookingNavigate() {
-    $('#navigateStepBack').hide();
-
-		$("form#booking").validate({
-			rules: {
-				fullname: {
-				  required: true
-				},
-				email: {
-				  required: true,
-				  email: true
-				},
-				phone: {
-				  required: false,
-				  digits: true,
-	        minlength: 10,
-		      maxlength: 11
-				},
-				clinic: {
-				  required: true
-				}
-			}
-		});
-
-    var inputFields = '.template.booking .form input,.template.booking .form select, .template.booking .form textarea';
-
-		// action when click on next button
-		$('#navigateStepNext').click(function() {
-
-			// form is invalid
-			if(!$("form#booking").valid()){
-				$(this).effect("shake", { times:2, distance:4, direction: "left" }, 50);
-				return false;
-			}
-				// disable and fade form
-				$(inputFields).attr('disabled', 'enabled');
-				$('.template.booking form').fadeTo('fast', 0.5);
-
-				// data
-				var fullname = $('.form #fullname').val();
-				var email = $('.form #email').val();
-				var phone = $('.form #phone').val();
-				var comments = $('.form #comments').val();
-				var clinic_url = $('.form #clinic option:selected').data('url'); // URL
-				var destination = $('.form #destination').val();
-				var participants = $('.form #participants input:checked').val();
-				//var participants = $('.form #participants option:selected').val();
-				//var service = participants; // SERVICE
-
-				// remove leading zero from phone number
-				phone = phone.substr(0,1) == '0' ? phone.substr(1) : phone;
-
-				// url encode values
-				var booking_url =
-					clinic_url +
-					//'?service=service' + service +
-
-					'?l1=' + encodeURI(fullname) +
-					'&l2=' + encodeURI(email) +
-					'&l3=%2B44' + encodeURI(phone) +
-					'&l4=' + encodeURI(comments) +
-					'&l5=' + encodeURI(destination) +
-					'&l6=' + encodeURI(participants);
-
-				// load iframe
-				$('.template.booking .iframe-placeholder').fadeOut('fast', function() {
-					$('.template.booking iframe').attr('src', booking_url);
-				});
-
-        // change navigation buttons
-        $(this).hide();
-        $('#navigateStepBack').show();
-		});
-
-		// action when click on edit/back button
-		$('#navigateStepBack').click(function() {
-
-				// enable and fadein form
-				$(inputFields).removeAttr('disabled');
-				$('.template.booking form').fadeTo('fast', 1);
-
-				// disable iframe
-        $('.template.booking iframe').attr('src', 'about:blank');
-				$('.template.booking .iframe-placeholder').fadeIn('fast');
-
-        // change navigation buttons
-        $(this).hide();
-        $('#navigateStepNext').show();
-		});
-
-	}
 
 	/******************
 	 * Search as you type: find country
@@ -272,13 +161,11 @@ jQuery.noConflict();
 		};
 	} // search faq end
 
-	/******************
-	 * CSS edits and styling
-	 ******************/
-
-	function miscStyles(){
-//		$('.page-template-template-front-php .clinics .clinic').click(function(){
-//	 		 window.location.href = $(this).find('a').attr('href');
-//		});
-	}
 })(jQuery);
+
+
+var loadBookingIframe = function(booking_url){
+	jQuery('.zebra').fadeOut('fast', function() {
+		jQuery('.template.booking iframe').attr('src', booking_url).show();
+	});
+};

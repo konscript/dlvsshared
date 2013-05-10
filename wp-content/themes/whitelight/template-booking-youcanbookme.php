@@ -9,8 +9,8 @@
 			// destination
 			$clinic_param = urldecode($wp_query->query_vars['clinic_param']);
 			$destination_param = urldecode($wp_query->query_vars['destination_param']);
-
 			?>
+
 			<?php $weekdays = array("monday", "tuesday", "wednesday", "thursday", "friday", "saturday"); ?>
 			<iframe src="about:blank" frameborder="0" width="100%" height="600" style="display:none"></iframe>
 			<table class="zebra">
@@ -23,6 +23,11 @@
 				</thead>
 				<?php $clinics = getClinics(); ?>
 				<?php foreach($clinics as $clinic): ?>
+					<?php if($clinic_param === $clinic->post_name){
+						$iframe_booking_url = get_field('booking_url', $clinic->ID);
+					}
+					?>
+
 					<tr>
 						<td><a href="<?php echo get_permalink($clinic->ID); ?>"><?php echo get_the_title($clinic->ID); ?></a><br /><?php the_field("address", $clinic->ID); ?></td>
 						<?php foreach($weekdays as $weekday): ?>
@@ -39,6 +44,15 @@
 					</tr>
 				<?php endforeach; ?>
 			</table>
+
+			<?php if($clinic_param !== ""): ?>
+				<script type="text/javascript">
+					jQuery(document).ready(function() {
+						loadBookingIframe("<?php echo $iframe_booking_url; ?>");
+					});
+				</script>
+			<?php endif; ?>
+
 		</div>
 	</div>
 </div>
