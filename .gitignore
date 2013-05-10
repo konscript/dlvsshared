@@ -16,3 +16,4 @@ sitemap.xml
 sitemap.xml.gz
 *.log
 /wp-config.php
+/.htaccess
