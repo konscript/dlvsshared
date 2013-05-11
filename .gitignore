@@ -10,10 +10,11 @@ wp-content/backups/
 wp-content/writable/
 
 # Dynamic files
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
 sitemap.xml
 sitemap.xml.gz
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
 *.log
 /wp-config.php
 /.htaccess

@@ -99,46 +99,160 @@ WOO CUSTOM STYLESHEET (for DLVS)
  * Top Navigaton
  **********************************************/
 
+#top .topbar-logo {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
 #top #top-nav {
     float: right;
+}
+#top .top-nav-brand {
+    padding: 6px 10px;
+    color: #FAFAFA;
+    float: left;
+    line-height: 1.4em;
+}
+
+@media only screen and (max-width: 768px) {
+    #top .top-nav-brand {
+        display: none;
+    }
+}
+
+#top .nav a {
+    font-size: 1em;
 }
 
 /**********************************************
  * Main Navigaton
  **********************************************/
 
-// Push top menu to the outmost right and align with logo
-#navigation ul#main-nav {
-	float: right;
-	margin-top: 20px
+#navigation ul#side-nav {
+    display: none;
 }
 
-// Make main nav hovering more subtle
-#navigation .nav > li:hover > a {
-	.transition(all, 0.2s);
-    background: #e9e9e9;
-	background-color: #e9e9e9;
-	color: black!important;
-    padding: 8px 10px;
-}
-#navigation .nav > li > a {
-    padding: 8px 10px;
-}
-#navigation { .nav li.current_page_item a, .nav li.current_page_parent a, .nav li.current-menu-ancestor a, .nav li.current-cat a, .nav li.li.current-menu-item a {
-	color: white!important;
-}}
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
 
-#navigation .nav li.parent > a {
-    padding-right: 1.4em;
-}
-#navigation .nav li.parent > a::after {
-    right: 8px;
+    #navigation {
+        z-index: 999;
+        margin-top: 0px;
+        padding: 0px;
+        border-bottom: 1px solid #E1E1E1;
+    }
+
+    // Push top menu to the outmost right and align with logo
+    #navigation ul#main-nav {
+        margin: 0 auto;
+        zoom: 1;
+        float: left;
+    }
+
+    // Make main nav hovering more subtle
+    #navigation .nav > li:hover {
+    	.transition(all, 0.2s);
+        //background: #f6f6f0;
+    	//background-color: #f6f6f0;
+
+        > a {
+            color: black!important;
+            background: none;
+            background-color: none;
+        }
+    }
+    #navigation .nav > li {
+        padding: 15px 0px 13px 0px;
+
+        a {
+            padding: 5px 10px;
+            margin-right: 0;
+        }
+    }
+    #navigation .nav li ul {
+        li.current_page_item a,
+        li.current_page_parent a,
+        li.current-menu-ancestor a,
+        li.current-cat a,
+        li.li.current-menu-item a {
+    	   color: white!important;
+        }
+    }
+
+    #navigation .nav li.parent > a {
+        padding-right: 1.4em;
+    }
+    #navigation .nav li.parent > a::after {
+        right: 8px;
+    }
+
+    // Recolor little small arrow when dropdown
+    #navigation .nav li a:hover::after,
+    #navigation .nav li:hover > a::after {
+    	border-color: #B72020 transparent transparent transparent!important;
+    }
+
+    #navigation .nav li ul {
+        z-index: 999;
+        margin: 13px -5px;
+        border-radius: 0px 0px 3px 3px;
+        border-bottom: 1px solid #88130B;
+    }
+
+    #navigation .nav span {
+        position: relative;
+        display: block;
+        z-index: 100;
+        padding: 4px 0px 4px 0px;
+        line-height: 1.7em;
+        text-decoration: none;
+        font-size: 0.8em;
+    }
 }
 
-// Recolor little small arrow when dropdown
-#navigation .nav li a:hover::after,
-#navigation .nav li:hover > a::after {
-	border-color: #B72020 transparent transparent transparent!important;
+.header-widget-area,
+.header-arrowaction {
+    display: none;
+}
+
+/* Only apply to iPad portrait and up */
+@media only screen and (min-width: 768px) {
+
+    .header-widget-area {
+        display: block;
+        float: right;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            margin-bottom: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+
+    .header-arrowaction {
+        display: block;
+        position: absolute;
+        right: -10px;
+        top: 83px
+    }
+
+    #navigation ul#side-nav {
+        display: block;
+        margin: 0 auto;
+        zoom: 1;
+        float: right;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 960px) {
+    .header-arrowaction,
+    #navigation ul#side-nav {
+        display: none;
+    }
 }
 
 /**********************************************

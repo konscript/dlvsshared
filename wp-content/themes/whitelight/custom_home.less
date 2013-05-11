@@ -13,6 +13,8 @@
 // No shadows on slider wrapper (best for white bg)
 #featured {
 	box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -o-box-shadow: none;
+	background: white;
+	background-color: white;
 }
 
 #featured article header .button {
@@ -29,24 +31,21 @@
 		top: 0;
 	}
 	#featured article {
+		overflow: hidden;
 		height: 100%;
-		width: 300px;
-		float: right;
-		margin-right: 10%;
-		background: #ffffff;
-		background: rgb(255,255,255);
-		background: rgba(255,255,255,0.7);
 	}
 	#featured article header {
 		position: relative;
-		height: 100%;
 		background-color: transparent;
 		color: black;
-		bottom: 0;
-		left: 0;
-		width: auto;
-		padding: 30px 30px 0 30px;
+		float: right;
+		width: 240px;
+		padding: 0 30px 0 30px;
 		text-shadow: none;
+		background: #fff;
+		height: 100%;
+		left: 0;
+		bottom: 0;
 	}
 	#featured article header h1,
 	#featured article header .entry {
@@ -56,13 +55,14 @@
 		font-family: Georgia, serif;
 		color: black;
 		font-size: 2.5em;
-		padding-bottom: 20px;
+		padding: 20px 0;
 	}
 	#featured article header .entry {
 		font-family: 'Helvetica Neue', Helvetica, sans-serif;
 		//font-size: 1em;
 		line-height: 1.5em;
 		color: black;
+		margin-bottom: 25px;
 	}
 	#featured img.button-book-icon { //overwrite
 		top: 50%;
@@ -87,7 +87,7 @@
 		font-family: Georgia, serif;
 		font-size: 2.5em;
 		color: black;
-		margin-bottom: 35px;
+		margin-bottom: 15px;
 	}
 	#featured article header .entry {
 		display: none;
@@ -101,10 +101,13 @@
 	}
 }
 
-// Hide the content bar in slider when too tight (between 768px & 920px)
-@media only screen and (min-width: 768px) and (max-width: 920px) {
+// Hide the content bar in slider when too tight (between 768px & 1200px)
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
 	#featured article header .entry {
 		display: none;
+	}
+	#featured article header h1 {
+		font-size: 1.8em;
 	}
 }
 
@@ -146,11 +149,12 @@
 	font-weight: bold;
 }
 
+.home-section#features header { display: none; }
+
 /* Only apply to iPad portrait and up */
 @media only screen and (min-width: 768px) {
 
 	.home-section.count4  {
-		header  { display: none; }
 		ul  {
 			float: left;
 			width: 100%;
@@ -235,6 +239,10 @@
 .home-section#blog {
 	display: block;
 	padding-bottom: 2em;
+
+	#map-wrapper {
+		overflow: hidden;
+	}
 
 	ul.entries {
 		margin-top: 15px;

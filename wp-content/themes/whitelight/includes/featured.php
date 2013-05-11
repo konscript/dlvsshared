@@ -96,7 +96,6 @@
 	    	    					echo woo_text_trim ( $slide_excerpt, 16 );
 	    	    				?>
 	    	    			</div>
-	    	    			<br />
 	    	    			<?php if ( isset($url) && $url != '' ) { ?>
 		    	    			<a class="button-book" href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 		    	    				<div class="button-book-title"><?php echo get_post_meta($post->ID, 'button_text', true); ?></div>
