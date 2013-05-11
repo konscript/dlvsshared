@@ -31,7 +31,7 @@
 		top: 0;
 	}
 	#featured article {
-		overflow: hidden;
+		overflow: visible;
 		height: 100%;
 	}
 	#featured article header {
@@ -40,12 +40,14 @@
 		color: black;
 		float: right;
 		width: 240px;
-		padding: 0 30px 0 30px;
+		padding: 10px 30px 10px 30px;
 		text-shadow: none;
 		background: #fff;
 		height: 100%;
 		left: 0;
-		bottom: 0;
+		top: -10px;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+		border-top: 1px solid rgba(0, 0, 0, 0.1);
 	}
 	#featured article header h1,
 	#featured article header .entry {
@@ -56,6 +58,8 @@
 		color: black;
 		font-size: 2.5em;
 		padding: 20px 0;
+		line-height: 1.2em;
+		margin-bottom: 0;
 	}
 	#featured article header .entry {
 		font-family: 'Helvetica Neue', Helvetica, sans-serif;
