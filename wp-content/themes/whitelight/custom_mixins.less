@@ -11,6 +11,14 @@
     More info at: http://lesselements.com
 -----------------------------------------------------*/
 
+// CSS3 Transition mixin
+.transition(@range: all, @time: 1s, @ease: ease-in-out) {
+    -moz-transition: @range @time @ease;
+    -webkit-transition: @range @time @ease;
+    -o-transition: @range @time @ease;
+    transition: @range @time @ease;
+}
+
 .gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
   background: @color;
   background: -webkit-gradient(linear,
@@ -54,7 +62,7 @@
   -webkit-border-radius: @radius;
   -moz-border-radius: @radius;
   border-radius: @radius;
-  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 }
 .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
   -webkit-border-top-right-radius: @topright;
@@ -69,7 +77,7 @@
   border-bottom-right-radius: @bottomright;
   border-bottom-left-radius: @bottomleft;
   border-top-left-radius: @topleft;
-  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 }
 .opacity(@opacity: 0.5) {
   -moz-opacity: @opacity;

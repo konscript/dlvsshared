@@ -377,6 +377,11 @@ table.zebra tbody tr:nth-child(odd) {
     margin: 0!important;
   }
 }
+@media only screen and (max-width: 768px) {
+  #features.home-section li {
+    margin-bottom: 0;
+  }
+}
 .home-section#features li p a.feature-readmore {
   display: block;
   padding: 5px 0;
@@ -907,6 +912,9 @@ div.post.country .post-content {
 #header hgroup {
   margin-bottom: 0px;
 }
+#header .nav-toggle {
+  top: 68px;
+}
 /**********************************************
  * Top Navigaton
  **********************************************/
@@ -937,6 +945,14 @@ div.post.country .post-content {
 #navigation ul#side-nav {
   display: none;
 }
+@media only screen and (max-width: 768px) {
+  #navigation {
+    margin: 1em 0;
+  }
+  #navigation .nav a {
+    padding: 5px 20px;
+  }
+}
 /* Only apply to iPad portrait and up */
 @media only screen and (min-width: 768px) {
   #navigation {
@@ -951,14 +967,14 @@ div.post.country .post-content {
     float: left;
   }
   #navigation .nav > li:hover {
-    -webkit-transition: all 0.2s 0.2s;
-    -moz-transition: all 0.2s 0.2s;
-    -o-transition: all 0.2s 0.2s;
-    transition: all 0.2s 0.2s;
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s 0.2s;
+    -moz-transition: all 0.2s 0.2s;
+    -o-transition: all 0.2s 0.2s;
+    transition: all 0.2s 0.2s;
   }
   #navigation .nav > li:hover > a {
     color: black!important;
@@ -1044,5 +1060,19 @@ div.post.country .post-content {
   }
 }
 /**********************************************
- * Mixins
+ * Footer
  **********************************************/
+#footer .col-right,
+#footer .col-left {
+  margin-bottom: 15px;
+}
+#footer .col-right {
+  float: right;
+  text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  #footer .col-right {
+    float: left;
+    text-align: left;
+  }
+}

@@ -82,7 +82,7 @@ WOO CUSTOM STYLESHEET (for DLVS)
  * Misc. (load compass modules)
  ************************************************/
 
-@import url(custom_elements.less);
+@import url(custom_mixins.less);
 @import url(custom_utilities.less);
 @import url(custom_home.less);
 @import url(custom_templates.less);
@@ -94,6 +94,10 @@ WOO CUSTOM STYLESHEET (for DLVS)
 // Permanently hide the search bar
 #header .search_main { display: none; }
 #header hgroup { margin-bottom: 0px; }
+
+#header .nav-toggle {
+    top: 68px;
+}
 
 /**********************************************
  * Top Navigaton
@@ -130,6 +134,16 @@ WOO CUSTOM STYLESHEET (for DLVS)
 
 #navigation ul#side-nav {
     display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    #navigation {
+        margin: 1em 0;
+
+        .nav a {
+            padding: 5px 20px;
+        }
+    }
 }
 
 /* Only apply to iPad portrait and up */
@@ -256,13 +270,24 @@ WOO CUSTOM STYLESHEET (for DLVS)
 }
 
 /**********************************************
- * Mixins
+ * Footer
  **********************************************/
 
-// CSS3 Transition mixin
-.transition(@range: all, @time: 1s, @ease: ease-in-out) {
-    -moz-transition: @range @time @ease;
-    -webkit-transition: @range @time @ease;
-    -o-transition: @range @time @ease;
-    transition: @range @time @ease;
+#footer .col-right,
+#footer .col-left {
+    margin-bottom: 15px;
+}
+
+#footer .col-right {
+    float: right;
+    text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #footer .col-right {
+        float: left;
+        text-align: left;
+    }
+
 }
