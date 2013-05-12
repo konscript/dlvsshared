@@ -65,7 +65,8 @@ varighed), udstationering eller tilsvarende hyppigt gentagne besøg.",
 		"Please wait" => "Vent venligst",
 		"Need help? Call us on weekdays from 9am-5pm" => "Få hjælp til din bestilling, ring 8-17 alle hverdage",
 		"A part of" => "En del af",
-		"European LifeCare Group" => "European LifeCare Group"
+		"European LifeCare Group" => "European LifeCare Group",
+		"Read more" => "Læs mere"
 	);
 
 	// get english translation
