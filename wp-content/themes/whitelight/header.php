@@ -118,7 +118,7 @@
 
 		    <ul id="side-nav" class="side-nav nav fl">
 		    	<li class="">
-		    		<span><?php echo dlvs_translate("Need help? Call us on weekdays from 9am - 5pm."); ?></span>
+		    		<span><?php echo dlvs_translate("Need help? Call us on weekdays from 9am-5pm"); ?></span>
 		    	</li>
 		    </ul>
 		</div>
