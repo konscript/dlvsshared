@@ -26,7 +26,7 @@ function vaccination_groups($vaccinations_groups){
 <table id="vaccinations_groups">
     <thead>
         <tr>
-            <td class="vaccination-list">Vaccination</td>
+            <td class="vaccination-list"><span class="vaccination-group" title="<?php echo dlvs_translate("The columns are split into expected travelling duration, as vaccination recommendations varies based on time spent in the country"); ?>"><?php echo dlvs_translate("Duration of stay:"); ?></span></td>
             <?php foreach($vaccinations_groups_info as $info):
                 $label = $info[0];
                 $tooltip = $info[1];

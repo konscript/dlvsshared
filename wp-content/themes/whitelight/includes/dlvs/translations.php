@@ -32,26 +32,36 @@ function dlvs_translate($key) {
 		"Phone" => "Telefon",										// clinic
 		"Show full-screen map" => "Vis stort kort",					// clinic
 		"Type to search" => "Skriv for at søge",					// faq
-		"Updated Malaria Map" => "Opdateret Malaria kort",			// Country
-		"Latest Disease Surveillance" => "Sidste sygdomsovervågning", // Country
+		"Updated Malaria Map" => "Opdateret Malaria kort",			// country
+		"Latest Disease Surveillance" => "Sidste sygdomsovervågning", // country
 		"Call to book" => "Ring for at booke", 						// clinic,
+
+		// vaccination groups table
+		"Duration of stay:" => "Rejsetid:",
 		"All travelers" => "Gr. 1<br />Alle rejsende",
 		"+2 weeks" => "Gr. 2<br />1-4 uger",
 		"+3 months" => "Gr. 3<br />1-6 mdr.",
 		"+6 months" => "Gr. 4<br />6 mdr.",
-		"All travelers description" => "Alle rejsende. Omfatter forretnings- eller kongresrejse af nogle dages varighed til hovedstad eller anden
+		"The columns are split into expected travelling duration, as vaccination recommendations varies based on time spent in the country"
+			=> "Kolonnerne er delt ind i forventet rejsetid da vaccinationsanbefalinger varierer afhængig af hvor lang tid tilbringer i landet",
+		"All travelers description"
+			=> "Alle rejsende. Omfatter forretnings- eller kongresrejse af nogle dages varighed til hovedstad eller anden
 storby. Er rejsen af særlig art med mulighed for intens smitteudsættelse, kan Gr. 1 suppleres
 med vacciner fra Gr. 2, 3 eller 4.",
-		"+2 weeks description" => "1-4 ugers rejsende. Omfatter arrangeret turistrejse af op til fire ugers varighed med dagsudflugter. Er rejsen af
+		"+2 weeks description"
+			=> "1-4 ugers rejsende. Omfatter arrangeret turistrejse af op til fire ugers varighed med dagsudflugter. Er rejsen af
 særlig art med mulighed for intens smitteudsættelse, kan Gr. 2 suppleres med vacciner fra Gr.
 3 eller 4. Det gælder fx indvandrere på familiebesøg (uanset rejsens varighed), ved seksuel
 kontakt med lokale, ved udtalt dårlig hygiejne (tyfus), ved tæt lokal personkontakt (hep. B),
 ved ophold med insekteksposition som fx trekkingtur (japansk encephalitis).",
-		"+3 months description" => "1-6 måneders rejsende. Omfatter individuel rejse af nogle måneders varighed, fx rygsækrejse. Er rejsen af særlig art
+		"+3 months description"
+			=> "1-6 måneders rejsende. Omfatter individuel rejse af nogle måneders varighed, fx rygsækrejse. Er rejsen af særlig art
 med mulighed for intens smitteudsættelse, kan Gr. 3 suppleres med vacciner fra Gr. 4. Det
 gælder fx indvandrere på familiebesøg (uanset rejsens varighed).",
-		"+6 months description" => "6 måneders rejsende. Omfatter langvarig individuel rejse i halve år, indvandrere på familiebesøg (uanset rejsens
+		"+6 months description"
+			=> "6 måneders rejsende. Omfatter langvarig individuel rejse i halve år, indvandrere på familiebesøg (uanset rejsens
 varighed), udstationering eller tilsvarende hyppigt gentagne besøg.",
+
 		"See a map of malaria risk for this country" => "Kort over aktuel malariarisiko i landet",
 		"Information on outbreaks from NaTHNaC" => "Information om sygdomsudbrud i landet",
 		"01462 459595" => "70 25 40 80",
@@ -63,7 +73,7 @@ varighed), udstationering eller tilsvarende hyppigt gentagne besøg.",
 		"Chosen countries:" => "Valgte lande:",
 		"or try the Trekkingguide if you're visiting multiple countries" => "eller prøv Trekkingguiden hvis du besøger flere lande",
 		"Please wait" => "Vent venligst",
-		"Need help? Call us on weekdays from 9am-5pm" => "Få hjælp til din bestilling, åbent 8-17 alle hverdage",
+		"Need help? Call us on weekdays from 9am-5pm" => "Få hjælp til din bestilling, 8-17 alle hverdage",
 		"A part of" => "En del af",
 		"European LifeCare Group" => "European LifeCare Group"
 	);
