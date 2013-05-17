@@ -67,7 +67,7 @@
 	    					} else {
 	    						the_excerpt();
 	    					} ?>
-                            <a class="feature-readmore" href="<?php if ( $feature_readmore != '' ) { echo $feature_readmore; } else { the_permalink(); } ?>">Read more<img src="<?php echo get_template_directory_uri(); ?>/styles/red/ico-more.png"></a>
+                            <a class="feature-readmore" href="<?php if ( $feature_readmore != '' ) { echo $feature_readmore; } else { the_permalink(); } ?>"><?php echo dlvs_translate("Read more"); ?><img src="<?php echo get_template_directory_uri(); ?>/styles/red/ico-more.png"></a>
 	    				</p>
 	    				</li>
 	    				<?php if ( $count == $settings['features_area_entries']) { echo '<li class="fix clear"></li>'; } ?>
