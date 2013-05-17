@@ -20,7 +20,7 @@ function dlvssite() {
 
 	$site = "";
 	if(strpos(get_bloginfo('url'), "flufighters") !== false){
-		$site = "flufighters"; 
+		$site = "flufighters";
 	} else if (strpos(get_bloginfo('url'), "dlvsdk") !== false || strpos(get_bloginfo('url'), "sikkerrejse") !== false) {
 		$site = "sikkerrejse";
 	} else if (strpos(get_bloginfo('url'), "dlvsuk") !== false || strpos(get_bloginfo('url'), "travelvaccination") !== false) {
