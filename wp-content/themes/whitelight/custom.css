@@ -717,7 +717,7 @@ div.post.country table#vaccinations_groups {
 div.post.country table#vaccinations_groups thead tr td {
   cursor: help;
   font-size: 1.1em;
-  line-height: 2em;
+  line-height: 1.5em;
 }
 div.post.country table#vaccinations_groups thead tr td.vaccination-group {
   width: 15%;
@@ -966,6 +966,13 @@ div.post.country .post-content {
     zoom: 1;
     float: left;
   }
+  #navigation .nav > li {
+    padding: 15px 0px 13px 0px;
+  }
+  #navigation .nav > li a {
+    padding: 5px 10px;
+    margin-right: 0;
+  }
   #navigation .nav > li:hover {
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
@@ -981,12 +988,11 @@ div.post.country .post-content {
     background: none;
     background-color: none;
   }
-  #navigation .nav > li {
-    padding: 15px 0px 13px 0px;
-  }
-  #navigation .nav > li a {
-    padding: 5px 10px;
-    margin-right: 0;
+  #navigation .nav > li.current-menu-item:hover > a,
+  #navigation .nav > li.current-menu-parent:hover > a {
+    color: white!important;
+    background: none;
+    background-color: none;
   }
   #navigation .nav li ul li.current_page_item a,
   #navigation .nav li ul li.current_page_parent a,

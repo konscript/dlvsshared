@@ -79,9 +79,12 @@ $sidebar_country_meta .= '
 						$vaccinations_groups = array();
 
 						$vaccinations_groups[1] = get_field('group_1');
-						$vaccinations_groups[2] = get_field('group_2');
-						$vaccinations_groups[3] = get_field('group_3');
-						$vaccinations_groups[4] = get_field('group_4');
+
+						if(dlvssite() == "dlvsdk" || dlvssite() == "sikkerrejse"){
+							$vaccinations_groups[2] = get_field('group_2');
+							$vaccinations_groups[3] = get_field('group_3');
+							$vaccinations_groups[4] = get_field('group_4');
+						}
 						$vaccinations_groups[5] = get_field('group_5');
 
 						// output vaccination table

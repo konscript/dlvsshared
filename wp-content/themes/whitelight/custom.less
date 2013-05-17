@@ -164,6 +164,14 @@ WOO CUSTOM STYLESHEET (for DLVS)
     }
 
     // Make main nav hovering more subtle
+    #navigation .nav > li {
+        padding: 15px 0px 13px 0px;
+
+        a {
+            padding: 5px 10px;
+            margin-right: 0;
+        }
+    }
     #navigation .nav > li:hover {
     	.transition(all, 0.2s);
         //background: #f6f6f0;
@@ -175,14 +183,13 @@ WOO CUSTOM STYLESHEET (for DLVS)
             background-color: none;
         }
     }
-    #navigation .nav > li {
-        padding: 15px 0px 13px 0px;
-
-        a {
-            padding: 5px 10px;
-            margin-right: 0;
-        }
+    #navigation .nav > li.current-menu-item:hover > a,
+    #navigation .nav > li.current-menu-parent:hover > a {
+        color: white!important;
+        background: none;
+        background-color: none;
     }
+
     #navigation .nav li ul {
         li.current_page_item a,
         li.current_page_parent a,

@@ -39,6 +39,7 @@
 						<?php echo slidedown(dlvs_translate('Vaccination content'), get_field("vaccine_contents")); ?>
 						<?php echo slidedown(dlvs_translate("Who should be vaccinated?"), get_field("who_should_be_vaccinated")); ?>
 						<?php echo slidedown(dlvs_translate("Vaccine dose"), get_field("vaccination_dosis")); ?>
+						<?php echo slidedown(dlvs_translate("When to get vaccinated"), get_field("when_to_get_vaccinated")); ?>
 						<?php echo slidedown(dlvs_translate("Who should not be vaccinated?"), get_field("who_should_not_be_vaccinated")); ?>
 						<?php echo slidedown(dlvs_translate("Pregnancy and breastfeeding"), get_field("pregnancy_and_lactation")); ?>
 						<?php echo slidedown(dlvs_translate("Duration of immunity"), get_field("duration_of_immunity")); ?>

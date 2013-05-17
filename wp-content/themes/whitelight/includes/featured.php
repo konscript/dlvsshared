@@ -53,6 +53,37 @@
 
     				<?php $url = get_post_meta($post->ID, 'url', true); ?>
 
+                    <?php if ( !$has_embed OR ( $has_embed && $settings['slider_video_title'] != "true" ) )  { // Hide title/description if video post ?>
+                    <div class="slide-content-container">
+                        <article class="slide-content col-full <?php if ( !$has_embed ) { echo "not-video"; } ?>">
+
+                            <header>
+
+                                <h1>
+                                    <?php
+                                        $slide_title = get_the_title();
+                                        echo woo_text_trim ( $slide_title, 25 );
+                                    ?>
+                                </h1>
+
+                                <div class="entry">
+                                    <?php
+                                        $slide_excerpt = get_the_excerpt();
+                                        echo woo_text_trim ( $slide_excerpt, 16 );
+                                    ?>
+                                </div>
+                                <?php if ( isset($url) && $url != '' ) { ?>
+                                    <a class="button-book" href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+                                        <div class="button-book-title"><?php echo get_post_meta($post->ID, 'button_text', true); ?></div>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/img/icon-rightarrow-white.png" class="button-book-icon" />
+                                    </a>
+                                <?php } ?>
+                            </header>
+
+                        </article>
+                    </div>
+                    <?php } ?>
+
     	    		<?php
 	    	    		if ( $slidertype == "full" ) {
 	    	    			$has_embed = woo_embed( 'width=800&class=slide-video' );
@@ -76,37 +107,6 @@
     	    				if ( isset($url) && $url != '' ) { ?></a><?php }
 	        			}
 	        		?>
-
-    	    		<?php if ( !$has_embed OR ( $has_embed && $settings['slider_video_title'] != "true" ) )  { // Hide title/description if video post ?>
-    	    		<div class="slide-content-container">
-	    	    	<article class="slide-content col-full <?php if ( !$has_embed ) { echo "not-video"; } ?>">
-
-	    	    		<header>
-
-	    	    			<h1>
-		    					<?php
-		    						$slide_title = get_the_title();
-		    						echo woo_text_trim ( $slide_title, 25 );
-		    					?>
-	    	    			</h1>
-
-	    	    			<div class="entry">
-	    	    				<?php
-	    	    					$slide_excerpt = get_the_excerpt();
-	    	    					echo woo_text_trim ( $slide_excerpt, 16 );
-	    	    				?>
-	    	    			</div>
-	    	    			<?php if ( isset($url) && $url != '' ) { ?>
-		    	    			<a class="button-book" href="<?php echo $url ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-		    	    				<div class="button-book-title"><?php echo get_post_meta($post->ID, 'button_text', true); ?></div>
-		    	    				<img src="<?php echo get_template_directory_uri(); ?>/img/icon-rightarrow-white.png" class="button-book-icon" />
-		    	    			</a>
-	    	    			<?php } ?>
-	    	    		</header>
-
-	    	    	</article>
-	    	    	</div>
-	    	    	<?php } ?>
 
 	            </li><!--/.slide-->
 
