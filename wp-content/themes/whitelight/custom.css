@@ -120,24 +120,6 @@ a.button-book-table .button-book-icon {
   top: 50%;
   margin-top: -10px;
 }
-body.home #column-right a.button-book {
-  width: 100%;
-}
-body.home #column-right a.button-book .button-book-title {
-  font-size: 22px;
-  padding: 25px 0 24px 34px;
-  margin: 0;
-}
-body.home #column-right a.button-book .button-book-meta {
-  padding: 20px 34px 20px 0;
-  float: right;
-  font-style: italic;
-  text-align: right;
-  line-height: 1.5em;
-  font-size: 10px;
-  text-transform: lowercase;
-  color: #ffffff;
-}
 /*****
 	 * Table even/odd colored rows
 	 *************************/
@@ -229,7 +211,7 @@ table.zebra tbody tr:nth-child(odd) {
   padding-bottom: 0;
 }
 /**********************************************
- * Featured slider on homepage
+ * Featured slider on homepage (full width)
  **********************************************/
 #featured {
   box-shadow: none;
@@ -317,7 +299,7 @@ table.zebra tbody tr:nth-child(odd) {
     top: 50%;
     margin-top: -10px;
   }
-  .controls-container .flex-control-nav {
+  #featured .controls-container .flex-control-nav {
     display: none;
   }
 }
@@ -329,12 +311,106 @@ table.zebra tbody tr:nth-child(odd) {
     font-size: 1.8em;
   }
 }
-.home #intro h1 {
-  margin-bottom: 0;
-}
 .controls-container .flex-control-nav {
   left: 20px;
   right: auto;
+}
+/**********************************************
+ * Featured slider on homepage (full width)
+ **********************************************/
+.page-template-index-splitslider-php #navigation {
+  border-bottom: 0px;
+}
+.splitslider {
+  overflow: hidden;
+  zoom: 1;
+}
+#featured-left {
+  width: 49%;
+  float: left;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  height: 274px;
+}
+#featured-left #slide-2 {
+  display: none;
+}
+#featured-left .slide {
+  position: relative;
+}
+#featured-left .slide-content-container {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  max-width: 400px;
+  padding-right: 30px;
+}
+#featured-left h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: white;
+  line-height: 1.2em;
+  float: left;
+  margin-bottom: 0;
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.7);
+  display: none;
+}
+#featured-left .button-book {
+  margin: 0;
+  width: 220px;
+}
+#featured-left .entry {
+  float: left;
+  color: white;
+  display: none;
+}
+#featured-left .button-book {
+  float: left;
+}
+#featured-left .controls-container .flex-control-nav {
+  left: 30px;
+  right: 30px;
+}
+#featured-right {
+  width: 49%;
+  float: right;
+  overflow: hidden;
+  border: 1px solid #CCC;
+  border-radius: 3px;
+  position: relative;
+  height: 274px;
+  margin-bottom: 20px;
+  line-height: 0;
+}
+#featured-right .button-book {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: 165px;
+  margin: 0;
+}
+@media only screen and (max-width: 960px) {
+  #featured-left {
+    width: 100%;
+    height: auto;
+  }
+  #featured-right {
+    width: 100%;
+    height: auto;
+  }
+  #featured-right .button-book {
+    left: 30px;
+    right: auto;
+  }
+}
+/**********************************************
+ * Intro text-line
+ **********************************************/
+#intro {
+  border-top: 1px solid #E1E1E1;
+}
+#intro h1 {
+  margin-bottom: 0;
 }
 /**********************************************
  * Features area on homepage
@@ -521,22 +597,16 @@ table.zebra tbody tr:nth-child(odd) {
 /***
  * Home & Region
  **********************************/
-.home .region-map,
-.region .region-map,
-.page-template-template-vaccination-recommendations-php .region-map {
+.region-map {
   display: block;
   margin: 0 auto;
 }
-.home .country-wrapper,
-.region .country-wrapper,
-.page-template-template-vaccination-recommendations-php .country-wrapper {
+.country-wrapper {
   overflow: hidden;
   border-left: 1px solid #eeeeee;
   border-top: 1px solid #eeeeee;
 }
-.home .country,
-.region .country,
-.page-template-template-vaccination-recommendations-php .country {
+.country {
   display: block;
   float: left;
   width: 156px;
@@ -546,16 +616,12 @@ table.zebra tbody tr:nth-child(odd) {
   border-bottom: 1px solid #eeeeee;
   padding: 10px;
 }
-.home .country img,
-.region .country img,
-.page-template-template-vaccination-recommendations-php .country img {
+.country img {
   width: 40px;
   float: left;
   margin-right: 10px;
 }
-.home .country span,
-.region .country span,
-.page-template-template-vaccination-recommendations-php .country span {
+.country span {
   display: block;
   width: 106px;
   float: left;
@@ -563,9 +629,7 @@ table.zebra tbody tr:nth-child(odd) {
   height: 28px;
   overflow: hidden;
 }
-.home .map-header,
-.region .map-header,
-.page-template-template-vaccination-recommendations-php .map-header {
+.map-header {
   display: block;
   padding: 30px 0 0px 0;
   margin: 0;
@@ -575,28 +639,20 @@ table.zebra tbody tr:nth-child(odd) {
   font-weight: normal;
   text-align: center;
 }
-.home .map-form-container,
-.region .map-form-container,
-.page-template-template-vaccination-recommendations-php .map-form-container {
+.map-form-container {
   text-align: center;
   margin-top: 20px;
 }
-.home .map-text,
-.region .map-text,
-.page-template-template-vaccination-recommendations-php .map-text {
+.map-text {
   display: block;
   color: #555;
   text-decoration: underline;
   padding: 5px 0;
 }
-.home .map-form,
-.region .map-form,
-.page-template-template-vaccination-recommendations-php .map-form {
+.map-form {
   display: inline;
 }
-.home #map-wrapper,
-.region #map-wrapper,
-.page-template-template-vaccination-recommendations-php #map-wrapper {
+#map-wrapper {
   -webkit-border-top-right-radius: 3px;
   -webkit-border-bottom-right-radius: 3px;
   -webkit-border-bottom-left-radius: 3px;
@@ -622,9 +678,7 @@ table.zebra tbody tr:nth-child(odd) {
   background-image: -ms-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
   background-image: radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
 }
-.home #map-wrapper h3,
-.region #map-wrapper h3,
-.page-template-template-vaccination-recommendations-php #map-wrapper h3 {
+#map-wrapper h3 {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   display: block;
   padding: 30px 0 0px 0;
@@ -636,17 +690,13 @@ table.zebra tbody tr:nth-child(odd) {
   text-align: center;
   font-family: Georgia, serif;
 }
-.home #map-continents #continents li .bg,
-.region #map-continents #continents li .bg,
-.page-template-template-vaccination-recommendations-php #map-continents #continents li .bg {
+#map-continents #continents li .bg {
   -moz-opacity: 0;
   -khtml-opacity: 0;
   -webkit-opacity: 0;
   opacity: 0;
 }
-.home #map-continents #continents li:hover .bg,
-.region #map-continents #continents li:hover .bg,
-.page-template-template-vaccination-recommendations-php #map-continents #continents li:hover .bg {
+#map-continents #continents li:hover .bg {
   -moz-opacity: 1;
   -khtml-opacity: 1;
   -webkit-opacity: 1;

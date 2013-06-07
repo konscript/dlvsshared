@@ -123,9 +123,3 @@
 		    </ul>
 		</div>
 	</nav><!-- /#navigation -->
-
-	<?php
-		// Featured Slider
-		if ( ( is_home() || is_front_page() ) && !$paged && isset( $woo_options['woo_featured'] ) && $woo_options['woo_featured'] == 'true' )
-			get_template_part ( 'includes/featured' );
-	?>

@@ -5,22 +5,22 @@
 	global $wp_query, $post, $panel_error_message;
 
 	$settings = array(
-					'featured_type' => 'Full',
-					'featured_entries' => 3,
-					'featured_height' => 380,
-					'featured_tags' => '',
-					'slider_video_title' => 'true',
-					'featured_order' => 'DESC',
-					'featured_sliding_direction' => 'vertical',
-					'featured_effect' => 'slide',
-					'featured_speed' => '7',
-					'featured_hover' => 'false',
-					'featured_touchswipe' => 'true',
-					'featured_animation_speed' => '0.6',
-					'featured_pagination' => 'false',
-					'featured_nextprev' => 'true',
-					'featured_opacity' => '0.5'
-					);
+		'featured_type' => 'Full',
+		'featured_entries' => 3,
+		'featured_height' => 380,
+		'featured_tags' => '',
+		'slider_video_title' => 'true',
+		'featured_order' => 'DESC',
+		'featured_sliding_direction' => 'vertical',
+		'featured_effect' => 'slide',
+		'featured_speed' => '7',
+		'featured_hover' => 'false',
+		'featured_touchswipe' => 'true',
+		'featured_animation_speed' => '0.6',
+		'featured_pagination' => 'false',
+		'featured_nextprev' => 'true',
+		'featured_opacity' => '0.5'
+		);
 
 	$settings = woo_get_dynamic_values( $settings );
 

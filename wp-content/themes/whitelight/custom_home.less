@@ -7,7 +7,7 @@
 }
 
 /**********************************************
- * Featured slider on homepage
+ * Featured slider on homepage (full width)
  **********************************************/
 
 // No shadows on slider wrapper (best for white bg)
@@ -102,7 +102,7 @@
 		top: 50%;
 		margin-top: -10px;
 	}
-	.controls-container .flex-control-nav {
+	#featured .controls-container .flex-control-nav {
 		display: none;
 	}
 }
@@ -117,13 +117,132 @@
 	}
 }
 
-.home #intro h1 {
-	margin-bottom: 0;
-}
-
 .controls-container .flex-control-nav {
 	left: 20px;
 	right: auto;
+}
+
+/**********************************************
+ * Featured slider on homepage (full width)
+ **********************************************/
+
+.page-template-index-splitslider-php {
+	#navigation {
+		border-bottom: 0px;
+	}
+}
+
+.splitslider {
+	overflow: hidden;
+	zoom: 1;
+}
+
+#featured-left {
+	width: 49%;
+	float: left;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	height: 274px;
+
+	#slide-2 {
+		display: none;
+	}
+
+	.slide {
+		position: relative;
+	}
+		.slide-content-container {
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+			max-width: 400px;
+			padding-right: 30px;
+		}
+
+			h1 {
+				font-family: @typography_family_secondary;
+				color: white;
+				line-height: 1.2em;
+				float: left;
+				margin-bottom: 0;
+				text-shadow: 0 1px 0px rgba(0, 0, 0, 0.7);
+				display: none;
+			}
+
+			.button-book {
+				margin: 0;
+				width: 220px;
+			}
+
+			.entry {
+				float: left;
+				color: white;
+				display: none;
+			}
+
+			.button-book {
+				float: left;
+			}
+
+			.slide-image {
+			}
+
+		.controls-container .flex-control-nav {
+			left: 30px;
+			right: 30px;
+		}
+}
+
+#featured-right {
+	width: 49%;
+	float: right;
+	overflow: hidden;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	position: relative;
+	height: 274px;
+	margin-bottom: 20px;
+	line-height: 0;
+
+	.button-book {
+		position: absolute;
+		right: 30px;
+		bottom: 30px;
+		width: 165px;
+		margin: 0;
+	}
+}
+
+// Slider content bar (only apply to small size devices)
+@media only screen and (max-width: 960px) {
+	.splitslider {
+	}
+	#featured-left {
+		width: 100%;
+		height: auto;
+	}
+	#featured-right {
+		width: 100%;
+		height: auto;
+
+		.button-book {
+			left: 30px;
+			right: auto;
+		}
+	}
+}
+
+ /**********************************************
+ * Intro text-line
+ **********************************************/
+
+#intro {
+	border-top: 1px solid #E1E1E1;
+}
+
+#intro h1 {
+	margin-bottom: 0;
 }
 
 /**********************************************
