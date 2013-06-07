@@ -29,7 +29,7 @@
 
 <?php
 // Analytics Split-slider experiment
-if ( is_home() || is_front_page() { ?>
+if (is_home() || is_front_page()){ ?>
 	<!-- Google Analytics Content Experiment code -->
 	<script>function utmx_section(){}function utmx(){}(function(){var
 	k='50148153-0',d=document,l=d.location,c=d.cookie;
