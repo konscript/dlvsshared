@@ -39,7 +39,7 @@ function dlvs_translate($key) {
 
 		// vaccination groups table
 		"Vaccination" => "Rejsetid:",
-		"All travelers" => "Gr. 1<br />Alle rejsende",
+		"All travellers" => "Gr. 1<br />Alle rejsende",
 		"+2 weeks" => "Gr. 2<br />1-4 uger",
 		"+3 months" => "Gr. 3<br />1-6 mdr.",
 		"+6 months" => "Gr. 4<br />6 mdr.",

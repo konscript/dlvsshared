@@ -5,7 +5,7 @@ function vaccination_groups($vaccinations_groups){
 
     $vaccinations_groups_info = array(
         array(
-            dlvs_translate("All travelers"),
+            dlvs_translate("All travellers"),
             dlvs_translate("The following vaccinations are all recommended no matter the duration of stay in the country"),
         ),
         array(
