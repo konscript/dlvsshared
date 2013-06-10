@@ -597,16 +597,19 @@ table.zebra tbody tr:nth-child(odd) {
 /***
  * Home & Region
  **********************************/
-.region-map {
+body.home .region-map,
+body.page-template-index-splitslider-php .region-map {
   display: block;
   margin: 0 auto;
 }
-.country-wrapper {
+body.home .country-wrapper,
+body.page-template-index-splitslider-php .country-wrapper {
   overflow: hidden;
   border-left: 1px solid #eeeeee;
   border-top: 1px solid #eeeeee;
 }
-.country {
+body.home .country,
+body.page-template-index-splitslider-php .country {
   display: block;
   float: left;
   width: 156px;
@@ -616,41 +619,20 @@ table.zebra tbody tr:nth-child(odd) {
   border-bottom: 1px solid #eeeeee;
   padding: 10px;
 }
-.country img {
+body.home .country img,
+body.page-template-index-splitslider-php .country img {
   width: 40px;
   float: left;
   margin-right: 10px;
 }
-.country span {
+body.home .country span,
+body.page-template-index-splitslider-php .country span {
   display: block;
   width: 106px;
   float: left;
   line-height: 14px;
   height: 28px;
   overflow: hidden;
-}
-.map-header {
-  display: block;
-  padding: 30px 0 0px 0;
-  margin: 0;
-  line-height: 34px;
-  font-size: 34px;
-  color: #000000;
-  font-weight: normal;
-  text-align: center;
-}
-.map-form-container {
-  text-align: center;
-  margin-top: 20px;
-}
-.map-text {
-  display: block;
-  color: #555;
-  text-decoration: underline;
-  padding: 5px 0;
-}
-.map-form {
-  display: inline;
 }
 #map-wrapper {
   -webkit-border-top-right-radius: 3px;
@@ -678,6 +660,29 @@ table.zebra tbody tr:nth-child(odd) {
   background-image: -ms-radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
   background-image: radial-gradient(50% 50%, ellipse cover, #d4ecf5, #74b6cf 100%);
 }
+#map-wrapper .map-header {
+  display: block;
+  padding: 30px 0 0px 0;
+  margin: 0;
+  line-height: 34px;
+  font-size: 34px;
+  color: #000000;
+  font-weight: normal;
+  text-align: center;
+}
+#map-wrapper .map-form-container {
+  text-align: center;
+  margin-top: 20px;
+}
+#map-wrapper .map-text {
+  display: block;
+  color: #555;
+  text-decoration: underline;
+  padding: 5px 0;
+}
+#map-wrapper .map-form {
+  display: inline;
+}
 #map-wrapper h3 {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   display: block;
@@ -690,13 +695,13 @@ table.zebra tbody tr:nth-child(odd) {
   text-align: center;
   font-family: Georgia, serif;
 }
-#map-continents #continents li .bg {
+#map-wrapper #map-continents #continents li .bg {
   -moz-opacity: 0;
   -khtml-opacity: 0;
   -webkit-opacity: 0;
   opacity: 0;
 }
-#map-continents #continents li:hover .bg {
+#map-wrapper #map-continents #continents li:hover .bg {
   -moz-opacity: 1;
   -khtml-opacity: 1;
   -webkit-opacity: 1;
