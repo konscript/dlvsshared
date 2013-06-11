@@ -595,21 +595,21 @@ table.zebra tbody tr:nth-child(odd) {
  *	CUSTOM POST TYPES
  *****************************************************************/
 /***
- * Home & Region
+ * Regions (and Home)
  **********************************/
-body.home .region-map,
-body.page-template-index-splitslider-php .region-map {
+body.page-template-template-vaccination-recommendations-php .region-map,
+body.single-region .region-map {
   display: block;
   margin: 0 auto;
 }
-body.home .country-wrapper,
-body.page-template-index-splitslider-php .country-wrapper {
+body.page-template-template-vaccination-recommendations-php .country-wrapper,
+body.single-region .country-wrapper {
   overflow: hidden;
   border-left: 1px solid #eeeeee;
   border-top: 1px solid #eeeeee;
 }
-body.home .country,
-body.page-template-index-splitslider-php .country {
+body.page-template-template-vaccination-recommendations-php .country,
+body.single-region .country {
   display: block;
   float: left;
   width: 156px;
@@ -619,14 +619,14 @@ body.page-template-index-splitslider-php .country {
   border-bottom: 1px solid #eeeeee;
   padding: 10px;
 }
-body.home .country img,
-body.page-template-index-splitslider-php .country img {
+body.page-template-template-vaccination-recommendations-php .country img,
+body.single-region .country img {
   width: 40px;
   float: left;
   margin-right: 10px;
 }
-body.home .country span,
-body.page-template-index-splitslider-php .country span {
+body.page-template-template-vaccination-recommendations-php .country span,
+body.single-region .country span {
   display: block;
   width: 106px;
   float: left;
