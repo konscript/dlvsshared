@@ -96,14 +96,14 @@ jQuery(function($) {
                     // vaccinations for groups
                     $vaccinations_groups = array();
 
-                    $vaccinations_groups[1] = get_field('group_1');
+                    $vaccinations_groups[1] = array();
 
                     if(dlvssite() == "dlvsdk" || dlvssite() == "sikkerrejse"){
-                        $vaccinations_groups[2] = get_field('group_2');
-                        $vaccinations_groups[3] = get_field('group_3');
-                        $vaccinations_groups[4] = get_field('group_4');
+                        $vaccinations_groups[2] = array();
+                        $vaccinations_groups[3] = array();
+                        $vaccinations_groups[4] = array();
                     }
-                    $vaccinations_groups[5] = get_field('group_5');
+                    $vaccinations_groups[5] = array();
 
                     foreach($chosen_countries as $country){
 
@@ -113,19 +113,21 @@ jQuery(function($) {
                             $vaccinations_groups[1] = array_merge($vaccinations_groups[1], $group_1);
                         }
 
-                        $group_2 = get_field('group_2', $country);
-                        if(is_array($group_2)){
-                            $vaccinations_groups[2] = array_merge($vaccinations_groups[2], $group_2);
-                        }
+                        if(dlvssite() == "dlvsdk" || dlvssite() == "sikkerrejse"){
+                            $group_2 = get_field('group_2', $country);
+                            if(is_array($group_2)){
+                                $vaccinations_groups[2] = array_merge($vaccinations_groups[2], $group_2);
+                            }
 
-                        $group_3 = get_field('group_3', $country);
-                        if(is_array($group_3)){
-                            $vaccinations_groups[3] = array_merge($vaccinations_groups[3], $group_3);
-                        }
+                            $group_3 = get_field('group_3', $country);
+                            if(is_array($group_3)){
+                                $vaccinations_groups[3] = array_merge($vaccinations_groups[3], $group_3);
+                            }
 
-                        $group_4 = get_field('group_4', $country);
-                        if(is_array($group_4)){
-                            $vaccinations_groups[4] = array_merge($vaccinations_groups[4], $group_4);
+                            $group_4 = get_field('group_4', $country);
+                            if(is_array($group_4)){
+                                $vaccinations_groups[4] = array_merge($vaccinations_groups[4], $group_4);
+                            }
                         }
 
                         $group_5 = get_field('group_5', $country);
