@@ -17,3 +17,7 @@ label.Group {
 .Calendar > form {
     display: none;
 }
+
+td a span {
+    color: #fff;
+}
