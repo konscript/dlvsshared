@@ -32,6 +32,6 @@ label.Group {
     font-size: 12px;
 }
 
-.Calendar > form .label {
+.Calendar > form label.Group {
     margin-right: 10px;
 }
