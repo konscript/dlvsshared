@@ -1,16 +1,31 @@
 *, body {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    line-height: 1.4em;
+}
+
+.Navigator form {
+    margin-bottom: 10px;
+}
+
+table.Time {
+    width: 100%;
 }
 
 table.Time td {
     padding: 10px;
     padding-left: 10px !important;
+    color: #585858;
+}
+
+table.Time th,
+table.Time td,
+.Right,
+.IntervalDate {
+    color: #585858;
 }
 
 label.Group {
     font-size: 12px;
 }
 
-.Calendar > form {
-    display: none;
-}
+.Calendar > form {}
