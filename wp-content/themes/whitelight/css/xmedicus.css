@@ -1,4 +1,4 @@
-*, body {
+html, body {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     line-height: 1.4em;
 }
@@ -24,8 +24,14 @@ table.Time td,
     color: #585858;
 }
 
+.IntervalDate {
+    margin-bottom: 10px;
+}
+
 label.Group {
     font-size: 12px;
 }
 
-.Calendar > form {}
+.Calendar > form .label {
+    margin-right: 10px;
+}
