@@ -1,11 +1,8 @@
 *, body {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 13px;
-    color: #555;
 }
 
 table.Time td {
-    color: #555;
     padding: 10px;
     padding-left: 10px !important;
 }
@@ -16,8 +13,4 @@ label.Group {
 
 .Calendar > form {
     display: none;
-}
-
-td a span {
-    color: #fff;
 }
