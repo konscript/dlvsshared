@@ -458,11 +458,12 @@ table.zebra tbody tr:nth-child(odd) {
     margin-bottom: 0;
   }
 }
-.home-section#features li p a.feature-readmore {
+.home-section#features li a.feature-readmore {
   display: block;
   padding: 5px 0;
+  margin-left: 40px;
 }
-.home-section#features li p a.feature-readmore img {
+.home-section#features li a.feature-readmore img {
   margin: 0;
   margin-left: 7px;
   float: none;
